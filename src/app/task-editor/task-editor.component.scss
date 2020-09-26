@@ -1,0 +1,70 @@
+.tooltip-container {
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    height: 32px;
+    color: #fff;
+    margin-left: 7px;
+    margin-right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+    &:hover:enabled {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    &:disabled {
+      opacity: 0.4;
+    }
+    &:focus {
+      outline: none;
+    }
+  
+    &.transparent {
+      background-color: transparent;
+    }
+  }
+  
+  .toolbar-button-content {
+    font-size: 22px;
+    color: hsl(0, 100%, 100%);
+    margin-right: 5px;
+  }
+
+  .help-header {
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 15px;
+  }
+  
+  .help-content {
+    padding: 2em;
+    height: 50vh;
+    overflow: auto;
+    max-width: 589px;
+    scroll-behavior: smooth;
+  }
+
+  .dont-show-wrapper {
+    padding: 1em 2em .5em;
+    font-weight: bold;
+
+    input {
+      margin: 0 0 0 5px;
+    }
+  }
+
+  .spinner-container {
+    background-color: #353f42;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

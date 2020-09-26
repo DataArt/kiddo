@@ -1,0 +1,36 @@
+
+.initial-code-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .code-preview-container {
+    height: 32vh;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  h1 {
+    margin: 0 0 10px 0;
+}
+}
+.delimiter {
+  width: 32px;
+  background-color: hsl(0, 0%, 16%);
+}
+
+.preview {
+  width: 50%;
+}
+
+
+.form {
+  width: 100%;
+
+  &.half-form {
+    width: 50%;
+  }
+}

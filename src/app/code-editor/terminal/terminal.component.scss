@@ -1,0 +1,90 @@
+.terminal-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: calc(100%);
+}
+
+.terminal-header {
+ background-color: #424242;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
+
+  .tooltip-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .left-icon {
+    margin-right: 20px;
+  }
+
+  .icon-caret-up {
+    font-size: .85em;
+    color: #CCCCCC;
+  }
+
+  .icon-reset {
+    font-size: .95em;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .icon-less {
+    font-size: 1.25em;
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+  
+    .icon-caret-up {
+      font-size: 1.25em;
+      color: white;
+    }
+
+}
+
+.terminal-content {
+  height: 0;
+  box-sizing: border-box;
+  background-color: #161616;
+  color: #CCCCCC;
+  visibility: hidden;
+  overflow: auto;
+}
+
+.terminal-open {
+  visibility: visible;
+  height: 150px;
+  padding-left: 20px;
+}
+
+.line {
+  margin-top: 4px;
+}
+
+.blinking-cursor {
+  width: 2px;
+  height: 1em;
+  margin: 8px 0 0 2px;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #CCCCCC;
+  }
+}
+
+.terminal-scrollable {
+  padding: 10px 0;
+}

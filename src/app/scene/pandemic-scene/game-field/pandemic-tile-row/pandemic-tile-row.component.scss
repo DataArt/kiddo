@@ -1,0 +1,84 @@
+// .tile-row {
+//   display: flex;
+//   flex-wrap: nowrap;
+//   width: 100%;
+// }
+
+// .tile-row__tile {
+//   width: 100%;
+//   background-repeat: no-repeat;
+//   border-right: 1px solid #6E6BA7;
+//   border-bottom: 1px solid #6E6BA7;
+// }
+
+// .tile-row__tile:after {
+//   content: '';
+//   display: block;
+//   padding-bottom: 100%;
+// }
+
+// .tile-row__tile_type_road {
+//   background-color: var(--scene-road);
+// }
+
+// .tile-row__tile_type_fence {
+//   background-image: url('../../../../../assets/images/who.svg');
+//   background-position: 45.2% 89%;
+//   background-size: 2000%;
+// }
+
+// .tile-row__tile_type_cone {
+//   background-image: url('../../../../../assets/images/who.svg');
+//   background-position: 52.2% 101%;
+//   background-size: 1800%;
+// }
+
+// .tile-row__tile_type_home {
+//   background-image: url('../../../../../assets/images/who.svg');
+//   background-position: 61.8% 100%;
+//   background-size: 1900%;
+//   background-repeat: repeat;
+//   background-color: var(--scene-road);
+// }
+
+// .tile-row__tile_type_shop {
+//   background-image: url('../../../../../assets/images/who.svg');
+//   background-position: 67.6% 103%;
+//   background-size: 1800%;
+//   background-color: var(--scene-road);
+// }
+
+// .tile-row__tile_type_mall {
+//   margin-right: 0;
+//   margin-bottom: 0;
+//   padding-right: 1px;
+//   padding-bottom: 1px;
+//   background-image: url('../../../../../assets/images/who.svg');
+//   background-color: #bdb5e4;
+//   background-size: 1900%;
+//   background-position: 73.4% 54%;
+// }
+
+// .tile-row__tile_type_mall-up-left {
+//   background-position: 73.4% 54%;
+//   border-right: none;
+//   border-bottom: none;
+// }
+
+// .tile-row__tile_type_mall-down-left {
+//   padding-bottom: 0;
+//   background-position: 73.4% 108%;
+//   border-right: none
+// }
+
+// .tile-row__tile_type_mall-up-right {
+//   padding-right: 0;
+//   background-position: 79% 54%;
+//   border-bottom: none;
+// }
+
+// .tile-row__tile_type_mall-down-right {
+//   padding-right: 0;
+//   padding-bottom: 0;
+//   background-position: 79% 108%;
+// }

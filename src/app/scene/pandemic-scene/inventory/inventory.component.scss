@@ -1,0 +1,113 @@
+// .inventory {
+//   display: flex;
+//   width: 90%;
+//   flex-wrap: nowrap;
+//   justify-content: space-between;
+//   margin: 0 auto;
+// }
+
+// .inventory::after {
+//   content: '';
+//   display: block;
+//   padding-bottom: 10%;
+// }
+
+// .inventory__items-wrapper {
+//   display: flex;
+//   justify-content: flex-start;
+//   width: 100%;
+// }
+
+// .inventory__compulsory-items {
+//   display: flex;
+//   justify-content: flex-end;
+//   width: 100%;
+// }
+
+// .inventory__item {
+//   width: 20%;
+// }
+
+// .inventory__item_type_cookie {
+//   background-image: url('../../../../assets/images/cookie-filled.svg');
+//   background-size: 60%;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+
+// .inventory__item_type_cookie-unpicked {
+//   background-image: url('../../../../assets/images/cookie.svg');
+//   background-size: 60%;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+
+// .inventory__item_type_mine {
+//   background-image: url('../../../../assets/images/box.png');
+//   background-repeat: no-repeat;
+//   background-size: 105%;
+//   background-position: 46.5% 90%;
+// }
+
+// .inventory__item_type_turret {
+//   background-image: url('../../../../assets/images/cannon-inv.svg');
+//   background-size: 70%;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+
+// .inventory__item_type_key--green {
+//   background-image: url('../../../../assets/images/key-green.svg');
+//   background-size: 95%;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+
+// .inventory__item_type_key--red {
+//   background-image: url('../../../../assets/images/key-red.svg');
+//   background-size: 95%;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+
+// .inventory__item_type_key--yellow {
+//   background-image: url('../../../../assets/images/key-yellow.svg');
+//   background-size: 95%;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+
+// .inventory__item_type_key--blue {
+//   background-image: url('../../../../assets/images/key-blue.svg');
+//   background-size: 95%;
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+// }
+
+// .inventory__item_type_mask {
+//   background-image: url('../../../../assets/images/who.svg');
+//   background-repeat: no-repeat;
+//   background-size: 3200%;
+//   background-position: 16.5% 88%;
+// }
+
+// .inventory__item_type_mask-unpicked {
+//   background-image: url('../../../../assets/images/who.svg');
+//   background-repeat: no-repeat;
+//   background-size: 3200%;
+//   background-position: 24% 88%;
+// }
+
+// .inventory__item_type_sanitizer {
+//   background-image: url('../../../../assets/images/who.svg');
+//   background-repeat: no-repeat;
+//   background-size: 3200%;
+//   background-position: 31.4% 88%;
+// }
+
+// .inventory__item_type_sanitizer-unpicked {
+//   background-image: url('../../../../assets/images/who.svg');
+//   background-repeat: no-repeat;
+//   background-size: 3200%;
+//   background-position: 38.6% 88%;
+// }

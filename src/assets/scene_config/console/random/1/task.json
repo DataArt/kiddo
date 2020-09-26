@@ -1,0 +1,9 @@
+{
+  "sceneType": "console",
+  "generatingFunc": "const lowercaseLetters = generateCharArray('A', 'Y');\n\nconst randomAmountOfVariables = getRandomInt(1, 5);\n\nconst variables = [];\n\nfor (let i = 0; i < randomAmountOfVariables; i++) {\n    const randomLetterIndex = Math.floor(Math.random() * lowercaseLetters.length);\n    const randomVarName = lowercaseLetters[randomLetterIndex];\n    lowercaseLetters.splice(randomLetterIndex, 1);\n    const randomVariable = {\n        name: randomVarName,\n        value: getRandomInt(1, 100),\n        readOnly: true\n    };\n    variables.push(randomVariable);\n}\n\nconst randomizedFormula = variables.map(variable => variable.name).join(' + ');\n\nvariables.push({ name: 'Z', value: null });\n\nfor (let i = 0; i < variables.length; i++) {\n    this.consoleSceneWriterService.addConsoleVariable(variables[i]);\n}\n\nconst winCondition = {\n    consoleVariables: [{\n        name: 'Z',\n        value: '',\n        formula: randomizedFormula\n    }]\n}\n\nthis.addWinCondition(winCondition);\n\n\n\nfunction getRandomInt(min, max) {\n    min = Math.ceil(min);\n    max = Math.floor(max);\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\nfunction generateCharArray(from, to) {\n    from = from.charCodeAt(0);\n    to = to.charCodeAt(0);\n    const result = [];\n    for (let i = from; i < to; i++) {\n        result.push(String.fromCharCode(i));\n    }\n    return result;\n}",
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/console-task5.html",
+    "text": "Next level"
+  },
+  "initialScript": "import console\n\n# Add your code here"
+}

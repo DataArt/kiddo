@@ -1,0 +1,23 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["RO", "RO", "RO", "RO", "RO", "RO"],
+    ["RO", "RO", "RO", "GR", "GR", "RO"],
+    ["RO", "RO", "RO", "BU", "BU", "RO"],
+    ["RO", "BU", "BU", "RO", "RO", "RO"],
+    ["RO", "GR", "GR", "RO", "RO", "RO"],
+    ["FI", "RO", "RO", "RO", "RO", "RO"]
+  ],
+  "player": {
+    "position": [5, 0]
+  },
+  "winCondition": {
+    "playerPosition": { "x": 0, "y": 5 },
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/raccoon-task3.html",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

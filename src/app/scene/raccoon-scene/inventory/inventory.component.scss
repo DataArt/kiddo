@@ -1,0 +1,78 @@
+.inventory {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.inventory::after {
+  content: '';
+  display: block;
+  padding-bottom: 10%;
+}
+
+.inventory__items-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.inventory__compulsory-items {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.inventory__item {
+  width: 20%;
+}
+
+.cookie {
+  background-size: 1400%;
+  background-position: 72.2% 15%;
+  background-repeat: no-repeat;
+}
+
+.cookie-unpicked {
+  background-size: 1400%;
+  background-position: 64% 10%;
+  background-repeat: no-repeat;
+}
+
+.mine {
+  background-size: 900%;
+  background-position: 99.2% 80%;
+  background-repeat: no-repeat;
+}
+
+.turret {
+  background-size: 700%;
+  background-position: 88.2% 91%;
+  background-repeat: no-repeat;
+}
+
+.key--yellow {
+  background-size: 800%;
+  background-position: 3.2% 116%;
+  background-repeat: no-repeat;
+}
+
+.key--red {
+  background-size: 800%;
+  background-position: 33.2% 116%;
+  background-repeat: no-repeat;
+}
+
+.key--green {
+  background-size: 800%;
+  background-position: 17.2% 116%;
+  background-repeat: no-repeat;
+}
+
+.key--blue {
+  background-size: 800%;
+  background-position: 51.2% 116%;
+  background-repeat: no-repeat;
+}
+

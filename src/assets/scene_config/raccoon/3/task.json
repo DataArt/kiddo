@@ -1,0 +1,26 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["BU", "BU", "BU", "BU", "BU", "BU", "BU", "BU", "BU"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "BU"],
+    ["BU", "BU", "BU", "BU", "BU", "BU", "BU", "RO", "BU"],
+    ["BU", "RO", "RO", "RO", "RO", "RO", "BU", "RO", "BU"],
+    ["BU", "RO", "BU", "BU", "BU", "RO", "BU", "RO", "BU"],
+    ["BU", "RO", "BU", "FI", "RO", "RO", "BU", "RO", "BU"],
+    ["BU", "RO", "BU", "BU", "BU", "BU", "BU", "RO", "BU"],
+    ["BU", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "BU"],
+    ["BU", "BU", "BU", "BU", "BU", "BU", "BU", "BU", "BU"]
+  ],
+  "player": {
+    "position": [0, 1]
+  },
+  "winCondition": {
+    "playerPosition": { "x": 3, "y": 5 },
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/raccoon-task4.html",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

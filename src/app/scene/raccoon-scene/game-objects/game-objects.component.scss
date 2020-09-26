@@ -1,0 +1,12 @@
+.game-object {
+  position: absolute;
+  transition-property: left, top;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  z-index: 98;
+ 
+  &-movable {
+    z-index: 100;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "sceneType": "Pandemic",
+  "gameField": [
+    ["CO", "FE", "RO", "FE", "FE", "CO", "HO"],
+    ["FE", "CO", "RO", "RO", "CO", "FE", "RO"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "RO"],
+    ["RO", "CO", "FE", "CO", "RO", "FE", "CO"],
+    ["RO", "RO", "FE", "FE", "RO", "CO", "FE"],
+    ["FE", "RO", "RO", "RO", "RO", "FE", "CO"],
+    ["FE", "CO", "FE", "CO", "FE", "RO", "RO"]
+  ],
+  "player": {
+    "position": [6, 1]
+  },
+  "masks": [
+    { "position": [4, 2] },
+    { "position": [4, 5] },
+    { "position": [0, 2] }
+  ],
+  "sanitizers": [
+    { "position": [2, 0] }
+  ],
+  "viruses": [
+    { "position": [5, 6], "direction": "left" }
+  ],
+  "shouldPutOnMask": false,
+  "winCondition": {
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/pandemic-task10.html",
+    "text": "Next level"
+  },
+  "initialScript": "import player\n\n# Add your code here",
+  "taskDescription": "Собери все маски и санитайзеры, дойди до дома и помой руки."
+}

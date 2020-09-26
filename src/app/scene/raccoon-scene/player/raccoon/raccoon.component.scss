@@ -1,0 +1,37 @@
+.player {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 700%;
+}
+
+.player::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;;
+}
+
+.player_state_default {
+  background-position: -2% 0;
+}
+
+.player_state_success {
+  background-position: 66% 0;
+}
+
+.player_state_fail {
+  background-position: 84% -26%;
+}
+
+.player_state_direction-left {
+  transform: scaleX(-1);
+}
+
+.player_state_moving {
+  animation-name: player_moving;
+  animation-duration: 1s;
+  animation-timing-function: steps(3);
+  animation-iteration-count: infinite;
+}
+@keyframes player_moving {
+  0% { background-position: -2% 0; } to { background-position: 49% 0; }
+}

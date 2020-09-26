@@ -1,0 +1,34 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["BU", "BU", "BU", "BU", "BU", "BU", "RO", "BU"],
+    ["BU", "GR", "GR", "RO", "RO", "RO", "RO", "FI"],
+    ["BU", "GR", "RO", "RO", "GR", "GR", "RO", "BU"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO"],
+    ["OF", "GR", "RO", "RO", "OF", "OF", "RO", "GR"],
+    ["BU", "GR", "RO", "GR", "OF", "GR", "OF", "BU"],
+    ["BU", "OF", "OF", "OF", "OF", "OF", "GR", "BU"],
+    ["BU", "BU", "BU", "BU", "BU", "BU", "BU", "TR"]
+  ],
+  "player": {
+    "position": [2, 5]
+  },
+  "cookies": [
+    { "position": [3, 3] },
+    { "position": [5, 1] }
+  ],
+  "monsters": [
+    { "position": [6, 2], "direction": "down" },
+    { "position": [0, 3], "direction": "right" },
+    { "position": [7, 3], "direction": "left" }
+  ],
+  "winCondition": {
+    "playerPosition": { "x": 7, "y": 1 },
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/raccoon-task12.html",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

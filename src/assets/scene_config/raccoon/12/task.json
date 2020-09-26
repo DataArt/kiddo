@@ -1,0 +1,38 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["RO", "RO", "TR", "TR", "RO", "TR", "GR", "TR", "TR"],
+    ["TR", "RO", "TR", "ST", "RO", "ST", "GR", "TR", "TR"],
+    ["TR", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "TR"],
+    ["TR", "RO", "TR", "GR", "RO", "GR", "TR", "TR", "TR"],
+    ["TR", "RO", "ST", "RO", "RO", "RO", "RO", "TR", "TR"],
+    ["TR", "RO", "RO", "RO", "RO", "BU", "RO", "RO", "TR"],
+    ["TR", "RO", "GR", "TR", "RO", "BU", "RO", "RO", "TR"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "FI"],
+    ["TR", "RO", "RO", "RO", "RO", "BU", "RO", "RO", "TR"]
+  ],
+  "player": {
+    "position": [0, 0]
+  },
+  "cookies": [
+    { "position": [1, 7] },
+    { "position": [4, 4] },
+    { "position": [4, 8] },
+    { "position": [7, 5] }
+  ],
+  "monsters": [
+    { "position": [4, 0], "direction": "down" },
+    { "position": [1, 2], "direction": "right" },
+    { "position": [0, 7], "direction": "right" },
+    { "position": [8, 7], "direction": "left" }
+  ],
+  "winCondition": {
+    "playerPosition": { "x": 8, "y": 7 },
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/raccoon-task13.html",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

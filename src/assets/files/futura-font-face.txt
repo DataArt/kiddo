@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'futura_pt_book';
+  src:
+    url('assetsPathToReplace/fonts/futura_PT_book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}

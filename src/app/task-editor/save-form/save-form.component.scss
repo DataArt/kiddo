@@ -1,0 +1,30 @@
+h1 {
+    margin: 0 0 10px 0;
+}
+
+
+
+.save-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    .button {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    } 
+}
+
+.output-wrapper {
+    background-color: #5f5a5a;
+    margin-bottom: 10px;
+}
+.output {
+    width: 100%;
+    max-height: 250px;
+    white-space: pre-wrap;
+    padding: 10px;
+    -webkit-user-select: all;
+    user-select: all;
+}
+

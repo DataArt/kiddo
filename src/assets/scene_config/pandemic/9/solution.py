@@ -1,0 +1,15 @@
+import player
+ 
+player.go_down()
+player.go_left(2)
+player.go_down(3)
+player.go_left(3)
+player.go_up()
+player.go_left()
+player.go_up(2)
+player.go_right(2)
+player.go_up(2)
+player.go_down(2)
+player.go_right(4)
+player.go_up(2)
+player.wash_hands()

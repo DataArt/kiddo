@@ -1,0 +1,16 @@
+import raccoon
+
+raccoon.go_up(2)
+raccoon.go_down()
+raccoon.go_right(3)
+raccoon.go_up()
+raccoon.go_right(2)
+raccoon.go_down(5)
+raccoon.go_left(3)
+raccoon.go_down()
+raccoon.go_up()
+raccoon.go_right(4)
+raccoon.go_down()
+raccoon.go_left()
+raccoon.go_up(3)
+raccoon.go_left(2)

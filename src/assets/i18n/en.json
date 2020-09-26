@@ -1,0 +1,354 @@
+{
+  "MODAL": {
+    "ACCEPT": "Accept",
+    "CLOSE": "Close",
+    "MOBILE_WARNING": "When accessing the page via a mobile device, beware of troubles! Please, copy the <a href=\"{{currentUrl}}\" target=\"_blank\">link</a> and access it using a PC. Coding with a mobile device is really confusing. You can make the most of it using the desktop version only.",
+    "CODE_RESET_WARNING": "Resetting to initial will rewrite all the code.",
+    "TRY_AGAIN": "Try again"
+  },
+  "CODE-EDITOR": {
+    "SERVICE": {
+      "SCRIPT_COMPILED_SUCCESSFULLY": "Script Compiled Successfully!",
+      "EXECUTING_SCRIPT": "Executing the script...",
+      "SCRIPT_EXECUTION_COMPLETED": "Script Execution Completed!",
+      "COULD_NOT_COMPILE_SCRIPT": "Script Error",
+      "GAME_FAIL_ERROR": {
+        "SCRIPT_STOPPED": "Script execution was aborted"
+      }
+    },
+    "TOOLTIP": {
+      "LAUNCH": "Launch",
+      "START_OVER": "Start over",
+      "RERENDER": "Regenerate the level",
+      "RESET_CODE": "Reset the code to initial",
+      "PLAYBACK_SCENE": "Playback scene",
+      "STOP_PLAYBACK": "Stop",
+      "TASK": "Task",
+      "HELP": "Help",
+      "MENU": "Menu"
+    },
+    "TABS": {
+      "TASK": "Task",
+      "HELP": "Help"
+    },
+    "BUTTON": {
+      "PLAY": "PLAY",
+      "STOP": "STOP",
+      "REPLAY": "REPLAY"
+    },
+    "OPTIONS": {
+      "SAVE": "Save code",
+      "LOAD": "Load code",
+      "IDE_POSITION": {
+        "CHOOSE": "IDE position",
+        "LEFT": "Left",
+        "RIGHT": "Right"
+      }
+    },
+    "MODAL": {
+      "SAVE_CODE": "Save code",
+      "ENTER_SAVE_NAME": "Enter save name...",
+      "WARNING": "WARNING!!!",
+      "SAVE_NAME_EXISTS": "Save name already exists. Please, choose another one!"
+    },
+    "SNACKBAR": {
+      "SUCCESSFULLY_SAVED": "Successfully saved!"
+    }
+  },
+  "CODE-SAVER": {
+    "TITLE": "Save manager",
+    "WARNING": "WARNING!!!",
+    "SOLUTIONS_DELETION_WARNING": "Confirm that you want to delete the following solutions:",
+    "SOLUTION_LOAD_WARNING": "Loading this solution will overwrite all the current code in the IDE",
+    "BUTTONS": {
+      "CLOSE": "Close",
+      "LOAD": "Load",
+      "DELETE": "Delete",
+      "DELETE_SELECTED": "Delete selected"
+    }
+  },
+  "SCENE": {
+    "CONSOLE": {
+      "SERVICE": {
+        "SCENE_ESTABLISHED": "Scene set!"
+      },
+      "WRITER": {
+        "GAME_FAIL_ERROR": {
+          "VARIABLE_READONLY": "The variable {{varName}} is read-only!"
+        }
+      },
+      "OUTPUT": "Output",
+      "TRY_AGAIN": "Try again",
+      "TASK_COMPLETE": "Awesome! Mission Completed!",
+      "TASK_ACCOMPLISHED": "Level Passed!",
+      "TASK_FAILED": "Mission Failed",
+      "FAIL_REASON": "Reason",
+      "FAIL_ROW_NUMBER": "Error in row",
+      "LEVEL_COMPLETE": "Level Passed!",
+      "TASK_DONE_WRONG": "Mission Failed",
+      "LEVEL_NOT_COMPLETE_TASK_NOT_DONE": "Level not passed: task done wrong",
+      "SCRIPT_COULD_NOT_COMPILE": "Script error",
+      "LEVEL_NOT_COMPLETE": "Level Not Passed",
+      "ERROR_IN_SCRIPT": "Error in the script",
+      "RESULT": "Result"
+    },
+    "RACCOON": {
+      "SERVICE": {
+        "GAME_FAIL_ERROR": {
+          "OFF_ROAD": "The Raccoon is off the road",
+          "OFF_MAP": "The Raccoon is beyond the playing field",
+          "CAUGHT_BY_MONSTER": "The Raccoon is caught by a monster",
+          "NO_GATES_KEY": "No appropriate key"
+        },
+        "SCENE_ESTABLISHED": "Scene set!"
+      },
+      "RESULT_MESSAGE": {
+        "TASK_ACCOMPLISHED": "Awesome! Mission Completed!",
+        "LEVEL_COMPLETE": "Level Passed!",
+        "FLAG_NOT_CAPTURED": " Oops... The Raccoon couldn't reach the flag",
+        "FLAG_CAPTURED_BUT_NOT_ALL_COOKIES_COLLECTED": "The Raccoon has captured the flag, but there are still cookies left :(",
+        "NOT_ALL_COOKIES_COLLECTED": "Not all cookies are collected",
+        "FLAG_CAPTURED_BUT_ONLY_N_COOKIES_COLLECTED": "Level Incomplete: the Raccoon has reached the destination but only {{cookies}} collected",
+        "LEVEL_INCOMPLETE_FLAG_NOT_CAPTURED": "Level Incomplete: the Raccoon has not reached the destination",
+        "FINAL_POINT_NOT_ACHIEVED": "The Raccoon has not reached the destination"
+      },
+      "RESULT": "Result",
+      "TASK_ACCOMPLISHED": "Mission Completed",
+      "TASK_FAILED": "Mission Failed",
+      "FAIL_REASON": "Reason",
+      "FAIL_ROW_NUMBER": "Error in row",
+      "COOKIES_PICKED": "Cookies collected",
+      "CELLS_PASSED": "Cells passed",
+      "TRY_AGAIN": "Try again",
+      "LEVEL_NOT_COMPLETE": "Level not passed",
+      "ERROR_IN_SCRIPT": "Error in the script"
+    },
+    "WHO": {
+      "SERVICE": {
+        "GAME_FAIL_ERROR": {
+          "OFF_ROAD": "The player is off the road",
+          "OFF_MAP": "The player is beyond the playing field",
+          "CAUGHT_BY_VIRUS": "The player caught the virus",
+          "TOO_CLOSE_TO_PERSON": "The player broke physical distancing rules",
+          "WITHOUT_MASK": "No mask put on when going out",
+          "ENTERED_MALL": " Shopping mall preferred over store "
+        },
+        "SCENE_ESTABLISHED": "Scene set!"
+      },
+      "RESULT_MESSAGE": {
+        "TASK_ACCOMPLISHED": "Awesome! Mission Completed!",
+        "LEVEL_COMPLETE": "Level Passed!",
+        "HOME_NOT_CAPTURED": "Home Not Reached",
+        "HOME_CAPTURED_BUT_NOT_ALL_OBJECTS_COLLECTED": "The player has reached home, But not all objects are collected :(",
+        "NOT_ALL_OBJECTS_COLLECTED": "Not all objects are collected",
+        "HOME_CAPTURED_BUT_ONLY_N_OBJECTS_COLLECTED": "Level Incomplete: the player has reached home, but with only {{objects}} collected",
+        "LEVEL_INCOMPLETE_FINISH_NOT_CAPTURED": "Level Incomplete: the player has not reached home",
+        "FINAL_POINT_NOT_ACHIEVED": "The player has not reached home",
+        "TERMINAL_MASK_NOT_PUT_ON": "Level Incomplete: the player has reached home but didn't put on the mask",
+        "TERMINAL_HANDS_NOT_WASHED": "Level Incomplete: the player has reached home but didn't wash hands",
+        "MASK_NOT_PUT_ON": "The player didn't put on the mask",
+        "HANDS_NOT_WASHED": " The player has reached home but didn't wash hands",
+        "SHORT_MASK_NOT_PUT_ON": "The mask was not put on",
+        "SHORT_HANDS_NOT_WASHED": "Hands weren't washed",
+        "TERMINAL_DID_NOT_PICKED_UP_PRODUCTS": "Level Incomplete: the player has reached home but didn't buy groceries",
+        "DID_NOT_PICKED_UP_PRODUCTS": "The player has reached home, but didn't buy groceries",
+        "SHORT_DID_NOT_PICKED_UP_PRODUCTS": "Groceries weren't bought",
+        "GOT_OFF_ROAD": "The player got off the road!",
+        "WAS_CAUGHT_BY_VIRUS": "The player caught the virus!",
+        "WAS_TOO_CLOSE_TO_PERSON": "Physical Distancing Rules Broken!",
+        "HAS_ENTERED_MALL": "Shopping Mall Preferred Over Store"
+      },
+      "RESULT": "Result",
+      "TASK_ACCOMPLISHED": "Mission Completed",
+      "TASK_FAILED": "Mission Failed",
+      "FAIL_REASON": "Reason",
+      "FAIL_ROW_NUMBER": "Error in  row",
+      "MASKS_PICKED": "Masks collected",
+      "SANITIZERS_PICKED": "Sanitizers collected",
+      "CELLS_PASSED": "Cells passed",
+      "TRY_AGAIN": "Try again",
+      "PUT_MASK_ON": "Put mask on",
+      "WASHED_HANDS": "Washed hands",
+      "VISITED_SHOP": "Bought products",
+      "MESSAGE_YES": "Yes",
+      "MESSAGE_NO": "No",
+      "LEVEL_NOT_COMPLETE": "Level Not Passed",
+      "ERROR_IN_SCRIPT": "Error in the script"
+    }
+  },
+  "MARKDOWN": {
+    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonEn.md",
+    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleEn.md",
+    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpWhoEn.md"
+  },
+  "SCENE-COMPONENT": {
+    "LEVEL_COMPLETE": "Level passed!",
+    "LEVEL_NOT_COMPLETE": "Level not passed",
+    "RACCOON": {
+      "FAIL_REASON": {
+        "FINISH_NOT_REACHED": "Finish was not reached",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED":"Not all cookies are collected",
+        "CAUGHT_BY_MONSTER":"The Raccoon is caught by a monster",
+        "OFF_MAP":"The Raccoon is beyond the playing field",
+        "OFF_ROAD":"The Raccoon is off the road",
+        "SCRIPT_STOPPED": "Script execution was aborted",
+        "NO_GATES_KEY": "No appropriate key",
+        "COULD_NOT_COMPILE_SCRIPT": "Script Error",
+        "INVALID_ARGUMENT":"Invalid argument",
+        "ARGUMENT_OUT_OF_RANGE":"Argument is out of range",
+        "EXTRA_ARGUMENT":"Expected zero arguments",
+        "INVENTORY_NO_MINE": "The raccoon has no mines",
+        "INVENTORY_NO_TURRET": "The raccoon has no turrets"
+      }
+    },
+    "CONSOLE": {
+      "FAIL_REASON": {
+        "SCRIPT_STOPPED": "Script execution was aborted",
+        "FAIL_ROW_NUMBER": "Error in row",
+        "COULD_NOT_COMPILE_SCRIPT": "Script Error",
+        "TASK_DONE_WRONG": "Task done wrong",
+        "INVALID_ARGUMENT":"Invalid argument",
+        "ARGUMENT_OUT_OF_RANGE":"Argument is out of range",
+        "UNKNOWN_VARIABLE":"Unknown variable"
+      }
+    },
+    "TILE-STATISTICS": {
+      "RACCOON": {
+        "FAIL_REASON": "Fail reason",
+        "FAIL_ROW_NUMBER": "Error in row",
+        "CELLS_PASSED": "Cells passed",
+        "COMPULSORY_OBJECTS_PICKED": "Cookies collected",
+        "FINISH_NOT_REACHED": "Finish was not reached",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Not all cookies are collected",
+        "COULD_NOT_COMPILE_SCRIPT": "Script Error",
+        "OFF_ROAD": "The Raccoon is off the road",
+        "OFF_MAP": "The Raccoon is beyond the playing field",
+        "SCRIPT_STOPPED": "Script execution was aborted",
+        "CAUGHT_BY_MONSTER": "The Raccoon is caught by a monster",
+        "NO_GATES_KEY": "No appropriate key",
+        "INVALID_ARGUMENT":"Invalid argument",
+        "ARGUMENT_OUT_OF_RANGE":"Argument is out of range",
+        "EXTRA_ARGUMENT":"Expected zero arguments",
+        "INVENTORY_NO_MINE": "The raccoon has no mines",
+        "INVENTORY_NO_TURRET": "The raccoon has no turrets"
+      },
+      "WHO": {
+        "FAIL_REASON": "Fail reason",
+        "FAIL_ROW_NUMBER": "Error in row",
+        "CELLS_PASSED": "Cells passed",
+        "COMPULSORY_OBJECTS_PICKED": "Masks and sanitizers collected",
+        "FINISH_NOT_REACHED": "Home was not reached",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Not all masks and sanitizers are collected",
+        "COULD_NOT_COMPILE_SCRIPT": "Script Error",
+        "OFF_ROAD": "The player is off the road",
+        "OFF_MAP": "The player is beyond the playing field",
+        "MASK_IS_NOT_ON": "The player didn't put on the mask",
+        "ENTERED_MALL": "Shopping mall preferred over store",
+        "HANDS_NOT_WASHED": "The player didn't wash hands",
+        "PRODUCTS_NOT_PICKED": "Groceries weren't bought",
+        "HANDS_WASHED": "Hands washed",
+        "MASK_IS_ON": "Mask is on",
+        "MESSAGE_YES": "Yes",
+        "MESSAGE_NO": "No",
+        "SCRIPT_STOPPED": "Script execution was aborted",
+        "MASKS_PICKED": "Masks collected",
+        "SANITIZERS_PICKED": "Sanitizers collected",
+        "PRODUCTS_PICKED": "Bought products",
+        "CAUGHT_BY_VIRUS": "The player caught the virus",
+        "TOO_CLOSE_TO_PERSON": "The player broke physical distancing rules",
+        "INVALID_ARGUMENT":"Invalid argument",
+        "ARGUMENT_OUT_OF_RANGE":"Argument is out of range",
+        "EXTRA_ARGUMENT":"Expected zero arguments"
+      }
+    },
+    "CONSOLE-STATISTICS": {
+      "FAIL_REASON": "Reason",
+      "FAIL_ROW_NUMBER": "Error in row",
+      "COULD_NOT_COMPILE_SCRIPT": "Script Error",
+      "TASK_DONE_WRONG": "Task done wrong",
+      "INVALID_ARGUMENT":"Invalid argument",
+      "ARGUMENT_OUT_OF_RANGE":"Argument is out of range",
+      "UNKNOWN_VARIABLE":"Unknown variable"
+    }
+  },
+  "TERMINAL": {
+    "TOOLTIP": {
+      "CLEAR": "Clear terminal",
+      "COLLAPSE": "Collapse",
+      "OPEN": "Open"
+    }
+  },
+  "INITIALIZATION": {
+    "JS_ERROR": "There is an error found in the initial JavaScript code",
+    "CONFIG_ERROR": "There is an error found in the configuration",
+    "RACCOON": {
+      "NO_PLAYER": "There is no Player in the scene configuration",
+      "NO_GAMEFIELD": "There is no game field in the configuration",
+      "GAMEOBJECTS_COORDS": "One or more objects are mislocated outside the field",
+      "GAMEOBJECTS_OUT_FIELD": "One or more objects are mislocated outside the field",
+      "PLAYER_COORDS": "The Player is mislocated outside the road",
+      "PLAYER_OUT_FIELD": "The Player is mislocated outside the field",
+      "GAMEOBJECTS_SAME_COORDS": "Two or more game objects have the same coordinates",
+      "GAMEOBJECT_WRONG_COLOR": "The game object has a wrong color assigned",
+      "GAMEOBJECT_NO_COLOR": "The game object has no color assigned",
+      "NO_CHECKING_LOGIC": "No logic check is set",
+      "GAMEFIELD_ROW_LENGTH": "(TODO: translate): Строки тайлов игрового поля имеют разную длину"
+    },
+    "CONSOLE": {
+      "OUT_OF_RANGE": "Numeric variables must take values from -1000000 up to 1000000",
+      "MAX_VARIABLES": "The admissible maximum number of variables in the configuration is 4",
+      "NO_CHECKING_LOGIC": "No logic check is set"
+    }
+  },
+  "TASK_EDITOR": {
+    "NEXT": "Next",
+    "LABEL": {
+      "SCENE_TYPE": "Scene type",
+      "TASK_DESCRIPTION": "Task description",
+      "INITIAL_CODE": "Initial code",
+      "TEST_LAUNCH": "Test launch",
+      "SAVE": "Saving the code"
+    },
+    "HELP": {
+      "HELP": "Help",
+      "INITIAL_RACCOON_LINK": "Several methods can be used to configure the scene. Following the <a href='/scene-config-help#raccoon' target='_blank'>link</a> will lead you to the detailed description of each.",
+      "INITIAL_CONSOLE_LINK": "Several methods can be used to configure the scene. Following the <a href='/scene-config-help#console' target='_blank'>link</a> will lead you to the detailed description of each.",
+      "SCENE_TYPE": "Choose the scene type (level). The first type is console that is a computer terminal emulator. At this level, the initial conditions consist of an original variables set. The one who is going to solve the problem is to manipulate the variables and to display the required value on the screen. The second scene type is graphic and consists of square elements (tiles). Tiles levels are the ones with the raccoon, for example. At them, the one who is solving the problem is to write a code using Python to take the character through the labyrinth created by them. ",
+      "SCENE_DESCRIPTION": "Write the scene description. It will be visible when the game is about to start. It can be a description of what has to be done or, alternatively, the scene pre-history. The text is displayed in .md format (markdown), so in case if necessary, it can be processed with markdown syntax.",
+      "TEST_LAUNCH": "There is a full-fledged player to launch a new scene. You can check it out to see the way it runs, create a solution in Python and find out how hard it is (or whether it is basically possible) to make your way through it.",
+      "SAVE": "Save the generated scene code not to let it go to waste! That can be done by exporting the file in Yaml-format or by copying the code in a regular way.",
+      "INTRODUCTION": "You have got a life-chance of becoming an author of Kiddo tasks! A little knowledge of JavaScript to configure the scene is the only thing required. By taking the following five steps, a new scene of your own can be created to be used for the game or to be shared with Kiddo editors who may make it available on the site after verifying it.",
+      "DO_NOT_SHOW": "Not to show this message when opening the task editor",
+      "STEP": "Step"
+      
+    },
+    "SCENE_TYPE": {
+      "TITLE": "Choose the scene type",
+      "MESSAGE": "Your choice is important for the next steps to take",
+      "CHANGING": "Warning! All the next steps progress is to be lost",
+      "CHANGING_MODAL": "All the next steps progress is to be lost",
+      "WARNING": "Warning!",
+      "CONSOLE": "Console",
+      "RACCOON": "Raccoon"
+
+    },
+    "TASK_DESCRIPTION": {
+      "TITLE": "Task description",
+      "MESSAGE": "This text will be used for your scene description."
+    },
+    "INITIAL_CODE": {
+      "TITLE": "Initial code",
+      "GENERATE": "Generate"
+    },
+    "TEST_LAUNCH": {
+      "TITLE": "Try it"
+    },
+    "SAVE": {
+      "TITLE": "Saving the code",
+      "SAVE_FILE": "Save as Yaml file",
+      "COPY": "Copy the code",
+      "COPIED": "The configuration code is copied",
+      "SEND_TEXT": "If you have created an interesting level, download the file containing the code and send it to <a class=\"i18n-link\" href=\"mailto:kiddo@dataart.com\">kiddo@dataart.com</a>. In case our moderators think of it as highly as you do, you will see it on the site. In case you have your own site to <a class=\"i18n-link\" href=\"//kiddo.academy/embed-code\" target=\"_blank\">build in</a> the player, you can use this one to configure the level."
+    }
+  }
+}

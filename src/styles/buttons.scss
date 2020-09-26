@@ -1,0 +1,135 @@
+button, .button {
+  border: 1px solid black;
+  box-sizing: border-box;
+  color: black;
+  padding: 6px 12px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: all .3s;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 48px;
+  font-family: "futura_pt_book";
+
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+
+  &.green {
+    background-color: #009597;
+    color: white;
+    border: none;
+    &:enabled:hover {
+      background-color: #00b3a9;
+    }
+    &.outline {
+      background-color: transparent;
+      border: 1px solid #009597;
+      color: #009597;
+      &:enabled:hover {
+        background-color: #009597;
+        color: white;
+      }
+    }
+  }
+
+  &.blue {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    &:enabled:hover {
+      background-color: #3EB7DF;
+    }
+    &.outline {
+      background-color: transparent;
+      border: 1px solid #008CBA;
+      color: #008CBA;
+      &:enabled:hover {
+        background-color: #008CBA;
+        color: white;
+      }
+    }
+  }
+
+  &.red {
+    background-color: #ba342b;
+    color: white;
+    border: none;
+    &:enabled:hover {
+      background-color: #f44336;
+    }
+    &.outline {
+      background-color: transparent;
+      border: 1px solid #ba342b;
+      color: #ba342b;
+      &:enabled:hover {
+        background-color: #ba342b;
+        color: white;
+      }
+    }
+  }
+
+  &.gray {
+    background-color: #e7e7e7;
+    color: black;
+    border: none;
+    &:enabled:hover {
+      background-color: #acacac;
+    }
+    &.outline {
+      background-color: transparent;
+      border: 1px solid #e7e7e7;
+      color: #e7e7e7;
+      &:enabled:hover {
+        background-color: #e7e7e7;
+        color: white;
+      }
+    }
+  }
+
+  &.black {
+    background-color: #555555;
+    color: white;
+    border: none;
+    &:enabled:hover {
+      background-color: #282828;
+    }
+    &.outline {
+      background-color: transparent;
+      border: 1px solid #555555;
+      color: #555555;
+      &:enabled:hover {
+        background-color: #555555;
+        color: white;
+      }
+    }
+  }
+
+  &.purple {
+    background-color: #725198;
+    color: white;
+    border: none;
+    &:enabled:hover {
+      background-color: #947ab3;
+    }
+    &.outline {
+      background-color: transparent;
+      border: 1px solid #725198;
+      color: #725198;
+      &:enabled:hover {
+        background-color: #725198;
+        color: white;
+      }
+    }
+  }
+
+  &.small {
+    height: 32px;
+  }
+}

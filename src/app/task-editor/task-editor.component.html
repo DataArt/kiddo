@@ -1,0 +1,43 @@
+<kiddo-stepper linear #stepper>
+    <span class="tooltip-container">
+        <button class="toolbar-button transparent"
+                (click)="openeHelp();">
+            <i class="icon-help toolbar-button-content"></i> {{ 'TASK_EDITOR.HELP.HELP' | translate }}
+        </button>
+    </span>
+    <cdk-step style="display: none;" [editable]="true" [label]="('TASK_EDITOR.LABEL.SCENE_TYPE' | translate)" [completed]="false" #step1>
+        <kiddo-scenetype-form (resetProgress)="setStepStatus(step1, false); setStepStatus(step2, false);" (sceneTypeFormSubmit)="setStepStatus(step1, true); stepper.next()"></kiddo-scenetype-form>
+    </cdk-step>
+    <cdk-step style="display: none;" [editable]="true" [label]="('TASK_EDITOR.LABEL.TASK_DESCRIPTION' | translate)" [completed]="false" #step2>
+        <kiddo-description-form *ngIf="step1.completed" (descriptionFormSubmit)="setStepStatus(step2, true); stepper.next()"></kiddo-description-form>
+    </cdk-step>
+    <cdk-step style="display: none;" [editable]="true" [label]="('TASK_EDITOR.LABEL.INITIAL_CODE' | translate)" [completed]="(isLoaded | async) && !(noConfig | async)" #step3>
+        <kiddo-initial-code-form *ngIf="step2.completed"></kiddo-initial-code-form>
+    </cdk-step>
+    <cdk-step style="display: none;" [label]="('TASK_EDITOR.LABEL.TEST_LAUNCH' | translate)" [completed]="(isLoaded | async) && !(noConfig | async)">
+        <kiddo-test-launch *ngIf="(isLoaded | async) && !(noConfig | async)"></kiddo-test-launch>
+    </cdk-step>
+    <cdk-step style="display: none;" [editable]="true" [label]="('TASK_EDITOR.LABEL.SAVE' | translate)" #step5>
+        <kiddo-save-form  *ngIf="(isLoaded | async) && !(noConfig | async)"></kiddo-save-form>
+    </cdk-step>
+
+    
+</kiddo-stepper>
+
+<div kiddoModal #helpModal="kiddoModal" (overlayClicked)="onOverlayClicked()">
+    <kiddo-modal-message [disableAcceptButton]="true" (cancelClick)="closeHelp();">
+        <div class="help-header">{{ 'TASK_EDITOR.HELP.HELP' | translate }}</div>
+        <div *ngIf="helpModal.isOpen() | async" class="help-content">
+            <kiddo-task-editor-help [selectedIndex]="stepper.selectedIndex"></kiddo-task-editor-help>
+        </div>
+        <div *ngIf="showHelpIntroduction | async"class="dont-show-wrapper">
+            <input type="checkbox" [(ngModel)]="dontShowMessaggeOnStart"> {{'TASK_EDITOR.HELP.DO_NOT_SHOW' | translate}}
+        </div>
+    </kiddo-modal-message>
+</div>
+
+<ng-template #spinner>
+    <div class="spinner-container">
+        <kiddo-loading-spinner></kiddo-loading-spinner>
+    </div>
+</ng-template>

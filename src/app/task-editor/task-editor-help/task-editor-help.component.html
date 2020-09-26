@@ -1,0 +1,8 @@
+<div *ngIf="markdownListReady | async">
+    <div class="markdown" *ngFor="let helpName of helpNames; index as i" id="{{ (showHelpIntroduction | async) ? '' : 'step' + i}}">
+        <span *ngIf="i > 0" class="step-number">
+            {{ i + ' ' + ('TASK_EDITOR.HELP.STEP' | translate) | lowercase }}
+        </span>
+        <p [innerHTML]="helpName | translate"></p>
+    </div>
+</div>

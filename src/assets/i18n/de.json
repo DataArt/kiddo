@@ -1,0 +1,319 @@
+{
+  "MODAL": {
+    "ACCEPT": "Akzeptieren",
+    "CLOSE": "Schließen",
+    "MOBILE_WARNING": "Was siehst Du? Sieht diese Seite nicht schön aus? Kopiere bitte das <a href=\"{{currentUrl}}\" target=\"_blank\">Link</a> und greife diese Seite an Deinem PC zu. Es ist unbequem, auf dem Handy zu codieren.",
+    "CODE_RESET_WARNING": "Durch Zurücksetzen auf initial wird der gesamte Code neu geschrieben.",
+    "TRY_AGAIN": "Versuch es noch einmal"
+  },
+  "CODE-EDITOR": {
+    "SERVICE": {
+      "SCRIPT_COMPILED_SUCCESSFULLY": "Skript erfolgreich kompiliert!",
+      "EXECUTING_SCRIPT": "Skript ausführen...",
+      "SCRIPT_EXECUTION_COMPLETED": "Skriptausführung abgeschlossen!",
+      "COULD_NOT_COMPILE_SCRIPT": "Skriptfehler",
+      "GAME_FAIL_ERROR": {
+        "SCRIPT_STOPPED": "Die Skriptausführung wurde abgebrochen"
+      }
+    },
+    "TOOLTIP": {
+      "LAUNCH": "Starten",
+      "START_OVER": "Von vorne beginnen",
+      "RERENDER": "Regeneriere das Level",
+      "RESET_CODE": "Zurücksetzen",
+      "PLAYBACK_SCENE": "Die Wiedergabeszene",
+      "STOP_PLAYBACK": "Stoppen",
+      "TASK": "Aufgabe",
+      "HELP": "Hilfe",
+      "MENU": "Menu"
+    },
+    "TABS": {
+      "TASK": "Aufgabe",
+      "HELP": "Hilfe"
+    },
+    "BUTTON": {
+      "PLAY": "STARTEN",
+      "STOP": "HALT",
+      "REPLAY": "WIEDERHOLEN"
+    },
+    "OPTIONS": {
+      "SAVE": "Code speichern",
+      "LOAD": "Code laden",
+      "IDE_POSITION": {
+        "CHOOSE": "Position der IDE",
+        "LEFT": "Links",
+        "RIGHT": "Recht"
+      }
+    },
+    "MODAL": {
+      "SAVE_CODE": "Code speichern",
+      "ENTER_SAVE_NAME": "Speichernamen...",
+      "WARNING": "Warnung!!!",
+      "SAVE_NAME_EXISTS": "Speichername existiert bereits. Bitte wählen Sie eine andere!"
+    },
+    "SNACKBAR": {
+      "SUCCESSFULLY_SAVED": "Erfolgreich gespeichert!"
+    }
+  },
+  "CODE-SAVER": {
+    "TITLE": "Manager speichern",
+    "WARNING": "Warnung!!!",
+    "SOLUTIONS_DELETION_WARNING": "Bestätigen Sie, dass Sie die folgenden Lösungen löschen möchten:",
+    "SOLUTION_LOAD_WARNING": "Durch das Laden dieser Lösung wird der gesamte aktuelle Code in der IDE überschrieben",
+    "BUTTONS": {
+      "CLOSE": "Schließen",
+      "LOAD": "Herunterladen",
+      "DELETE": "Löschen",
+      "DELETE_SELECTED": "Ausgewählte löschen"
+    }
+  },
+  "SCENE": {
+    "CONSOLE": {
+      "SERVICE": {
+        "SCENE_ESTABLISHED": "Szenen-Set!"
+      },
+      "WRITER": {
+        "GAME_FAIL_ERROR": {
+          "VARIABLE_READONLY": "Die Variable {{varName}} ist schreibgeschützt!"
+        }
+      },
+      "OUTPUT": "Ausgabe",
+      "TRY_AGAIN": "Versuch es noch einmal",
+      "TASK_COMPLETE": " Genial! Mission erledigt!",
+      "LEVEL_COMPLETE": "Level bestanden!",
+      "TASK_DONE_WRONG": "Mission fehlgeschlagen",
+      "LEVEL_NOT_COMPLETE_TASK_NOT_DONE": "Level nicht bestanden. Mission fehlgeschlagen",
+      "SCRIPT_COULD_NOT_COMPILE": "Skript konnte nicht kompiliert",
+      "LEVEL_NOT_COMPLETE": "Level nicht bestanden",
+      "ERROR_IN_SCRIPT": "Fehler im Skript",
+      "RESULT": "Ergebnis",
+      "TASK_FAILED": "Mission fehlgeschlagen",
+      "FAIL_REASON": "Grund",
+      "FAIL_ROW_NUMBER": "Fehler in der Reihe"
+    },
+    "RACCOON": {
+      "SERVICE": {
+        "GAME_FAIL_ERROR": {
+          "OFF_ROAD": "Der Waschbär ist abseits der Weg",
+          "OFF_MAP": "Der Waschbär ist jenseits des Spielfeldes",
+          "CAUGHT_BY_MONSTER": "Der Waschbär wird von einem Monster gefangen",
+          "NO_GATES_KEY": "Es gibt keinen geeigneten Schlüssel"
+        },
+        "SCENE_ESTABLISHED": "Szenen-Set!"
+      },
+      "RESULT_MESSAGE": {
+        "TASK_ACCOMPLISHED": "Genial! Auftrag erledigt!",
+        "LEVEL_COMPLETE": "Level bestanden!",
+        "FLAG_NOT_CAPTURED": "Ups ... Der Waschbär konnte die Flagge",
+        "FLAG_CAPTURED_BUT_NOT_ALL_COOKIES_COLLECTED": "Der Waschbär hat die Flagge erobert, aber es sind noch Kekse übrig:(",
+        "NOT_ALL_COOKIES_COLLECTED": "Nicht alle Cookies werden gesammelt",
+        "FLAG_CAPTURED_BUT_ONLY_N_COOKIES_COLLECTED": "Level wurde nicht bestanden: Der Waschbär hat das Ziel erreicht, aber nur {{Cookies}} gesammelt",
+        "LEVEL_INCOMPLETE_FLAG_NOT_CAPTURED": "Level Unvollständig: Der Waschbär hat das Ziel nicht erreicht",
+        "FINAL_POINT_NOT_ACHIEVED": "Der Waschbär hat das Ziel nicht erreicht"
+      },
+      "RESULT": "Ergebnis",
+      "TASK_ACCOMPLISHED": "Auftrag erledigt",
+      "TASK_FAILED": "Mission fehlgeschlagen",
+      "FAIL_REASON": "Grund",
+      "FAIL_ROW_NUMBER": "Fehler in der Reihe",
+      "COOKIES_PICKED": "Cookies gesammelt",
+      "CELLS_PASSED": "Zellen bestanden",
+      "TRY_AGAIN": "Versuch es noch einmal",
+      "LEVEL_NOT_COMPLETE": "Level nicht bestanden",
+      "ERROR_IN_SCRIPT": "Fehler im Skript"
+    },
+    "WHO": {
+      "SERVICE": {
+        "GAME_FAIL_ERROR": {
+          "OFF_ROAD": "Der Spieler ist von der Straße weg",
+          "OFF_MAP": "Der Spieler ist jenseits des Spielfeldes",
+          "CAUGHT_BY_VIRUS": "Spieler ist infiziert",
+          "TOO_CLOSE_TO_PERSON": "Der Spieler hat gegen physische Distanzierungsregeln verstoßen.",
+          "WITHOUT_MASK": "Kam ohne Maske heraus",
+          "ENTERED_MALL": "Bevorzugte ein Einkaufszentrum anstelle eines Geschäfts"
+        },
+        "SCENE_ESTABLISHED": "Szenen-Set!"
+      },
+      "RESULT_MESSAGE": {
+        "TASK_ACCOMPLISHED": "Genial! Auftrag erledigt!",
+        "LEVEL_COMPLETE": "Level bestanden!",
+        "HOME_NOT_CAPTURED": "Haus nicht erreicht",
+        "HOME_CAPTURED_BUT_NOT_ALL_OBJECTS_COLLECTED": "Zuhause erreicht, Objekte noch übrig",
+        "NOT_ALL_OBJECTS_COLLECTED": "Nicht alle Objekte gesammelt",
+        "HOME_CAPTURED_BUT_ONLY_N_OBJECTS_COLLECTED": "Level unvollständig: Der Spieler hat sein Zuhause erreicht, aber nur {{ objects }} gesammelt",
+        "LEVEL_INCOMPLETE_FINISH_NOT_CAPTURED": "Level Unvollständig: Der Spieler hat sein Zuhause nicht erreicht",
+        "FINAL_POINT_NOT_ACHIEVED": "Der Spieler hat sein Zuhause nicht erreicht",
+        "TERMINAL_MASK_NOT_PUT_ON": "Level unvollständig: Der Spieler hat sein Zuhause erreicht, aber die Maske nicht aufgesetzt",
+        "TERMINAL_HANDS_NOT_WASHED": "Level Unvollständig: Der Spieler hat zu Hause angekommen, aber keine Hände gewaschen",
+        "MASK_NOT_PUT_ON": "Der Spieler hat die Maske nicht aufgesetzt",
+        "HANDS_NOT_WASHED": "Der Spieler ist zu Hause angekommen, hat sich aber nicht die Hände gewaschen",
+        "SHORT_MASK_NOT_PUT_ON": "Keine Maske aufgesetzt",
+        "SHORT_HANDS_NOT_WASHED": "Hände ungewaschen",
+        "TERMINAL_DID_NOT_PICKED_UP_PRODUCTS": "Level Unvollständig: Der Spieler ist zu Hause angekommen, hat aber keine Lebensmittel gekauft",
+        "DID_NOT_PICKED_UP_PRODUCTS": "Der Spieler ist zu Hause angekommen, hat aber keine Lebensmittel gekauft",
+        "SHORT_DID_NOT_PICKED_UP_PRODUCTS": "Keine Lebensmittel gekauft",
+        "GOT_OFF_ROAD": "Der Spieler ist von der Straße abgekommen!",
+        "WAS_CAUGHT_BY_VIRUS": "Spieler ist infiziert!",
+        "WAS_TOO_CLOSE_TO_PERSON": "Physikalische Distanzierungsregeln gebrochen!",
+        "HAS_ENTERED_MALL": " Einkaufszentrum bevorzugt gegenüber Geschäft"
+      },
+      "RESULT": "Ergebnis",
+      "TASK_ACCOMPLISHED": "Auftrag erledigt",
+      "TASK_FAILED": "Mission fehlgeschlagen",
+      "FAIL_REASON": "Grund",
+      "FAIL_ROW_NUMBER": "Fehler in Reihe",
+      "MASKS_PICKED": "Masken gesammelt",
+      "SANITIZERS_PICKED": "Desinfektionsmittel gesammelt",
+      "CELLS_PASSED": "Zellen bestanden",
+      "TRY_AGAIN": "Versuch es noch einmal",
+      "PUT_MASK_ON": "Maske aufsetzen",
+      "WASHED_HANDS": "Gewaschene Hände",
+      "VISITED_SHOP": "Lebensmittel gekauft",
+      "MESSAGE_YES": "Ja",
+      "MESSAGE_NO": "Nein",
+      "LEVEL_NOT_COMPLETE": "Level nicht bestanden",
+      "ERROR_IN_SCRIPT": "Fehler im Skript"
+    }
+  },
+  "MARKDOWN": {
+    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonDe.md",
+    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleDe.md",
+    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpWhoDe.md"
+  },
+  "SCENE-COMPONENT": {
+    "LEVEL_COMPLETE": "Level bestanden!",
+    "LEVEL_NOT_COMPLETE": "Level nicht bestanden",
+    "TILE-STATISTICS": {
+      "RACCOON": {
+        "FAIL_REASON": "Grund",
+        "FAIL_ROW_NUMBER": "Fehler in der Reihe",
+        "CELLS_PASSED": "Zellen bestanden",
+        "COMPULSORY_OBJECTS_PICKED": "Cookies gesammelt",
+        "FINISH_NOT_REACHED": "Der Waschbär konnte die Flagge",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Nicht alle Cookies werden gesammelt",
+        "COULD_NOT_COMPILE_SCRIPT": "Skriptfehler",
+        "OFF_ROAD": "Der Waschbär ist abseits der Weg",
+        "OFF_MAP": "Der Waschbär ist jenseits des Spielfeldes",
+        "SCRIPT_STOPPED": "Die Skriptausführung wurde abgebrochen",
+        "CAUGHT_BY_MONSTER": "Der Waschbär wird von einem Monster gefangen",
+        "NO_GATES_KEY": "Es gibt keinen geeigneten Schlüssel",
+        "INVALID_ARGUMENT":"Ungültiges Argument",
+        "ARGUMENT_OUT_OF_RANGE":"Das Argument liegt außerhalb des Bereichs",
+        "EXTRA_ARGUMENT":"Erwartete Nullargumente",
+        "INVENTORY_NO_MINE": "Der Waschbär hat keine Minen",
+        "INVENTORY_NO_TURRET": "Der Waschbär hat keinen Turm"
+      },
+      "WHO": {
+        "FAIL_REASON": "Grund",
+        "FAIL_ROW_NUMBER": "Fehler in der Reihe",
+        "CELLS_PASSED": "Zellen bestanden",
+        "COMPULSORY_OBJECTS_PICKED": "Masken und Desinfektionsmittel gesammelt",
+        "FINISH_NOT_REACHED": "Haus nicht erreicht",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Nicht alle Masken und Desinfektionsmittel gesammelt",
+        "COULD_NOT_COMPILE_SCRIPT": "Skriptfehler",
+        "OFF_ROAD": "Der Spieler ist von der Straße weg",
+        "OFF_MAP": "Der Spieler ist jenseits des Spielfeldes",
+        "MASK_IS_NOT_ON": "Keine Maske aufgesetzt",
+        "HANDS_NOT_WASHED": "Hände ungewaschen",
+        "PRODUCTS_NOT_PICKED": "Keine Lebensmittel gekauft",
+        "HANDS_WASHED": "Gewaschene Hände",
+        "MASK_IS_ON": "Maske aufsetzen",
+        "MESSAGE_YES": "Ja",
+        "MESSAGE_NO": "Nein",
+        "SCRIPT_STOPPED": "Die Skriptausführung wurde abgebrochen",
+        "MASKS_PICKED": "Masken gesammelt",
+        "SANITIZERS_PICKED": "Desinfektionsmittel gesammelt",
+        "PRODUCTS_PICKED": "Lebensmittel gekauft",
+        "CAUGHT_BY_VIRUS": "Spieler ist infiziert",
+        "TOO_CLOSE_TO_PERSON": "Der Spieler hat gegen physische Distanzierungsregeln verstoßen.",
+        "INVALID_ARGUMENT":"Ungültiges Argument",
+        "ARGUMENT_OUT_OF_RANGE":"Das Argument liegt außerhalb des Bereichs",
+        "EXTRA_ARGUMENT":"Erwartete Nullargumente"
+      }
+    },
+    "CONSOLE-STATISTICS": {
+      "FAIL_REASON": "Grund",
+      "FAIL_ROW_NUMBER": "Fehler in der Reihe",
+      "COULD_NOT_COMPILE_SCRIPT": "Skriptfehler",
+      "TASK_DONE_WRONG": "Mission fehlgeschlagen",
+      "INVALID_ARGUMENT":"Ungültiges Argument",
+      "ARGUMENT_OUT_OF_RANGE":"Das Argument liegt außerhalb des Bereichs",
+      "UNKNOWN_VARIABLE":"Unbekannte Variable"
+    }
+  },
+  "TERMINAL": {
+    "TOOLTIP": {
+      "CLEAR": "Löschen",
+      "COLLAPSE": "Aufrollen",
+      "OPEN": "Öffnen"
+    }
+  },
+  "INITIALIZATION": {
+    "JS_ERROR": "There is syntax error in your initial JavaScript code:",
+    "CONFIG_ERROR": "Error in config:",
+    "RACCOON": {
+      "NO_PLAYER": "There is no Player in the scene configuration",
+      "NO_GAMEFIELD": "There is no game field in the configuration",
+      "GAMEOBJECTS_COORDS": "One or more objects are mislocated outside the field",
+      "GAMEOBJECTS_OUT_FIELD": "One or more objects are mislocated outside the field",
+      "PLAYER_COORDS": "The Player is mislocated outside the road",
+      "PLAYER_OUT_FIEL": "The Player is mislocated outside the field",
+      "GAMEOBJECTS_SAME_COORDS": "Два или более игровых объектов имеют одинаковые координаты"
+    },
+    "CONSOLE": {
+      "OUT_OF_RANGE": "Numeric variabes must be in range of -1000000 to 1000000",
+      "MAX_VARIABLES": "Config must have less than 5 variables"
+    }
+  },
+  "TASK_EDITOR": {
+    "NEXT": "Дальше",
+    "LABEL": {
+      "SCENE_TYPE": "Тип сцены",
+      "TASK_DESCRIPTION": "Описание сцены",
+      "INITIAL_CODE": "Инициализационный код",
+      "TEST_LAUNCH": "Проверка результата",
+      "SAVE": "Сохранение кода"
+    },
+    "HELP": {
+      "HELP": "Помощь",
+      "INITIAL_RACCOON_LINK": "Для конфигурации сцены используется несколько методов. Подробное описание каждого из них можно найти по <a href='/scene-config-help#raccoon' target='_blank'>этой ссылке</a>.",
+      "INITIAL_CONSOLE_LINK": "Для конфигурации сцены используется несколько методов. Подробное описание каждого из них можно найти по <a href='/scene-config-help#console' target='_blank'>этой ссылке</a>.",
+      "SCENE_TYPE": "Выбери тип сцены (уровня). Первый тип — консоль, то есть эмулятор компьютерного терминала. Первоначальные условия на таком уровне состоят из набора переменных с изначальными значениям. Тот, кто будет решать задачу, должен будет провести с переменными манипуляции и вывести на экран нужное значение. Второй тип сцены — графический, состоящий из квадратных элементов (тайлов). Тайловые уровни — это, например, уровни про Енота. Здесь тот, кто будет решать задачу, должен написать код на Python, чтобы провести героя через построенный тобой лабиринт.",
+      "SCENE_DESCRIPTION": "Напиши описание сцены. Оно отобразится перед началом игры. Это может  описание того, что нужно сделать и, может быть, предыстория этой сценки.",
+      "TEST_LAUNCH": "Перед тобой полноценный плеер с новой сценкой! Можешь запустить ее, посмотреть, как она работает, написать решение с помощью языка программирования Python и проверить, насколько сложно (и возможно ли в принципе :) ) ее пройти.",
+      "SAVE": "Чтобы твои труды на всех предыдущих шагах не пропали даром, сохрани полученный код сценки! Это можно сделать с помощью экспорта файла в Yaml-формате или обычным копированием кода.",
+      "INTRODUCTION": "У тебя есть отличная возможность стать автором задач Kiddo! Для этого нужно немного знать JavaScript для конфигурирования сцены.  С помощью следующих пяти шагов ты сможешь создать свою сцену, которую можно будет использовать для игры, или поделиться с редакторами киддо, чтобы после проверки ее выложили на сайт.",
+      "DO_NOT_SHOW": "Не показывать это сообщение при открытии редактора задач",
+      "STEP": "Шаг"
+      
+    },
+    "SCENE_TYPE": {
+      "TITLE": "Выбери тип сцены",
+      "MESSAGE": "Твой выбор важен для дальнейших шагов",
+      "CHANGING": "Внимание! Весь прогресс дальнейших шагов будет утерян",
+      "CHANGING_MODAL": "Весь прогресс дальнейших шагов будет утерян",
+      "WARNING": "Внимание!",
+      "CONSOLE": "Консоль",
+      "RACCOON": "Енот"
+
+    },
+    "TASK_DESCRIPTION": {
+      "TITLE": "Описание сцены",
+      "MESSAGE": "Этот текст будет использоваться для описания твоей сцены."
+    },
+    "INITIAL_CODE": {
+      "TITLE": "Инициализационный код",
+      "GENERATE": "Сгенерировать"
+    },
+    "TEST_LAUNCH": {
+      "TITLE": "Try it"
+    },
+    "SAVE": {
+      "TITLE": "Сохранение кода",
+      "SAVE_FILE": "Сохранить как Yaml файл",
+      "COPY": "Скопировать код",
+      "COPIED": "Конфигурационный код скопирован",
+      "SEND": "Отправить код на проверку"
+    }
+  }
+}

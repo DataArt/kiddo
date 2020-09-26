@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>Document</title>
+  <script src="https://kiddo.academy/player/kiddo-player.js" defer></script>
+  <script> const assetsPath = 'https://kiddo.academy/player/assets'; </script>
+</head>
+<body>
+  <kiddo-player></kiddo-player>
+
+  <script>
+    const sceneConfig = `
+    sceneType: Raccoon
+    generatingFunc: >-
+      this.setPlayerPosition(1, 0);
+      this.setGameField([
+        ['BU', 'RO', 'BU', 'BU', 'BU', 'BU'],
+        ['BU', 'RO', 'GR', 'RO', 'RO', 'RO'],
+        ['BU', 'RO', 'RO', 'RO', 'GR', 'RO'],
+        ['BU', 'RO', 'RO', 'GR', 'GR', 'FI'],
+        ['BU', 'GR', 'GR', 'GR', 'OF', 'OF'],
+        ['BU', 'GR', 'GR', 'GR', 'OF', 'GR']
+      ]);
+      this.addCheckingLogic('return this.player.position.x === 5 && this.player.position.y === 3 ? null : "FINISH_NOT_REACHED"');
+    initialScript: |-
+      import raccoon
+
+      # Add your code here
+    taskDescription: ...
+    `;
+
+    const kiddoPlayerElement = document.querySelector('kiddo-player');
+    kiddoPlayerElement.setAttribute('kiddo-scene-config', sceneConfig);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- <article class="tile-scene" *ngIf="sceneType; else spinner">
+
+  <kiddo-inventory
+    [inventory]="playerInventory"
+    [compulsoryItems]="compulsoryItems"
+  >
+  </kiddo-inventory>
+
+  <kiddo-game-field [field]="gameField" [sceneType]="sceneType" [playerPosition]="player?.position" [sceneIsLabyrinth]="terraIncognita">
+    <kiddo-game-objects
+      [gameObjects]="gameObjects"
+      [itemSize]="gameField | cellSize">
+    </kiddo-game-objects>
+
+    <kiddo-player class="tile-scene__player"
+      [player]="player" 
+      [sceneType]="sceneType"
+      [ngStyle]="{
+        left: player.position.x | coordinateInPercents: (gameField | cellSize),
+        top: player.position.y | coordinateInPercents: (gameField | cellSize),
+        width: (gameField | cellSize) + '%'
+      }">
+    </kiddo-player>
+  </kiddo-game-field>
+
+</article>
+
+<ng-template #spinner>
+  <b style="color: red">TODO put a spinner in here</b>
+</ng-template> -->

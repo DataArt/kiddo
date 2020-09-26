@@ -1,0 +1,13 @@
+<div class="codeEditor">
+  <kiddo-code-editor-toolbar></kiddo-code-editor-toolbar>
+  <div class="ide-wrapper">
+      <ace
+          #aceComponent
+          [config]="editorConfig"
+          [mode]="'python'"
+          [theme]="'tomorrow_night_eighties'"
+          [(value)]="codeEditorService.userCode">
+      </ace>
+      <kiddo-terminal></kiddo-terminal>
+  </div>
+</div>

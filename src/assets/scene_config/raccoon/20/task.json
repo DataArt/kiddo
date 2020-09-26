@@ -1,0 +1,34 @@
+{
+    "sceneType": "Raccoon",
+    "gameField": [
+      ["RO", "RO", "RO", "RO", "RO", "RO", "RO"],
+      ["RO", "BU", "RO", "BU", "RO", "BU", "RO"],
+      ["RO", "RO", "RO", "RO", "RO", "RO", "RO"],
+      ["RO", "BU", "RO", "BU", "RO", "BU", "RO"],
+      ["RO", "RO", "RO", "RO", "RO", "RO", "RO"],
+      ["RO", "BU", "RO", "BU", "RO", "BU", "RO"],
+      ["RO", "RO", "RO", "RO", "RO", "RO", "FI"]
+    ],
+    "player": {
+      "position": [0, 0]
+    },
+    "monsters": [
+      { "position": [3, 6], "chasing": true }
+    ],
+    "cookies": [
+        { "position": [4, 4] },
+        { "position": [4, 6] }
+      ],
+    "mines": [
+        { "position": [4, 1] }
+      ],
+    "compulsoryGameObjects": [
+      "COOKIE"
+    ],
+    "winCondition": {
+      "playerPosition": { "x": 8, "y": 0 },
+      "pickAllCompulsoryObjects": true
+    },
+    "initialScript": "import raccoon\n\n# Add your code here",
+    "taskDescription": "Помоги Еноту собрать печеньки и добраться до финиша. Осторожно! Монстр будет пытаться угнаться за ним."
+  }

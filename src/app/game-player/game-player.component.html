@@ -1,0 +1,34 @@
+<article class="app">
+    <div *ngIf="!(isLoaded | async)" class="app-loader-wrapper">
+        <div class="app-loader"></div>
+    </div>
+    <div *ngIf="(isLoaded | async) && !(noConfig | async)"
+            class="app-blocks-wrapper"
+            [ngClass]="{'swap-app-blocks': (scenePositionState | async)}">
+            <div class="app-block">
+            <kiddo-code-editor></kiddo-code-editor>
+        </div>
+        <div class="scene-slider" (click)="onToggleSceneClick()">
+            <i [ngClass]="{
+                'icon-arrow-right': !sceneIsCollapsed,
+                'icon-arrow-left': sceneIsCollapsed
+            }">
+        </i>
+        </div>
+        <div class="app-block" [ngClass]="{'scene-hidden': sceneIsCollapsed}">
+            <kiddo-scene></kiddo-scene>
+        </div>
+    </div>
+    <div *ngIf="noConfig | async" class="no-setup">
+        <div>No Setup file was provided!
+            <span class="sad-raccoon" [ngStyle]="{ backgroundImage: 'url(' + assetsPath + '/images/KidsEdu.svg' +')'}"></span>
+        </div>
+    </div>
+</article>
+
+<div kiddoModal #noConfigMessage="kiddoModal">
+    <kiddo-modal-message [disableAcceptButton]="true" (cancelClick)="onModalCloseClick()">
+        <div class="warning-modal-header">{{ 'CODE-EDITOR.MODAL.WARNING' | translate }}</div>
+        {{ 'INITIALIZATION.' + (configError | async)?.type | translate}}: {{ (configError | async)?.message | translate}}
+    </kiddo-modal-message>
+</div>

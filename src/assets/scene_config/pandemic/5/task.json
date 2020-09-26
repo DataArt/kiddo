@@ -1,0 +1,28 @@
+{
+  "sceneType": "Pandemic",
+  "gameField": [
+    ["HO", "FE", "CO", "CO", "FE", "L1", "L2"],
+    ["RO", "RO", "RO", "RO", "RO", "L3", "L4"],
+    ["RO", "FE", "CO", "RO", "RO", "FE", "FE"],
+    ["RO", "FE", "FE", "FE", "RO", "FE", "RO"],
+    ["RO", "RO", "CO", "CO", "RO", "FE", "FE"],
+    ["CO", "RO", "RO", "RO", "RO", "SH", "FE"],
+    ["FE", "CO", "FE", "CO", "CO", "FE", "FE"]
+  ],
+  "player": {
+    "position": [0, 1]
+  },
+  "viruses": [
+    { "position": [6, 3], "direction": "left" }
+  ],
+  "shouldPutOnMask": true,
+  "winCondition": {
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/pandemic-task6.html",
+    "text": "Next level"
+  },
+  "initialScript": "import player\n\n# Add your code here",
+  "taskDescription": "Надень маску, купи продукты в маленьком магазине, дойди до дома и помой руки."
+}

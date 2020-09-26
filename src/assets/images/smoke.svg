@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg3051" viewBox="0 0 339.5 256" version="1.1">
+  <g id="layer1" transform="translate(-180.25 -404.36)">
+    <g id="g10" class="Drawing" transform="matrix(.056575 0 0 .056575 64.27 246.75)" fill-rule="evenodd">
+      <g id="g12">
+        <g id="g14" fill="#ccc">
+          <path id="path16" d="m2627 4302c-110-547 401-1063 912-1063 161-4 328 49 465 129 131-248 374-399 647-399 182 8 374 82 511 215 98-219 306-348 530-348 189 0 361 94 470 237 126-147 314-237 511-237 319 0 590 231 647 555 309 90 533 383 533 719 0 102-16 201-63 295 131 164 211 366 211 573 0 469-353 865-806 932 0 449-350 801-787 801-150 0-293-43-418-124-115 395-478 674-885 674-304 0-590-166-763-429-161 101-76 160-538 160-380 0-729-207-912-543-437-8-661-274-661-610 0-156 57-297 161-414-189-98-292-293-292-516 0-314 229-572 527-607zm-527-1466zm5901 4425z"/>
+        </g>
+        <g id="g18" stroke-linejoin="round" stroke="#e6e6e6" stroke-width="100" fill="none">
+          <path id="path20" d="m2627 4302c-110-547 401-1063 912-1063 161-4 328 49 465 129 131-248 374-399 647-399 182 8 374 82 511 215 98-219 306-348 530-348 189 0 361 94 470 237 126-147 314-237 511-237 319 0 590 231 647 555 309 90 533 383 533 719 0 102-16 201-63 295 131 164 211 366 211 573 0 469-353 865-806 932 0 449-350 801-787 801-150 0-293-43-418-124-115 395-478 674-885 674-304 0-590-166-763-429-161 101-76 160-538 160-380 0-729-207-912-543-437-8-661-274-661-610 0-156 57-297 161-414-189-98-292-293-292-516 0-314 229-572 527-607"/>
+          <path id="path22" d="m2627 4302c5 52 30 109 43 156"/>
+          <path id="path24" d="m2100 2836"/>
+          <path id="path26" d="m8001 7261"/>
+          <path id="path28" d="m4004 3368c63 39 139 92 191 146"/>
+          <path id="path30" d="m2100 2836"/>
+          <path id="path32" d="m8001 7261"/>
+          <path id="path34" d="m5162 3184c-22 43-36 94-49 143"/>
+          <path id="path36" d="m2100 2836"/>
+          <path id="path38" d="m8001 7261"/>
+          <path id="path40" d="m6162 3073c-41 49-63 115-90 174"/>
+          <path id="path42" d="m2100 2836"/>
+          <path id="path44" d="m8001 7261"/>
+          <path id="path46" d="m7320 3391c6 37 33 118 22 137"/>
+          <path id="path48" d="m2100 2836"/>
+          <path id="path50" d="m8001 7261"/>
+          <path id="path52" d="m7790 4405c-46 104-109 196-197 272"/>
+          <path id="path54" d="m2100 2836"/>
+          <path id="path56" d="m8001 7261"/>
+          <path id="path58" d="m7197 5910c22-165-104-575-453-729"/>
+          <path id="path60" d="m2100 2836"/>
+          <path id="path62" d="m8001 7261"/>
+          <path id="path64" d="m5990 6587c22-68 30-130 35-195"/>
+          <path id="path66" d="m2100 2836"/>
+          <path id="path68" d="m8001 7261"/>
+          <path id="path70" d="m4345 6832c-44-53-71-114-98-178"/>
+          <path id="path72" d="m2100 2836"/>
+          <path id="path74" d="m8001 7261"/>
+          <path id="path76" d="m2892 6449c52-8 104-20 153-39"/>
+          <path id="path78" d="m2100 2836"/>
+          <path id="path80" d="m8001 7261"/>
+          <path id="path82" d="m2392 5425c90 53 194 100 344 82"/>
+          <path id="path84" d="m2100 2836"/>
+          <path id="path86" d="m8001 7261"/>
+        </g>
+        <g id="g88" fill="none">
+          <rect id="rect90" y="2836" width="5901" height="4425" x="2100"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Cloud Gray</dc:title>
+        <dc:date>2011-08-12T20:59:32</dc:date>
+        <dc:description>Clipart for computer and network diagrams</dc:description>
+        <dc:source>http://openclipart.org/detail/155137/cloud-gray-by-saisyukusanagi</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>saisyukusanagi</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>Cloud</rdf:li>
+            <rdf:li>Internet</rdf:li>
+            <rdf:li>Network</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

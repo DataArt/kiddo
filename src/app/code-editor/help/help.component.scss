@@ -1,0 +1,24 @@
+.help-wrapper {
+  background-color: #fff;
+  box-shadow: 1px 2px 12px 1px rgba(0,0,0,0.75);
+}
+
+.help-header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+
+  i {
+    font-size: 1.25em;
+    padding: 10px;
+    cursor: pointer;
+    color: #000;
+  }
+}
+
+.help-content {
+  padding: 2em;
+  min-height: 400px;
+  height: 70vh;
+  overflow: auto;
+}

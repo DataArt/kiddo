@@ -1,0 +1,33 @@
+<section class="toolbar">
+  <div class="toolbar__tabs-wrapper">
+    <ul class="toolbar__tabs">
+        <li *ngFor="let tab of tabs; index as i"
+            class="toolbar__tab"
+            [ngClass]="{ 'toolbar__tab_active': activeTab === i }"
+            (click)="setActiveTab(i)"
+        >
+          {{ tab | translate | uppercase }}
+        </li>
+    </ul>
+  </div>
+  <div class="toolbar__variables-wrapper">
+    <ul class="toolbar__variables toolbar__variables_section_readonly">
+      <li *ngFor="let variable of variables | propertyFilter:'readOnly':true"
+          class="toolbar__variable-wrapper"
+      >
+        <span class="toolbar__variable">
+          {{ variable.name }} = {{ variable.value != null ? (variable.value | quoteString) : '?' }}
+        </span>
+      </li>
+    </ul>
+    <ul class="toolbar__variables">
+      <li *ngFor="let variable of variables | propertyFilter:'readOnly':false"
+          class="toolbar__variable-wrapper"
+      >
+        <span class="toolbar__variable">
+          {{ variable.name }} = {{ variable.value != null ? (variable.value | quoteString) : '?' }}
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>

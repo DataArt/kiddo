@@ -1,0 +1,26 @@
+{
+  "sceneType": "console",
+  "variables": [
+    {
+      "name": "x",
+      "value": 10,
+      "readOnly": false
+    }
+  ],
+  "winCondition": {
+    "consoleContent": [
+      "10"
+    ],
+    "consoleVariables": [
+      {
+        "name": "x",
+        "value": 10
+      }
+    ]
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/console-task2.html",
+    "text": "Next level"
+  },
+  "initialScript": "import console\n\n# Add your code here"
+}

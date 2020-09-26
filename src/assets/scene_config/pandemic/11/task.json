@@ -1,0 +1,26 @@
+{
+  "sceneType": "Pandemic",
+  "gameField": [
+    ["HO", "FE", "FE", "CO", "FE", "FE", "RO"],
+    ["RO", "RO", "RO", "CO", "RO", "RO", "RO"],
+    ["RO", "RO", "RO", "RO", "FE", "RO", "CO"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "FE"],
+    ["RO", "RO", "FE", "RO", "RO", "RO", "CO"],
+    ["FE", "FE", "RO", "RO", "RO", "RO", "RO"],
+    ["CO", "RO", "FE", "RO", "CO", "RO", "RO"]
+  ],
+  "player": {
+    "position": [6, 0]
+  },
+  "viruses": [
+    { "position": [[3, 2], [3, 6]], "direction": "down" },
+    { "position": [[5, 3], [0, 3]], "direction": "left" },
+    { "position": [0, 4], "direction": "up" }
+  ],
+  "shouldPutOnMask": true,
+  "winCondition": {
+    "pickAllCompulsoryObjects": true
+  },
+  "initialScript": "import player\n\n# Add your code here",
+  "taskDescription": "Надень маску, дойди до дома, уворачиваясь от вирусов, и помой руки."
+}

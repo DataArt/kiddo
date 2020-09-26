@@ -1,0 +1,28 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["BU", "BU", "BU", "GR", "GR", "BU", "GR"],
+    ["BU", "GR", "GR", "RO", "RO", "RO", "FI"],
+    ["BU", "BU", "RO", "RO", "GR", "GR", "RO"],
+    ["GR", "GR", "RO", "RO", "RO", "RO", "RO"],
+    ["BU", "GR", "RO", "GR", "OF", "OF", "BU"],
+    ["BU", "GR", "GR", "GR", "OF", "GR", "GR"],
+    ["BU", "BU", "BU", "BU", "BU", "BU", "BU"]
+  ],
+  "player": {
+    "position": [2, 4]
+  },
+  "cookies": [
+    { "position": [5, 3] },
+    { "position": [5, 1] }
+  ],
+  "winCondition": {
+    "playerPosition": { "x": 6, "y": 1 },
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/raccoon-task5.html",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

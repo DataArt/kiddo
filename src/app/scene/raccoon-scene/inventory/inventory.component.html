@@ -1,0 +1,27 @@
+<article class="inventory">
+  <section class="inventory__items-wrapper">
+    <ng-container *ngFor="let item of inventory">
+      <div *ngIf="!item.isCompulsory"
+          class="
+            {{!item.isCompulsory && 'inventory__item ' 
+            + (item.type | lowercase) 
+            + (item.additionalState
+            ? '--' + (item.additionalState  | lowercase | snakeToKebabCase)
+            : '') }}
+            "
+           [ngStyle]="{'background-image': 'url(' + assetsPath + '/images/inventory.svg)'}">
+      </div>
+    </ng-container>
+  </section>
+
+  <section *ngIf="compulsoryItems" class="inventory__compulsory-items">
+    <ng-container *ngFor="let item of compulsoryItems">
+      <div *ngIf="item.isCompulsory"
+           [class]="item.state === GameObjectState.PICKED
+        ? ('inventory__item ' + item.type | lowercase)
+        : 'inventory__item ' + (item.type | lowercase) + '-unpicked'"
+        [ngStyle]="{'background-image': 'url(' + assetsPath + '/images/inventory.svg)'}">
+      </div>
+    </ng-container>
+  </section>
+</article>

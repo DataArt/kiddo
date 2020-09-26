@@ -1,0 +1,29 @@
+<div class="terminal-wrapper">
+    <header class="terminal-header" (click)="toggle()">
+        <span class="tooltip-container left-icon" *ngIf="isOpen | async" (click)="clear($event)">
+            <i class="icon-clean"></i>
+            <span class="tooltip-text top">
+                {{prefixTooltip + 'CLEAR' | translate}}
+            </span>
+        </span>
+        <span class="tooltip-container">
+            <i [ngClass]="{
+                    'icon-caret-up': !(isOpen | async),
+                    'icon-less': isOpen | async
+                }">
+            </i>
+            <span class="tooltip-text top">
+                {{(isOpen | async) ? (prefixTooltip + 'COLLAPSE' | translate) : (prefixTooltip + 'OPEN' | translate)}}
+            </span>
+        </span>
+    </header>
+    <main class="terminal-content" [ngClass]="{'terminal-open': isOpen | async}">
+        <perfect-scrollbar #perfectScrollbarComponent>
+            <div class="terminal-scrollable">
+                <div class="line" *ngFor="let line of content">
+                    {{line.time}} {{line.text | translate}}
+                </div>
+            </div>
+        </perfect-scrollbar>
+    </main>
+</div>

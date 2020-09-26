@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+@import "styles/color";
+@import "styles/buttons";
+@import "styles/tooltip";
+@import "styles/modal";
+@import "styles/icon-fonts";
+@import "styles/snackbar";
+@import "styles/ace-editor";
+@import 'styles/variables.scss';
+
+.kiddo-player-wrapper {
+  height: 100%;
+  min-height: 550px;
+  min-width: 875px;
+  font-family: 'futura_pt_book';
+  font-size: 18px;
+  line-height: 24px;
+
+  @media screen and (min-width: 576px) {
+    .scene {
+      margin-right: 0.5rem;
+    }
+    .codeEditor {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+  }
+
+  pre {
+    color: inherit;
+  }
+
+  p {
+    color: inherit;
+  }
+
+  .btn-primary:focus,
+  .btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+  }
+
+  .set-colors {
+    background-color: $current-bg;
+    color: $current-color;
+  }
+}
+
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y.ps--clicking,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-y:active,
+perfect-scrollbar>.ps.ps--scrolling-x>.ps__rail-x,
+perfect-scrollbar>.ps.ps--scrolling-y>.ps__rail-y {
+  background-color: hsl(0, 0%, 23%) !important;
+}
+
+.i18n-link {
+  color: #fff;
+}
+
+@media screen and (max-width: map-get($screen-breakpoints, xl)) {
+  .kiddo-player-wrapper {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (min-width: map-get($screen-breakpoints, xl)) {
+  .kiddo-player-wrapper {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (min-width: map-get($screen-breakpoints, xxl)) {
+  .kiddo-player-wrapper {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

@@ -1,0 +1,20 @@
+<div
+  class="game-object
+  {{ (gameObject.type | lowercase | snakeToKebabCase) + '-' + (gameObject.state  | lowercase | snakeToKebabCase) }}
+  {{
+    (gameObject.type | lowercase | snakeToKebabCase)
+    + '-'
+    + (gameObject.state  | lowercase | snakeToKebabCase)
+    + (gameObject.additionalState
+      ? '--' + (gameObject.additionalState  | lowercase | snakeToKebabCase)
+      : '')
+  }}
+  {{ gameObject.state === GameObjectState.MOVING && gameObject.direction
+    ? (gameObject.type | lowercase | snakeToKebabCase) + '-' + (gameObject.direction | lowercase)
+    : ''
+  }}
+  {{ gameObject.chasing === true ? (gameObject.type | lowercase | snakeToKebabCase) + '-chasing' : ''}}
+  "
+  [ngStyle]="{'background-image': 'url(' + assetsPath + '/images/game-objects.svg)'}"
+>
+</div>

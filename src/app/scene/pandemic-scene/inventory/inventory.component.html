@@ -1,0 +1,22 @@
+<!-- <article class="inventory">
+  <section class="inventory__items-wrapper">
+    <div
+      *ngFor="let item of inventory"
+      class="inventory__item {{ 'inventory__item_type_' + (item.type | lowercase) + (item.additionalState
+      ? '--' + (item.additionalState  | lowercase | snakeToKebabCase)
+      : '') }}"
+    >
+    </div>
+  </section>
+  
+  <section *ngIf="compulsoryItems" class="inventory__compulsory-items">
+    <div
+      *ngFor="let item of compulsoryItems"
+      [class]="item.state === GameObjectState.PICKED
+        ? ('inventory__item inventory__item_type_' + item.type | lowercase)
+        : 'inventory__item inventory__item_type_' + (item.type | lowercase) + '-unpicked'"
+    >
+    </div>
+  </section>
+  
+</article> -->

@@ -1,0 +1,9 @@
+<div class="description-form-wrapper">
+    <h1>{{ 'TASK_EDITOR.TASK_DESCRIPTION.TITLE' | translate }}</h1>
+    <p>{{ 'TASK_EDITOR.TASK_DESCRIPTION.MESSAGE' | translate }}</p>
+
+    <form class="description-form" [formGroup]="taskDescriptionForm" (submit)="onSubmit(taskDescriptionForm.value)">
+        <textarea class="form-element description-field" formControlName="taskDescription" cols="30" rows="6"></textarea>
+        <button class="form-element" [disabled]="!taskDescriptionForm.valid" class="button purple">{{ 'TASK_EDITOR.NEXT' | translate }}</button>
+    </form>
+</div>

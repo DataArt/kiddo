@@ -1,0 +1,12 @@
+<kiddo-game-object
+  *ngFor="let item of gameObjects" 
+  class="game-object"
+  [gameObject]="item"
+  [ngStyle]="{
+    left: item.position.x | coordinateInPercents: itemSize.width,
+    top: item.position.y | coordinateInPercents: itemSize.height,
+    width: this.itemSize.width + '%'
+  }"
+  [ngClass]="{'game-object-movable': item.isMovable}"
+>
+</kiddo-game-object>

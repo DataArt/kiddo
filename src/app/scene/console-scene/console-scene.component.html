@@ -1,0 +1,14 @@
+<article class="console-scene">
+  <kiddo-console-toolbar
+    class="console-scene__toolbar"
+    [tabs]="tabs"
+    [variables]="variables"
+  >
+  </kiddo-console-toolbar>
+
+  <section class="console-scene__output-area">
+    <p *ngFor="let row of consoleContent">
+      {{ isStatic ? '' : row }}
+    </p>
+  </section>
+</article>

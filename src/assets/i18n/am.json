@@ -1,0 +1,319 @@
+{
+  "MODAL": {
+    "ACCEPT": "Ընդունել",
+    "CLOSE": "փակել",
+    "MOBILE_WARNING": "Բջջային սարքի միջոցով էջ մուտք գործելիս զգուշացեք որոշակի խնդիրներից: Խնդրում ենք պատճենել <a href=\"{{currentUrl}}\" target=\"_blank\">հղումը</a> և մուտք գործել համակարգչի միջոցով: Բջջային սարքի միջոցով կոդավորումը իսկապես շփոթեցնում է: Մեծ մասը հնարավոր է իրականացնել միայն աշխատասեղանի տարբերակը օգտագործելով:",
+    "CODE_RESET_WARNING": "Նախկին տարբերակի վերագործարկումը կվերաշարարի ամբողջ կոդը:",
+    "TRY_AGAIN": "Կրկին փորձել"
+  },
+  "CODE-EDITOR": {
+    "SERVICE": {
+      "SCRIPT_COMPILED_SUCCESSFULLY": "Սկրիպտը հաջողությամբ կատարվեց",
+      "EXECUTING_SCRIPT": "Սկրիպտի կատարումն ընթացքի մեջ է․․․",
+      "SCRIPT_EXECUTION_COMPLETED": "Սկրիպտի կատարումն ավարտված է",
+      "COULD_NOT_COMPILE_SCRIPT": "Սցենարի սխալ",
+      "GAME_FAIL_ERROR": {
+        "SCRIPT_STOPPED": "Սցենարի կատարումը դադարեցվեց"
+      }
+    },
+    "TOOLTIP": {
+      "LAUNCH": "գործարկել",
+      "START_OVER": "վերագործարկել",
+      "RERENDER": "վերափոխել մակարդակը",
+      "RESET_CODE": "վերադառնալ սկզբնական կոդին",
+      "PLAYBACK_SCENE": "վերարտադրել պատկերը",
+      "STOP_PLAYBACK": "դադարեցնել",
+      "TASK": "Առաջադրանք",
+      "HELP": "Օգնություն",
+      "MENU": "Menu"
+    },
+    "TABS": {
+      "TASK": "Առաջադրանք",
+      "HELP": "Օգնություն"
+    },
+    "BUTTON": {
+      "PLAY": "Սկսել",
+      "STOP": "Կանգնել",
+      "REPLAY": "Կրկնել"
+    },
+    "OPTIONS": {
+      "SAVE": "Պահել կոդ",
+      "LOAD": "Բեռի կոդ",
+      "IDE_POSITION": {
+        "CHOOSE": "IDE դիրքը",
+        "LEFT": "Ձախ",
+        "RIGHT": "Աջ"
+      }
+    },
+    "MODAL": {
+      "SAVE_CODE": "Պահել կոդ",
+      "ENTER_SAVE_NAME": "Մուտքագրեք անունը",
+      "WARNING": "Զգուշացում",
+      "SAVE_NAME_EXISTS": "Անունի պահումը արդեն գոյություն ունի: Խնդրում ենք ընտրել մեկ այլ"
+    },
+    "SNACKBAR": {
+      "SUCCESSFULLY_SAVED": "Հաջողությամբ պահպանվեց"
+    }
+  },
+  "CODE-SAVER": {
+    "TITLE": "Պահպանիր մենեջեր",
+    "WARNING": "Զգուշացում",
+    "SOLUTIONS_DELETION_WARNING": "Հաստատեք, որ ցանկանում եք ջնջել հետևյալ լուծումները.",
+    "SOLUTION_LOAD_WARNING": "Բեռնել այս լուծումը կփոխարինի ամբողջ կոդը IDE",
+    "BUTTONS": {
+      "CLOSE": "փակել",
+      "LOAD": "Ներբեռնեք",
+      "DELETE": "Նջել",
+      "DELETE_SELECTED": "ջնջել ընտրված"
+    }
+  },
+  "SCENE": {
+    "CONSOLE": {
+      "SERVICE": {
+        "SCENE_ESTABLISHED": "տեսարանը տեղադրված է"
+      },
+      "WRITER": {
+        "GAME_FAIL_ERROR": {
+          "VARIABLE_READONLY": "Փոփոխական {{varName}}- ը ընթերցվում է միայն"
+        }
+      },
+      "OUTPUT": "Արդյունք",
+      "TRY_AGAIN": "Կրկին փորձել",
+      "TASK_COMPLETE": "Կեցցե՛ս առաքելությունն ավարտվա՛ծ է",
+      "LEVEL_COMPLETE": "Մակարդակն հաղթահարվա՛ծ է",
+      "TASK_DONE_WRONG": "Առաքելությունը ձախողվեց",
+      "LEVEL_NOT_COMPLETE_TASK_NOT_DONE": "Մակարդակը հաղթահարված չէ՛։ Առաքելությունը ձախողվեց",
+      "SCRIPT_COULD_NOT_COMPILE": "Սկրիպտի կատարման ընթացքը խափանվեց",
+      "LEVEL_NOT_COMPLETE": "Մակարդակը հաղթահարված չէ՛։",
+      "ERROR_IN_SCRIPT": "Սկրիպտի սխալ",
+      "RESULT": "Արդյունքներ",
+      "TASK_FAILED": "Առաքելությունը ձախողվեց",
+      "FAIL_REASON": "Ձախողման պատճառը",
+      "FAIL_ROW_NUMBER": "Սխալ տողում"
+    },
+    "RACCOON": {
+      "SERVICE": {
+        "GAME_FAIL_ERROR": {
+          "OFF_ROAD": "Ջրարջը շեղվել է ճանապարհից",
+          "OFF_MAP": "Ջրարջը դուրս է խաղադաշտից",
+          "CAUGHT_BY_MONSTER": "Ջրարջին առևանգել է հրեշը",
+          "NO_GATES_KEY": "Համապատասխան բանալին չկա"
+        },
+        "SCENE_ESTABLISHED": "Պակկերը ստեղծված է"
+      },
+      "RESULT_MESSAGE": {
+        "TASK_ACCOMPLISHED": "Կեցցե՛ս առաքելությունն ավարտվա՛ծ է",
+        "LEVEL_COMPLETE": "Մակարդակն հաղթահարվա՛ծ է",
+        "FLAG_NOT_CAPTURED": "Ջրարջը չկարողացավ հասնել դրոշին ",
+        "FLAG_CAPTURED_BUT_NOT_ALL_COOKIES_COLLECTED": "Ջրարջը գրավել է դրոշը, սակայն դեռ չհավաքաց բլիթներ են մնացել",
+        "NOT_ALL_COOKIES_COLLECTED": "Դեռ չհավաքաց բլիթներ են մնացել",
+        "FLAG_CAPTURED_BUT_ONLY_N_COOKIES_COLLECTED": "Մակարդակն ավարտված չէ՛։  Ջրարջը հասել է  նպատակակետին, սակայն միայն {{բլիթներնեն}} հավաքված։",
+        "LEVEL_INCOMPLETE_FLAG_NOT_CAPTURED": "Մակարդակն ավարտված չէ՛։  Ջրարջը չի՛ հասել նպատակակետին։",
+        "FINAL_POINT_NOT_ACHIEVED": "Ջրարջը չի՛ հասել նպատակակետին։"
+      },
+      "RESULT": "Արդյունքներ",
+      "TASK_ACCOMPLISHED": "Մակարդակը հաղթահարված է՛։",
+      "TASK_FAILED": "Առաքելությունը ձախողվեց",
+      "FAIL_REASON": "Ձախողման պատճառը",
+      "FAIL_ROW_NUMBER": "Սխալ տողում",
+      "COOKIES_PICKED": "Բլիթները հավաքված են",
+      "CELLS_PASSED": "Վանդակները անցված են։",
+      "TRY_AGAIN": "Կրկի՛ն փորձիր",
+      "LEVEL_NOT_COMPLETE": "Մակարդակն հաղթահարված չէ՛։",
+      "ERROR_IN_SCRIPT": "Սկրիպտի սխալ"
+    },
+    "WHO": {
+      "SERVICE": {
+        "GAME_FAIL_ERROR": {
+          "OFF_ROAD": "Խաղացողը շեղվե՛լ է ճանապարհից",
+          "OFF_MAP": "Խաղացողը դուրս է խաղադաշտից",
+          "CAUGHT_BY_VIRUS": "Վիրուսի հայտնաբերում",
+          "TOO_CLOSE_TO_PERSON": "ֆիզիկական հեռավորության կանոնների խախտում",
+          "WITHOUT_MASK": "Խաղացողը դուրս է եկել առանց դիմակի",
+          "ENTERED_MALL": "Ընտրված է առևտրի կենտրոն փոքր խանութի փոխարեն"
+        },
+        "SCENE_ESTABLISHED": "Պատկերը ստեղծված է"
+      },
+      "RESULT_MESSAGE": {
+        "TASK_ACCOMPLISHED": "Կեցցե՛ս առաքելությունն ավարտվա՛ծ է",
+        "LEVEL_COMPLETE": "Մակարդակն հաղթահարվա՛ծ է",
+        "HOME_NOT_CAPTURED": "Ցավոք, չկարողացա՛ր տուն հասնել",
+        "HOME_CAPTURED_BUT_NOT_ALL_OBJECTS_COLLECTED": "Խաղացողը հասել է տուն, Դեռ ոչ բոլոր առարկաներնեն հավաքված",
+        "NOT_ALL_OBJECTS_COLLECTED": "Ոչ բոլոր առարկաներնեն հավաքված",
+        "HOME_CAPTURED_BUT_ONLY_N_OBJECTS_COLLECTED": "Մակարդակն ավարտված չէ՛։ Խաղացողը հասել է տուն, սակայն միայն {{առարկաներնեն}} հավաքված։",
+        "LEVEL_INCOMPLETE_FINISH_NOT_CAPTURED": "Մակարդակն ավարտված չէ՛։ Խաղացողը տուն չի հասել։",
+        "FINAL_POINT_NOT_ACHIEVED": "Խաղացողը տուն չի հասել։",
+        "TERMINAL_MASK_NOT_PUT_ON": "Մակարդակն ավարտված չէ՛։ Խաղացողը հասել է տուն, սակայն չի՛ հագել դիմակը։",
+        "TERMINAL_HANDS_NOT_WASHED": "Մակարդակն ավարտված չէ՛։ Խաղացողը հասել է տուն, սակայն ձեռքերը չի լվացել։",
+        "MASK_NOT_PUT_ON": "Խաղացողը չի՛ հագել դիմակը։",
+        "HANDS_NOT_WASHED": "Խաղացողը հասել է տուն, սակայն ձեռքերը չի լվացել։",
+        "SHORT_MASK_NOT_PUT_ON": "Դիմակը բացակայում է։",
+        "SHORT_HANDS_NOT_WASHED": "Ձեռքերը լվացած չե՛ն։",
+        "TERMINAL_DID_NOT_PICKED_UP_PRODUCTS": "Մակարդակն ավարտված չէ՛։ Խաղացողը հասել է տուն, սակայն մթերք չի՛ գնել։",
+        "DID_NOT_PICKED_UP_PRODUCTS": "Խաղացողը հասել է տուն, սակայն մթերք չի՛ գնել։",
+        "SHORT_DID_NOT_PICKED_UP_PRODUCTS": "Մթերքը գնված չէ՛։",
+        "GOT_OFF_ROAD": "Խաղացողը շեղվել է ճանապարհից։",
+        "WAS_CAUGHT_BY_VIRUS": "Վիրուսի հայտնաբերու՛մ։",
+        "WAS_TOO_CLOSE_TO_PERSON": "ֆիզիկական հեռավորության կանոնների խախտում",
+        "HAS_ENTERED_MALL": "Ընտրված է առևտրի կենտրոն փոքր խանութի փոխարեն"
+      },
+      "RESULT": "Արդյունքներ",
+      "TASK_ACCOMPLISHED": "Առաքելությունն ավարտվա՛ծ է",
+      "TASK_FAILED": "Առաքելությունը ձախողվեց",
+      "FAIL_REASON": "Ձախողման պատճառը",
+      "FAIL_ROW_NUMBER": "Սխալ տողում",
+      "MASKS_PICKED": "Դիմակներըբ հավաքված են",
+      "SANITIZERS_PICKED": "Ախտահանիչ միջոցները հավաքված են",
+      "CELLS_PASSED": "Վանդակները անցված են։",
+      "TRY_AGAIN": "Կրկի՛ն փորձիր",
+      "PUT_MASK_ON": "Հագի՛ր դիմակը",
+      "WASHED_HANDS": "Լվացած ձեռքեր",
+      "VISITED_SHOP": "Ես ապրանքներ եմ գնել",
+      "MESSAGE_YES": "Այո՛",
+      "MESSAGE_NO": "Ո՛չ",
+      "LEVEL_NOT_COMPLETE": "Մակարդակն հաղթահարված չէ՛։",
+      "ERROR_IN_SCRIPT": "Սկրիպտի սխալ"
+    }
+  },
+  "MARKDOWN": {
+    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonAm.md",
+    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleAm.md",
+    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpWhoAm.md"
+  },
+  "SCENE-COMPONENT": {
+    "LEVEL_COMPLETE": "Մակարդակն հաղթահարվա՛ծ է",
+    "LEVEL_NOT_COMPLETE": "Մակարդակը հաղթահարված չէ՛։",
+    "TILE-STATISTICS": {
+      "RACCOON": {
+        "FAIL_REASON": "Ձախողման",
+        "FAIL_ROW_NUMBER": "Սխալ տողում",
+        "CELLS_PASSED": "Վանդակները անցված են։",
+        "COMPULSORY_OBJECTS_PICKED": "Բլիթները հավաքված են",
+        "FINISH_NOT_REACHED": "Ջրարջը չկարողացավ հասնել դրոշին",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Դեռ չհավաքաց բլիթներ են մնացել",
+        "COULD_NOT_COMPILE_SCRIPT": "Սցենարի սխալ",
+        "OFF_ROAD": "Ջրարջը շեղվել է ճանապարհից",
+        "OFF_MAP": "Ջրարջը դուրս է խաղադաշտից",
+        "SCRIPT_STOPPED": "Սցենարի կատարումը դադարեցվեց",
+        "CAUGHT_BY_MONSTER": "Ջրարջին առևանգել է հրեշը",
+        "NO_GATES_KEY": "Համապատասխան բանալին չկա",
+        "INVALID_ARGUMENT":"Անվավեր փաստարկ",
+        "ARGUMENT_OUT_OF_RANGE":"Փաստարկը դուրս չէ",
+        "EXTRA_ARGUMENT":"Սպասված զրոյական փաստարկներ",
+        "INVENTORY_NO_MINE": "Ռակկուն ական չունի",
+        "INVENTORY_NO_TURRET": "Ռակկոն չունի պտուտահաստոց"
+      },
+      "WHO": {
+        "FAIL_REASON": "Ձախողման",
+        "FAIL_ROW_NUMBER": "Սխալ տողում",
+        "CELLS_PASSED": "Վանդակները անցված են։",
+        "COMPULSORY_OBJECTS_PICKED": "Հավաքվել են դիմակներ և սանիտարական միջոցներ",
+        "FINISH_NOT_REACHED": "Ցավոք, չկարողացա՛ր տուն հասնել",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Ոչ բոլոր դիմակները և սանիտարական միջոցները հավաքվում են",
+        "COULD_NOT_COMPILE_SCRIPT": "Սցենարի սխալ",
+        "OFF_ROAD": "Խաղացողը շեղվե՛լ է ճանապարհից",
+        "OFF_MAP": "Խաղացողը դուրս է խաղադաշտից",
+        "MASK_IS_NOT_ON": "Դիմակը բացակայում է։",
+        "HANDS_NOT_WASHED": "Խաղացողը հասել է տուն, սակայն ձեռքերը չի լվացել։",
+        "PRODUCTS_NOT_PICKED": "Մթերքը գնված չէ՛։",
+        "HANDS_WASHED": "Լվացած ձեռքեր",
+        "MASK_IS_ON": "Հագի՛ր դիմակը",
+        "MESSAGE_YES": "Այո՛",
+        "MESSAGE_NO": "Ո՛չ",
+        "SCRIPT_STOPPED": "Սցենարի կատարումը դադարեցվեց",
+        "MASKS_PICKED": "Դիմակներըբ հավաքված են",
+        "SANITIZERS_PICKED": "Ախտահանիչ միջոցները հավաքված են",
+        "PRODUCTS_PICKED": "Ես ապրանքներ եմ գնել",
+        "CAUGHT_BY_VIRUS": "Վիրուսի հայտնաբերում",
+        "TOO_CLOSE_TO_PERSON": "ֆիզիկական հեռավորության կանոնների խախտում",
+        "INVALID_ARGUMENT":"Անվավեր փաստարկ",
+        "ARGUMENT_OUT_OF_RANGE":"Փաստարկը դուրս չէ",
+        "EXTRA_ARGUMENT":"Սպասված զրոյական փաստարկներ"
+      }
+    },
+    "CONSOLE-STATISTICS": {
+      "FAIL_REASON": "Ձախողման",
+      "FAIL_ROW_NUMBER": "Սխալ տողում",
+      "COULD_NOT_COMPILE_SCRIPT": "Սցենարի սխալ",
+      "TASK_DONE_WRONG": "Առաքելությունը ձախողվեց",
+      "INVALID_ARGUMENT":"Անվավեր փաստարկ",
+      "ARGUMENT_OUT_OF_RANGE":"Փաստարկը դուրս չէ",
+      "UNKNOWN_VARIABLE":"Անհայտ փոփոխական"
+    }
+  },
+  "TERMINAL": {
+    "TOOLTIP": {
+      "CLEAR": "Մաքրել",
+      "COLLAPSE": "Փլուզվել",
+      "OPEN": "Բացել"
+    }
+  },
+  "INITIALIZATION": {
+    "JS_ERROR": "There is syntax error in your initial JavaScript code:",
+    "CONFIG_ERROR": "Error in config:",
+    "RACCOON": {
+      "NO_PLAYER": "There is no Player in the scene configuration",
+      "NO_GAMEFIELD": "There is no game field in the configuration",
+      "GAMEOBJECTS_COORDS": "One or more objects are mislocated outside the field",
+      "GAMEOBJECTS_OUT_FIELD": "One or more objects are mislocated outside the field",
+      "PLAYER_COORDS": "The Player is mislocated outside the road",
+      "PLAYER_OUT_FIEL": "The Player is mislocated outside the field",
+      "GAMEOBJECTS_SAME_COORDS": "Два или более игровых объектов имеют одинаковые координаты"
+    },
+    "CONSOLE": {
+      "OUT_OF_RANGE": "Numeric variabes must be in range of -1000000 to 1000000",
+      "MAX_VARIABLES": "Config must have less than 5 variables"
+    }
+  },
+  "TASK_EDITOR": {
+    "NEXT": "Дальше",
+    "LABEL": {
+      "SCENE_TYPE": "Тип сцены",
+      "TASK_DESCRIPTION": "Описание сцены",
+      "INITIAL_CODE": "Инициализационный код",
+      "TEST_LAUNCH": "Проверка результата",
+      "SAVE": "Сохранение кода"
+    },
+    "HELP": {
+      "HELP": "Помощь",
+      "INITIAL_RACCOON_LINK": "Для конфигурации сцены используется несколько методов. Подробное описание каждого из них можно найти по <a href='/scene-config-help#raccoon' target='_blank'>этой ссылке</a>.",
+      "INITIAL_CONSOLE_LINK": "Для конфигурации сцены используется несколько методов. Подробное описание каждого из них можно найти по <a href='/scene-config-help#console' target='_blank'>этой ссылке</a>.",
+      "SCENE_TYPE": "Выбери тип сцены (уровня). Первый тип — консоль, то есть эмулятор компьютерного терминала. Первоначальные условия на таком уровне состоят из набора переменных с изначальными значениям. Тот, кто будет решать задачу, должен будет провести с переменными манипуляции и вывести на экран нужное значение. Второй тип сцены — графический, состоящий из квадратных элементов (тайлов). Тайловые уровни — это, например, уровни про Енота. Здесь тот, кто будет решать задачу, должен написать код на Python, чтобы провести героя через построенный тобой лабиринт.",
+      "SCENE_DESCRIPTION": "Напиши описание сцены. Оно отобразится перед началом игры. Это может  описание того, что нужно сделать и, может быть, предыстория этой сценки.",
+      "TEST_LAUNCH": "Перед тобой полноценный плеер с новой сценкой! Можешь запустить ее, посмотреть, как она работает, написать решение с помощью языка программирования Python и проверить, насколько сложно (и возможно ли в принципе :) ) ее пройти.",
+      "SAVE": "Чтобы твои труды на всех предыдущих шагах не пропали даром, сохрани полученный код сценки! Это можно сделать с помощью экспорта файла в Yaml-формате или обычным копированием кода.",
+      "INTRODUCTION": "У тебя есть отличная возможность стать автором задач Kiddo! Для этого нужно немного знать JavaScript для конфигурирования сцены.  С помощью следующих пяти шагов ты сможешь создать свою сцену, которую можно будет использовать для игры, или поделиться с редакторами киддо, чтобы после проверки ее выложили на сайт.",
+      "DO_NOT_SHOW": "Не показывать это сообщение при открытии редактора задач",
+      "STEP": "Шаг"
+      
+    },
+    "SCENE_TYPE": {
+      "TITLE": "Выбери тип сцены",
+      "MESSAGE": "Твой выбор важен для дальнейших шагов",
+      "CHANGING": "Внимание! Весь прогресс дальнейших шагов будет утерян",
+      "CHANGING_MODAL": "Весь прогресс дальнейших шагов будет утерян",
+      "WARNING": "Внимание!",
+      "CONSOLE": "Консоль",
+      "RACCOON": "Енот"
+
+    },
+    "TASK_DESCRIPTION": {
+      "TITLE": "Описание сцены",
+      "MESSAGE": "Этот текст будет использоваться для описания твоей сцены."
+    },
+    "INITIAL_CODE": {
+      "TITLE": "Инициализационный код",
+      "GENERATE": "Сгенерировать"
+    },
+    "TEST_LAUNCH": {
+      "TITLE": "Try it"
+    },
+    "SAVE": {
+      "TITLE": "Сохранение кода",
+      "SAVE_FILE": "Сохранить как Yaml файл",
+      "COPY": "Скопировать код",
+      "COPIED": "Конфигурационный код скопирован",
+      "SEND": "Отправить код на проверку"
+    }
+  }
+}

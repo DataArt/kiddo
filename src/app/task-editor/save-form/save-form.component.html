@@ -1,0 +1,14 @@
+<div class="save-form-wrapper">
+    <h1>{{ 'TASK_EDITOR.SAVE.TITLE' | translate }}</h1>
+    <div class="output-wrapper">
+        <perfect-scrollbar #perfectScrollbarComponent>
+            <div class="output">{{ outputCode }}</div>
+        </perfect-scrollbar>
+    </div>
+    <div class="save-wrapper">
+        <button class="button purple" (click)="onSaveAsYamlFileClick(outputCode)">{{ 'TASK_EDITOR.SAVE.SAVE_FILE' | translate }}</button>
+        <button class="button purple" [cdkCopyToClipboard]="outputCode" (click)="setCodeCopied()">{{ 'TASK_EDITOR.SAVE.COPY' | translate }}</button>
+    </div>
+    <p [innerHTML]="'TASK_EDITOR.SAVE.SEND_TEXT' | translate"></p>
+    <p *ngIf="codeCopied">{{ 'TASK_EDITOR.SAVE.COPIED' | translate }}!</p>
+</div>

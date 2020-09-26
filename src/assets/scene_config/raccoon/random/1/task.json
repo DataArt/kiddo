@@ -1,0 +1,15 @@
+{
+  "sceneType": "Raccoon",
+  "generatingFunc": "function getRandomInt(min, max) {min = Math.ceil(min);max = Math.floor(max);return Math.floor(Math.random() * (max - min + 1)) + min;}const gameField = [ ['RO', 'GR', 'GR', 'GR', 'GR', 'GR', 'GR', 'GR', 'GR'], ['GR', 'GR', 'RO', 'GR', 'GR', 'GR', 'RO', 'GR', 'GR'], ['GR', 'GR', 'RO', 'GR', 'GR', 'GR', 'RO', 'GR', 'GR'], ['GR', 'GR', 'RO', 'GR', 'GR', 'GR', 'RO', 'GR', 'GR'], ['GR', 'GR', 'RO', 'GR', 'GR', 'GR', 'RO', 'GR', 'GR'], ['GR', 'GR', 'RO', 'GR', 'GR', 'GR', 'RO', 'GR', 'GR'], ['GR', 'GR', 'RO', 'GR', 'GR', 'GR', 'RO', 'GR', 'GR'], ['GR', 'GR', 'RO', 'GR', 'GR', 'GR', 'RO', 'GR', 'GR'], ['GR', 'GR', 'GR', 'GR', 'GR', 'GR', 'GR', 'GR', 'GR'],];const horizontalRoad = ['RO', 'RO', 'RO'];const random = getRandomInt(2, 6);console.log(random);gameField[random].splice(3, 3, ...horizontalRoad);this.addGameField(gameField);this.addPlayer({ position: [0, 0] });",
+  "compulsoryGameObjects": [
+    "COOKIE"
+  ],
+  "winCondition": {
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "https://google.com",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

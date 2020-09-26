@@ -1,0 +1,15 @@
+{
+  "sceneType": "Raccoon",
+  "generatingFunc": "function getRandomInt(min, max) {min = Math.ceil(min);max = Math.floor(max);return Math.floor(Math.random() * (max - min + 1)) + min;}this.initializeGameField([ ['RO', 'RO', 'RO', 'RO'], ['RO', 'RO', 'RO', 'RO'], ['RO', 'RO', 'RO', 'RO'], ['RO', 'RO', 'RO', 'RO'],]);this.addPlayer({ position: [0, 0] });const cookiesCount = getRandomInt(1, 4);const cookies = [];for (let i = 1; i <= cookiesCount; i++) {const position = [getRandomInt(1, 3), getRandomInt(1, 3)];cookies.push({ position });}console.log(cookies);this.addCookies(cookies);",
+  "compulsoryGameObjects": [
+    "COOKIE"
+  ],
+  "winCondition": {
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "https://google.com",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

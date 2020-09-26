@@ -1,0 +1,18 @@
+sceneType: Raccoon
+generatingFunc: >-
+  this.setPlayerPosition(1, 0); this.setGameField([ ['BU', 'RO', 'BU', 'BU',
+  'BU', 'BU'], ['BU', 'RO', 'GR', 'RO', 'RO', 'RO'], ['BU', 'RO', 'RO', 'RO',
+  'GR', 'RO'], ['BU', 'RO', 'RO', 'GR', 'GR', 'FI'], ['BU', 'GR', 'GR', 'GR',
+  'OF', 'OF'], ['BU', 'GR', 'GR', 'GR', 'OF', 'GR'] ]);
+  this.addCheckingLogic('return this.player.position.x === 5 &&
+  this.player.position.y === 3');
+winButton:
+  url: ../task2
+  text: Next level
+initialScript: |-
+  import raccoon
+
+  # Add your code here
+taskDescription: Доведи енота до флага
+
+

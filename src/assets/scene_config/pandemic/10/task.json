@@ -1,0 +1,29 @@
+{
+  "sceneType": "Pandemic",
+  "gameField": [
+    ["HO", "FE", "FE", "RO", "FE", "FE", "RO"],
+    ["RO", "RO", "RO", "CO", "RO", "RO", "RO"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "CO"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "CO"],
+    ["RO", "RO", "FE", "FE", "RO", "RO", "CO"],
+    ["FE", "FE", "RO", "RO", "RO", "RO", "RO"],
+    ["CO", "RO", "FE", "RO", "CO", "RO", "RO"]
+  ],
+  "player": {
+    "position": [5, 5]
+  },
+  "viruses": [
+    { "position": [3, 3], "direction": "up" },
+    { "position": [6, 6], "direction": "left" }
+  ],
+  "shouldPutOnMask": true,
+  "winCondition": {
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/pandemic-task11.html",
+    "text": "Next level"
+  },
+  "initialScript": "import player\n\n# Add your code here",
+  "taskDescription": "Надень маску, дойди до дома, уворачиваясь от вирусов, и помой руки. Вирус можно уничтожить, используя функцию disinfect()."
+}

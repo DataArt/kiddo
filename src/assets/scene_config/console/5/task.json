@@ -1,0 +1,34 @@
+{
+  "sceneType": "console",
+  "variables": [
+    {
+      "name": "x",
+      "range": [-5, 5],
+      "random": true,
+      "readOnly": true
+    },
+    {
+      "name": "y",
+      "value": 5,
+      "readOnly": true
+    },
+    {
+      "name": "c",
+      "value": null
+    }
+  ],
+  "winCondition": {
+    "consoleVariables": [
+      {
+        "name": "c",
+        "formula": "x >= 0 ? x + y : x * y"
+      }
+    ]
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/console-task6.html",
+    "text": "Next level"
+  },
+  "initialScript": "import console\n\n# Add your code here",
+  "taskDescription": "Если значение в переменной X больше или равно 0, то сложи его со значением переменной Y и добавь полученную сумму в переменную С.\nЕсли значение в переменной X меньше нуля, то умножь его на значение переменной Y и добавь полученное произведение в переменную С."
+}

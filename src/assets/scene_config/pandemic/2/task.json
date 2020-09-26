@@ -1,0 +1,30 @@
+{
+  "sceneType": "Pandemic",
+  "gameField": [
+    ["L1", "L2", "FE", "HO", "FE", "RO", "RO"],
+    ["L3", "L4", "FE", "RO", "FE", "FE", "RO"],
+    ["FE", "FE", "FE", "RO", "CO", "FE", "RO"],
+    ["FE", "RO", "CO", "RO", "RO", "FE", "CO"],
+    ["CO", "RO", "CO", "FE", "RO", "RO", "FE"],
+    ["FE", "RO", "FE", "CO", "FE", "RO", "RO"],
+    ["CO", "RO", "RO", "RO", "FE", "CO", "RO"]
+  ],
+  "player": {
+    "position": [6, 6]
+  },
+  "viruses": [
+    { "position": [6, 0], "direction": "down" },
+    { "position": [1, 3], "direction": "down" },
+    { "position": [3, 6], "direction": "left" }
+  ],
+  "shouldPutOnMask": false,
+  "winCondition": {
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/pandemic-task3.html",
+    "text": "Next level"
+  },
+  "initialScript": "import player\n\n# Add your code here",
+  "taskDescription": "Дойди до дома и помой руки."
+}

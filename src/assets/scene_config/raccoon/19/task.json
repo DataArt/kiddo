@@ -1,0 +1,39 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["RO", "RO", "BU", "RO", "RO", "RO", "RO"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "RO"],
+    ["RO", "BU", "BU", "BU", "BU", "RO", "RO"],
+    ["BU", "BU", "BU", "FI", "RO", "RO", "RO"],
+    ["BU", "BU", "BU", "BU", "BU", "RO", "RO"],
+    ["BU", "BU", "RO", "RO", "RO", "RO", "RO"],
+    ["BU", "BU", "RO", "BU", "BU", "RO", "RO"]
+  ],
+  "player": {
+    "position": [0, 2]
+  },
+  "cookies": [
+    { "position": [2, 5] },
+    { "position": [2, 6] }
+  ],
+  "gates": [
+    { "position": [2, 1], "color": "yellow" },
+    { "position": [4, 3], "color": "red" }
+  ],
+  "keys": [
+    { "position": [0, 0], "color": "yellow" },
+    { "position": [6, 6], "color": "red" }
+  ],
+  "monsters": [
+    { "position": [5, 1], "direction": "left" },
+    { "position": [6, 3], "direction": "down" }
+  ],
+  "compulsoryGameObjects": [
+    "COOKIE"
+  ],
+  "winCondition": {
+    "playerPosition": { "x": 8, "y": 0 },
+    "pickAllCompulsoryObjects": true
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

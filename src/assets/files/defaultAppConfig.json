@@ -1,0 +1,14 @@
+{
+  "language": {
+    "useBrowserLangAsDefault": true,
+    "default": "ru",
+    "useOnly": null
+  },
+  "analytics": {
+    "GA_key": "UA-159399120-1"
+  },
+  "database": {
+    "name": "dataartKiddo",
+    "version": 1
+  }
+}

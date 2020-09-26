@@ -1,0 +1,5 @@
+{
+  "description": "Write 'Hello world!' to console",
+  "sceneSetUpCode": "this.setInitialScript('# Add yor code here\\n');",
+  "verificationCode": "if (this.consoleContent === 'Hello world!\\n') return true"
+}

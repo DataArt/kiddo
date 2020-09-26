@@ -1,0 +1,38 @@
+{
+  "sceneType": "console",
+  "variables": [
+    {
+      "name": "X",
+      "value": 7,
+      "readOnly": true
+    },
+    {
+      "name": "Y",
+      "value": 5,
+      "readOnly": true
+    },
+    {
+      "name": "Z",
+      "value": 4,
+      "readOnly": true
+    },
+    {
+      "name": "S",
+      "value": null,
+      "readOnly": false
+    }
+  ],
+  "winCondition": {
+    "consoleVariables": [
+      {
+        "name": "S",
+        "value": 4
+      }
+    ]
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/console-task4.html",
+    "text": "Next level"
+  },
+  "initialScript": "import console\n\n# Add your code here"
+}

@@ -1,0 +1,26 @@
+.test-description-wrapper {
+    display: flex;
+    justify-content: center;
+    min-height: 30px;
+    background-color: #161616;
+    color: #fff;
+
+    .description {
+        width: 800px;
+        height: 120px;
+        padding: 10px 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 5em;
+        height: 120px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.player-wrapper {
+    max-height: 300px;
+}

@@ -1,0 +1,29 @@
+<section class="stepper-container">
+    <header>
+      <ng-container *ngFor="let step of steps; let i = index">
+      <div class="stepper-step">
+        <div class="step-icon" (click)="onClick(i)" [ngClass]="{ 'step-icon-active': selectedIndex === i }">
+          {{ i + 1 }}
+        </div>
+        <div class="step-name">
+          <span *ngIf="selectedIndex === i" class="step-label">
+            {{step.label}}
+          </span>
+        </div>
+    </div>
+    <div *ngIf="i < steps.length - 1" class="step-divider-wrapper">
+      <div class="step-divider"></div>
+    </div>
+  </ng-container>
+  <ng-content></ng-content>
+    </header>
+
+    
+  
+    <div class="stepper-content" [style.display]="selected ? 'block' : 'none'">
+      <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+    </div>
+  </section>
+
+
+  

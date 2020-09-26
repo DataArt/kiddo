@@ -1,0 +1,34 @@
+{
+  "sceneType": "console",
+  "variables": [
+    {
+      "name": "X",
+      "range": [1, 10],
+      "random": true,
+      "readOnly": true
+    },
+    {
+      "name": "Y",
+      "range": [10, 19],
+      "random": true,
+      "readOnly": true
+    },
+    {
+      "name": "C",
+      "value": null
+    }
+  ],
+  "winCondition": {
+    "consoleVariables": [
+      {
+        "name": "C",
+        "value": X * Y
+      }
+    ]
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/console-task5.html",
+    "text": "Next level"
+  },
+  "initialScript": "import console\n\n# Add your code here"
+}

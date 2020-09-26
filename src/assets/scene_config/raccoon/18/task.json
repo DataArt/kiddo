@@ -1,0 +1,35 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["RO", "BU", "BU", "RO", "BU", "FI"],
+    ["RO", "BU", "BU", "RO", "BU", "RO"],
+    ["RO", "RO", "RO", "RO", "BU", "RO"],
+    ["RO", "BU", "BU", "BU", "BU", "RO"],
+    ["RO", "RO", "RO", "RO", "RO", "RO"],
+    ["RO", "BU", "BU", "RO", "BU", "BU"]
+  ],
+  "player": {
+    "position": [0, 5]
+  },
+  "cookies": [
+    { "position": [0, 0] },
+    { "position": [0, 1] },
+    { "position": [3, 5] }
+  ],
+  "monsters": [
+    { "position": [5, 4], "direction": "up" },
+    { "position": [3, 1], "direction": "down" }
+  ],
+  "mines": [
+    { "position": [3, 2] }
+  ],
+  "compulsoryGameObjects": [
+    "COOKIE"
+  ],
+  "winCondition": {
+    "playerPosition": { "x": 8, "y": 0 },
+    "pickAllCompulsoryObjects": true
+  },
+  "initialScript": "import raccoon\n\n# Add your code here",
+  "taskDescription": "Помоги Еноту собрать печеньки и добраться до финиша. Тебе может пригодиться лежащий на поле ящик. В нем лежит мина, которую ты сможешь использовать."
+}

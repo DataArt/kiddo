@@ -1,0 +1,13 @@
+<section class="game-field">
+  
+  <kiddo-raccoon-tile-row
+    *ngFor="let row of field; index as i"
+    [row]="row"
+    [customTiles]="customTiles"
+    [playerPosition]="playerPosition"
+    [rowIndex]="i"
+    [sceneIsLabyrinth]="sceneIsLabyrinth"
+  ></kiddo-raccoon-tile-row>
+
+  <ng-content></ng-content>
+</section>

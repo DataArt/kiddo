@@ -1,0 +1,169 @@
+<section class="toolbar">
+        <div class="toolbar-dummy"></div>
+        <div class="launch-button-wrapper">
+            <button class="button launch-button small"
+                    [ngClass]="getLaunchButtonColor() | async"
+                    (click)="onLaunchButtonClick()"
+                    [disabled]="playbackIsLaunched | async">
+                <span class="launch-button-content">
+                    <i class="icon-{{launchButtonState | async}}"></i>
+                    <span class="launch-button-text">
+                        {{ prefixButton + (launchButtonState | async) | uppercase | translate }}
+                    </span>
+                </span>
+        </button>
+    </div>
+    <div class="toolbar-buttons-wrapper">
+        <span class="tooltip-container">
+            <button class="toolbar-button"
+                    (click)="resetApp()">
+                <i class="icon-reset toolbar-button-content"></i>
+            </button>
+            <span class="tooltip-text">
+                {{ prefixTooltip + 'RERENDER' | translate }}
+            </span>
+        </span>
+            <span class="tooltip-container">
+                <button class="toolbar-button" (click)="onOpenModalClick(initialCodeModal, 'open_initial_code_modal_click')">
+                    <i class="icon-web-code toolbar-button-content"></i>
+                </button>
+                <span class="tooltip-text">
+                    {{ prefixTooltip + 'RESET_CODE' | translate }}
+                </span>
+            </span>
+            <span class="tooltip-container" *ngIf="sceneIsPlaybackable()">
+                <button class="toolbar-button" (click)="onPlaybackClick()">
+                    <i [ngClass]="{
+                        'icon-watch': !(playbackIsLaunched | async),
+                         'icon-stop': playbackIsLaunched | async
+                        }"
+                       class="toolbar-button-content">
+                    </i>
+                </button>
+                <span class="tooltip-text">
+                    {{(!(playbackIsLaunched | async) ? prefixTooltip + 'PLAYBACK_SCENE' : prefixTooltip + 'STOP_PLAYBACK') | translate }}
+                </span>
+            </span>
+            
+        </div>
+        <div class="toolbar-dummy">
+        </div>
+        <span class="tooltip-container" *ngIf="sceneHasTaskDescription()">
+            <button class="toolbar-button transparent"
+                    (click)="onOpenModalClick(taskModal, 'open_task_modal_click')">
+                <span class="toolbar-button-content">T</span>
+            </button>
+            <span class="tooltip-text">
+                {{prefixTooltip + 'TASK' | translate}}
+            </span>
+        </span>
+        <span class="tooltip-container">
+            <button class="toolbar-button transparent"
+                    (click)="onOpenModalClick(helpModal, 'open_help_modal_click')">
+                <i class="icon-help toolbar-button-content"></i>
+            </button>
+            <span class="tooltip-text">
+                {{prefixTooltip + 'HELP' | translate}}
+            </span>
+        </span>
+        <div kiddoDropdown
+             class="lang-select-dropdown-button"
+             [ngClass]="{ 'display-none': hideLangSelectionDropdown }"
+             placement="bottom-left">
+            <div kiddoDropdownToggle class="lang-select-toggle">
+                {{ currentLang | titlecase }}
+            </div>
+            <div kiddoDropdownMenu class="lang-select-menu">
+                <div kiddoDropdownItem class="lang-select-item"
+                     *ngFor="let lang of allLangs"
+                     (click)="handleLangChange(lang)">
+                    {{ lang | languageNative | titlecase }}
+                </div>
+            </div>
+        </div>
+        <div kiddoDropdown
+             class="options-dropdown-button tooltip-container"
+             placement="bottom-left">
+            <div kiddoDropdownToggle class="options-toggle">
+                <i class="icon-settings toolbar-button-content"></i>
+                <span class="tooltip-text">
+                    {{ prefixTooltip + 'MENU' | translate }}
+                </span>
+            </div>
+            <div kiddoDropdownMenu class="options-menu">
+                <div kiddoDropdownItem class="options-item"
+                     (click)="onOpenModalClick(saveCodeModal, 'open_save_modal_click')"
+                     (mouseenter)="ideDropdown.close()">
+                    {{ prefixOptions + 'SAVE' | translate }}
+                </div>
+                <div kiddoDropdownItem class="options-item"
+                     (click)="onOpenModalClick(loadCodeModal, 'open_load_code_modal_click')"
+                     (mouseenter)="ideDropdown.close()">
+                    {{ prefixOptions + 'LOAD' | translate }}
+                </div>
+                <div class="menu-delimiter">
+                </div>
+                <div kiddoDropdownItem class="options-item nested-dropdown"
+                     kiddoDropdown placement="left-bottom" #ideDropdown="kiddoDropdown">
+                    <div kiddoDropdownToggle class="ide-position-toggle"
+                         (mouseenter)="ideDropdown.open()">
+                         <i class="icon-left-chevron"></i>
+                        {{ prefixOptions + 'IDE_POSITION.CHOOSE' | translate }}
+                    </div>
+                    <div kiddoDropdownMenu class="options-menu">
+                        <div kiddoDropdownItem class="ide-position-item"
+                             (click)="setIDELeft()">
+                            {{ prefixOptions + 'IDE_POSITION.LEFT' | translate }}
+                        </div>
+                        <div kiddoDropdownItem class="ide-position-item"
+                             (click)="setIDERight()">
+                            {{ prefixOptions + 'IDE_POSITION.RIGHT' | translate }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</section>
+
+<div kiddoModal #initialCodeModal="kiddoModal">
+    <kiddo-modal-message (acceptClick)="onResetCodeClick()"
+                         (cancelClick)="initialCodeModal.close()">
+        <div class="warning-modal-header">{{ prefixModal + 'WARNING' | translate }}</div>
+        {{ 'MODAL.CODE_RESET_WARNING' | translate }}
+    </kiddo-modal-message>
+</div>
+
+<div kiddoModal #saveCodeModal="kiddoModal">
+    <kiddo-modal-message *ngIf="saveCodeModal.isOpen() | async"
+                         (acceptClick)="onSaveClick(solutionNameInput.value)"
+                         (cancelClick)="closeSaveCodeModal()">
+        <div class="warning-modal-header">{{prefixModal + 'SAVE_CODE' | translate}}</div>
+        <div class="save-modal-body">
+            <label>
+                <input type="text" class="solution-name-input" #solutionNameInput [placeholder]="prefixModal + 'ENTER_SAVE_NAME' | translate">
+            </label>
+            <div class="save-error" *ngIf="saveErrorMessage">{{saveErrorMessage | translate}}</div>
+        </div>
+    </kiddo-modal-message>
+</div>
+
+<div kiddoModal #loadCodeModal="kiddoModal">
+    <kiddo-code-saver *ngIf="loadCodeModal.isOpen() | async" (closeModal)="loadCodeModal.close()"
+                      (loadCode)="onLoad($event)">
+    </kiddo-code-saver>
+</div>
+
+<div kiddoModal class="task-modal" #taskModal="kiddoModal">
+    <kiddo-task (closeModal)="taskModal.close()"></kiddo-task>
+</div>
+
+<div kiddoModal class="help-modal" #helpModal="kiddoModal">
+    <kiddo-help (closeModal)="helpModal.close()"></kiddo-help>
+</div>
+
+<div kiddoSnackbar #saveSnackbar="kiddoSnackbar">
+    <div class="save-snackbar-body">
+        <span class="save-snackbar__message">{{prefixSnackbar + 'SUCCESSFULLY_SAVED' | translate}}</span>
+    </div>
+</div>

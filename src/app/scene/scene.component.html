@@ -1,0 +1,36 @@
+<section class="scene-wrapper">
+  <kiddo-raccoon-scene [isStatic]="isStatic" *ngIf="sceneType === 'RACCOON'"></kiddo-raccoon-scene>
+  <!-- <kiddo-pandemic-scene *ngIf="sceneType === 'PANDEMIC'"></kiddo-pandemic-scene> -->
+  <kiddo-console-scene [isStatic]="isStatic" *ngIf="sceneType === 'CONSOLE'"></kiddo-console-scene>
+</section>
+
+<div kiddoModal #gameFinishModal="kiddoModal">
+  <kiddo-modal-message class="popup"
+                       [disableAcceptButton]="!statistics.levelPassed || !winButton?.url"
+                       [acceptButtonText]="winButton?.text"
+                       (acceptClick)="handleAcceptClick()"
+                       (cancelClick)="gameFinishModal.close()"
+                       (resetClick)="gameFinishModal.close(); handleResetClick()"
+                       [enableResetButton]="!statistics.levelPassed"
+  >
+    <div class="popup__header">
+      {{ prefixPath + scriptRunResult | translate }}
+    </div>
+    <div *ngIf="statistics.gameFinished" class="popup__statistics">
+      <kiddo-raccoon-statistics
+          *ngIf="sceneType === 'RACCOON'"
+          [sceneType]="sceneType"
+          [statistics]="statistics">
+      </kiddo-raccoon-statistics>
+      <kiddo-pandemic-statistics
+          *ngIf="sceneType === 'PANDEMIC'"
+          [sceneType]="sceneType"
+          [statistics]="statistics">
+      </kiddo-pandemic-statistics>
+      <kiddo-console-statistics
+          *ngIf="sceneType === 'CONSOLE'"
+          [statistics]="statistics">
+      </kiddo-console-statistics>
+    </div>
+  </kiddo-modal-message>
+</div>

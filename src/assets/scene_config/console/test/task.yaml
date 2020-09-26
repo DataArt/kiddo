@@ -1,0 +1,9 @@
+sceneType: console
+generatingFunc: >-
+  this.addConsoleVariable('x', 42);
+  this.addConsoleVariable('STR', 'test', true);
+  this.addConsoleVariable('result');
+initialScript: |-
+  import console
+
+  # Add your code here

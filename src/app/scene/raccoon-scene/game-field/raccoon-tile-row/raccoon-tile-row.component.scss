@@ -1,0 +1,52 @@
+.tile-row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.tile-row__tile {
+  width: 100%;
+  background-size: 100%;
+  background-position: 0% -100%;
+  background-repeat: no-repeat;
+  border-right: 1px solid #90b95a;
+  border-bottom: 1px solid #90b95a;
+
+
+  &.incognita:not(.tile-row__tile_type_finish) {
+    background-color: #161616;
+    background-image: none;
+    border-color: #161616;
+  }
+}
+
+.tile-row__tile:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.tile-row__tile_type_custom-tile {
+  background-size: 100%;
+  background-position: 0% 0%;
+}
+
+.tile-row__tile_type_road {
+  background-color: var(--scene-road);
+}
+
+.tile-row__tile_type_grass {
+  background-position: -22% 51%;
+  background-size: 200%;
+}
+
+.tile-row__tile_type_bush {
+  background-position: 54.5% 7%;
+  background-size: 340%;
+}
+
+.tile-row__tile_type_finish {
+  background-position: 96% 0%;
+  background-size: 400%;
+  background-color: var(--scene-road);
+}

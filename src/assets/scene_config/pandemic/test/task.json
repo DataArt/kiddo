@@ -1,0 +1,6 @@
+{
+  "sceneType": "Pandemic",
+  "generatingFunc": "this.setPlayerPosition(0, 2); this.setGameField([ ['OF', 'FE', 'RO', 'SH', 'RO', 'RO', 'RO', 'RO', 'HO'], ['CO', 'RO', 'RO', 'RO', 'RO', 'L1', 'L2', 'TR', 'RO'], ['RO', 'RO', 'RO', 'RO', 'RO', 'L3', 'L4', 'RO', 'RO'], ['RO', 'ST', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO'], ['RO', 'FE', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO'], ['RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO'], ['RO', 'FE', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO'], ['RO', 'FE', 'FE', 'FE', 'CO', 'FE', 'CO', 'CO', 'CO'], ['RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO', 'RO'] ]); this.addMasks([0, 4], [0, 5]); this.addSanitizers([0, 6]); this.addPerson([[2, 4], [8, 4]], 'RIGHT'); this.addPerson([8, 6], 'LEFT'); this.addVirus([[7, 2], [7, 6]], 'DOWN'); this.addVirus([2, 3], 'RIGHT'); this.addVirus([8, 8], 'CHASING');",
+  "shouldPutOnMask": true,
+  "initialScript": "import player\n\n# Add your code here"
+}

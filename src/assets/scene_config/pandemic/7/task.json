@@ -1,0 +1,32 @@
+{
+  "sceneType": "Pandemic",
+  "gameField": [
+    ["HO", "CO", "FE", "RO", "CO", "FE", "RO"],
+    ["RO", "RO", "RO", "RO", "RO", "CO", "RO"],
+    ["RO", "RO", "RO", "RO", "RO", "FE", "RO"],
+    ["RO", "RO", "RO", "RO", "RO", "CO", "RO"],
+    ["RO", "RO", "RO", "RO", "RO", "CO", "FE"],
+    ["CO", "RO", "RO", "RO", "RO", "RO", "FE"],
+    ["FE", "FE", "FE", "RO", "FE", "FE", "FE"]
+  ],
+  "player": {
+    "position": [5, 5]
+  },
+  "viruses": [
+    { "position": [6, 3], "direction": "up" }
+  ],
+  "people": [
+    { "position": [0, 2], "direction": "right" },
+    { "position": [3, 3], "direction": "up" }
+  ],
+  "shouldPutOnMask": true,
+  "winCondition": {
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/pandemic-task8.html",
+    "text": "Next level"
+  },
+  "initialScript": "import player\n\n# Add your code here",
+  "taskDescription": "Надень маску, дойди до дома, держа дистанцию в одну клетку от людей, и помой руки."
+}

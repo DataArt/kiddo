@@ -1,0 +1,17 @@
+kiddo-code-saver ace .ace_editor .ace_scroller {
+  left: 30px;
+  background-color: #242b2d;
+}
+
+kiddo-code-saver ace .ace_editor .ace_gutter {
+  width: 30px;
+  background-color: #465255;
+}
+
+kiddo-code-saver ace .ace_gutter .ace_gutter-cell {
+  display: flex;
+  align-items: center;
+  padding-left: 9px;
+  color: #fff;
+  background-color: #353f42;
+}

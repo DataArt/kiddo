@@ -1,0 +1,31 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["BU", "BU", "BU", "BU", "BU", "BU", "BU"],
+    ["BU", "GR", "GR", "RO", "RO", "RO", "FI"],
+    ["BU", "RO", "RO", "RO", "GR", "OF", "BU"],
+    ["BU", "RO", "RO", "RO", "RO", "OF", "BU"],
+    ["RO", "RO", "RO", "GR", "OF", "GR", "OF"],
+    ["BU", "GR", "GR", "GR", "GR", "OF", "BU"],
+    ["BU", "BU", "BU", "BU", "BU", "BU", "TR"]
+  ],
+  "player": {
+    "position": [0, 4]
+  },
+  "cookies": [
+    { "position": [3, 3] }
+  ],
+  "monsters": [
+    { "position": [1, 3], "direction": "right" }
+  ],
+  "winCondition": {
+    "playerPosition": { "x": 6, "y": 1 },
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/raccoon-task8.html",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here",
+  "taskDescription": "Возьми печенье, увернись от монстра и доведи енота до флага!"
+}

@@ -1,0 +1,82 @@
+<div class="wrapper">
+    <header class="app-modal-header">
+    <span class="app-modal-title">
+        {{ prefixPath + 'TITLE' | translate }}
+    </span>
+        <i class="icon-close" (click)="onCloseClick()"></i>
+    </header>
+    <main class="app-modal-body">
+        <div class="solutions-list-container">
+            <div class="solutions-list">
+                <div kiddoSelectableItem
+                     class="solutions-item"
+                     [ngClass]="{'item-selected': solution.isSelected, 'item-highlighted': solution.isHighlighted }"
+                     *ngFor="let solution of solutions"
+                     (justClick)="onSolutionClick(solution)"
+                     (ctrlClick)="onSolutionCtrlClick(solution)"
+                     (shiftClick)="onSolutionShiftClick(solution)">
+                    <div class="solution-name"
+                          (focusout)="solution.isBeingEdited = false"
+                          *ngIf="solution.isBeingEdited && solution.isSelected; then editMode else previewMode">
+                    </div>
+                    <ng-template #previewMode>
+                        {{ (solution.name.length > 19 )? ((solution.name | slice:0:14) + '...') : (solution.name) }}
+                        <span class="solution-inline-options">
+                            <i class="icon-edit" (click)="onInlineEditClick(solution)"></i>
+                            <i class="icon-delete" (click)="deletionWarningModal.open(solution)"></i>
+                        </span>
+                    </ng-template>
+                    <ng-template #editMode>
+                        <label>
+                            <input #editableField type="text" class="editable-name-field"
+                                   kiddoAutofocus
+                                   value="{{solution.name.trim()}}"
+                                  (keydown.enter)="$event.preventDefault(); onSolutionRenameSubmit(solution, editableField.value)">
+                        </label>
+                        <span class="solution-inline-options visible">
+                            <i class="icon-accept" (click)="onSolutionRenameSubmit(solution, editableField.value)"></i>
+                            <i class="icon-close" (click)="solution.isBeingEdited = false"></i>
+                        </span>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <div class="code-preview-container">
+            <ace [mode]="'python'" [theme]="'tomorrow_night_eighties'" [disabled]="true" [(value)]="selectedCode"></ace>
+        </div>
+    </main>
+    <footer class="code-saver-footer">
+        <div>
+            <button class="button red load-button"
+                    *ngIf="selectedSolutions?.length > 1"
+                    (click)="deletionWarningModal.open()">
+                {{ prefixPath + 'BUTTONS.DELETE_SELECTED' | translate }}
+            </button>
+        </div>
+        <button class="button green load-button"
+                [disabled]="!selectedCode || selectedSolutions.length > 1"
+                (click)="overwriteWarningModal.open()">
+            {{ prefixPath + 'BUTTONS.LOAD' | translate }}
+        </button>
+    </footer>
+</div>
+
+<div kiddoModal #deletionWarningModal="kiddoModal">
+    <kiddo-modal-message (acceptClick)="onDeletionSubmit()"
+                       (cancelClick)="deletionWarningModal.close()">
+        <div class="warning-modal-header">{{ prefixPath + 'WARNING' | translate }}</div>
+        <div class="warning-modal-body">
+            {{ prefixPath + 'SOLUTIONS_DELETION_WARNING' | translate }}
+            <b *ngFor="let solution of selectedSolutions"><br>{{solution.name}}</b>
+        </div>
+    </kiddo-modal-message>
+</div>
+
+<div kiddoModal #overwriteWarningModal="kiddoModal">
+    <kiddo-modal-message (acceptClick)="onLoadClick()"
+                       (cancelClick)="overwriteWarningModal.close()">
+        <div class="warning-modal-header">{{ prefixPath + 'WARNING' | translate }}</div>
+        <div class="warning-modal-body"><b>{{ prefixPath + 'SOLUTION_LOAD_WARNING' | translate }}</b></div>
+    </kiddo-modal-message>
+</div>
+

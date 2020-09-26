@@ -1,0 +1,18 @@
+<!-- <div
+  class="game-object
+  {{
+    'game-object_type_'
+    + (gameObject.type | lowercase | snakeToKebabCase)
+    + '-'
+    + (gameObject.state  | lowercase | snakeToKebabCase)
+    + (gameObject.additionalState
+      ? '--' + (gameObject.additionalState  | lowercase | snakeToKebabCase)
+      : '')
+  }}
+  {{ gameObject.state === GameObjectState.Moving && gameObject.direction
+    ? 'game-object_type_' + (gameObject.type | lowercase | snakeToKebabCase) + '-' + (gameObject.direction | lowercase)
+    : ''
+  }}"
+  [ngClass]="{'chasing': gameObject.chasing}"
+  >
+</div> -->

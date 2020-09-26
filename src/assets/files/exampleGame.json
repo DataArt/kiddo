@@ -1,0 +1,6 @@
+{
+  "sceneName":"tileRaccoon",
+  "description":"Move Raccon from lower left corner to upper right corner",
+  "sceneSetUpCode":"this.setInitialScript('import raccoon\\n\\nraccoon.goRight()\\nraccoon.goUp()\\nraccoon.goUp()\\nraccoon.goRight()\\nraccoon.goRight()\\n\\nwhile raccoon.look(-1, 1):\\n    raccoon.wait()\\n\\nraccoon.goDown()\\nraccoon.goUp()\\nraccoon.goUp()\\nraccoon.goRight()\\nraccoon.goRight()\\nif raccoon.look(1, -1) or raccoon.look(1, 1):\\n    raccoon.wait()\\n\\nraccoon.goRight()\\nraccoon.goRight()\\n');\nthis.playerPosition = { x: 0, y: 4 };this.addMonster('vertical', { x: 6, y: 2 }); this.addMonster('horizontal', { x: 1, y: 3 }); \nthis.setCookies([{ x: 3, y: 3 }, { x: 5, y: 1 }]);\nthis.setGameField([\n    ['B', 'B', 'B', 'B', 'B', 'B', 'R', 'B'],\n    ['B', 'G', 'G', 'R', 'R', 'R', 'R', 'F'],\n    ['B', 'R', 'R', 'R', 'G', 'G', 'R', 'B'],\n    ['B', 'R', 'R', 'R', 'G', 'G', 'R', 'B'],\n    ['R', 'R', 'R', 'G', '0', '0', '0', 'B'],\n    ['B', 'G', 'G', '0', '0', '0', '0', 'B'],\n    ['B', '0', '0', '0', '0', '0', '0', 'B'],\n    ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']\n]);",
+  "verificationCode":"if (this.playerPosition.x === 7 && this.playerPosition.y === 1) return true"
+}

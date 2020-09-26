@@ -1,0 +1,30 @@
+{
+  "sceneType": "console",
+  "variables": [
+    {
+      "name": "X",
+      "range": [1, 100],
+      "random": true,
+      "readOnly": true
+    }
+  ],
+  "winCondition": {
+    "consoleWindow": {
+      "content": [
+        "X",
+        "X",
+        "X",
+        "X",
+        "X",
+        "X",
+        "X",
+        "X",
+        "X",
+        "X"
+      ],
+      "dynamicValues": true
+    }
+  },
+  "initialScript": "import console\n\n# Add your code here",
+  "taskDescription": "Выведи значение переменной Х в консоль 10 раз (используй циклы)."
+}

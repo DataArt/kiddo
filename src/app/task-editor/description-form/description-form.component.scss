@@ -1,0 +1,24 @@
+h1 {
+    margin: 0 0 10px 0;
+}
+
+.description-form {
+    textarea {
+        background-color: #353f42;
+        color: #bcbebf;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font: inherit;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .form-element {
+        margin: 15px 0;
+    }
+
+    
+}

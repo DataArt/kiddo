@@ -1,0 +1,33 @@
+.image-wrapper {
+  display: block;
+  margin: 1rem auto;
+  width: 25rem;
+  text-align: center;
+}
+
+.raccoon_happy-player {
+  display: inline-block;
+  width: 50%;
+  padding-bottom: 50%;
+  background-repeat: no-repeat;
+  background-size: 650%;
+  background-position: 66.5% 0;
+}
+
+.raccoon_sad-player {
+  display: inline-block;
+  width: 50%;
+  padding-bottom: 50%;
+  background-repeat: no-repeat;
+  background-size: 700%;
+  background-position: 86% -20%;
+}
+
+.statistics {
+  margin: 0 auto;
+}
+
+.statistics-item-header {
+  padding: 0.5rem;
+  text-align: left;
+}

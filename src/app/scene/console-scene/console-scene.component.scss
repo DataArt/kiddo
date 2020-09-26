@@ -1,0 +1,22 @@
+.console-scene {
+  display: flex;
+  height: 100%;
+  padding: .5rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  color: #d4d4d4;
+  background-color: #363636;
+  box-sizing: border-box;
+}
+
+.console-scene__toolbar {
+  width: 100%;
+}
+
+.console-scene__output-area {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  box-sizing: border-box;
+}

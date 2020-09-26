@@ -1,0 +1,6 @@
+<table class="statistics">
+  <tr *ngFor="let statisticsItem of statisticsItemsList">
+    <th class="statistics-item-header">{{ prefixPath + statisticsItem.name | translate }}:</th>
+    <td class="statistics-item-data">{{ statisticsItem.value | translate }}</td>
+  </tr>
+</table>

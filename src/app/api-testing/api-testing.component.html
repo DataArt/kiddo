@@ -1,0 +1,22 @@
+<div class="test-description-wrapper">
+    <div>
+        <a *ngIf="previousConfigExists" href="api-testing/{{previousDirectory}}">
+            <i class="icon-arrow-left"></i>
+        </a>
+    </div>
+    <div class="description">
+        <div *ngIf="sceneConfigLoaded">{{description}}</div>
+    </div>
+    <div>
+        <a *ngIf="nextConfigExists" href="api-testing/{{nextDirectory}}">
+            <i class="icon-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+
+<div *ngIf="sceneConfigLoaded" class="player-wrapper">
+    <kiddo-game-player ></kiddo-game-player>
+</div>
+
+<div *ngIf="noConfig">No config!</div>

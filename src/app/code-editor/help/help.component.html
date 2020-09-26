@@ -1,0 +1,9 @@
+<div class="help-wrapper">
+    <header class="help-header">
+        <i class="icon-close" (click)="onCloseClick()"></i>
+    </header>
+    <main class="help-content">
+        <markdown [src]="'MARKDOWN.HELP_' + currentSceneType | translate: {assetsPath: environment.assetsPath}">
+        </markdown>
+    </main>
+</div>

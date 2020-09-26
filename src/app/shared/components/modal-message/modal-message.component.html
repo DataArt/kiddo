@@ -1,0 +1,15 @@
+<div class="modal-message">
+  <i class="icon-close" (click)="onCancelClick()"></i>
+  <div class="modal-body">
+    <ng-content>
+    </ng-content>
+  </div>
+  <div class="app-modal-footer">
+    <button *ngIf="!disableAcceptButton" type="button" class="button green" (click)="onAcceptClick()">
+      {{ acceptButtonText || (prefixPath + "ACCEPT" | translate) }}
+    </button>
+    <button *ngIf="enableResetButton" type="button" class="button blue" (click)="onResetClick()">{{ prefixPath + 'TRY_AGAIN' | translate }}</button>
+    <button type="button" class="button {{warning? 'red' : 'purple'}}" (click)="onCancelClick()">{{ prefixPath + 'CLOSE' | translate }}</button>
+    
+  </div>
+</div>

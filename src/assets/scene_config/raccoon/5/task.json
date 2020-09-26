@@ -1,0 +1,32 @@
+{
+  "sceneType": "Raccoon",
+  "gameField": [
+    ["GR", "GR", "GR", "FI", "GR", "GR", "GR"],
+    ["GR", "GR", "RO", "RO", "RO", "GR", "GR"],
+    ["GR", "GR", "GR", "RO", "GR", "GR", "GR"],
+    ["GR", "RO", "RO", "RO", "RO", "RO", "GR"],
+    ["GR", "GR", "GR", "RO", "GR", "GR", "GR"],
+    ["RO", "RO", "RO", "RO", "RO", "RO", "RO"],
+    ["GR", "GR", "GR", "RO", "GR", "GR", "GR"]
+  ],
+  "player": {
+    "position": [3, 6]
+  },
+  "cookies": [
+    { "position": [0, 5] },
+    { "position": [6, 5] },
+    { "position": [1, 3] },
+    { "position": [5, 3] },
+    { "position": [2, 1] },
+    { "position": [4, 1] }
+  ],
+  "winCondition": {
+    "playerPosition": { "x": 3, "y": 0 },
+    "pickAllCompulsoryObjects": true
+  },
+  "winButtonDetails": {
+    "url": "http://localhost:8080/QA/raccoon-task6.html",
+    "text": "Next level"
+  },
+  "initialScript": "import raccoon\n\n# Add your code here"
+}

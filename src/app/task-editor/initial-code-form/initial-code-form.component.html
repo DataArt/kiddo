@@ -1,0 +1,22 @@
+<div class="initial-code-wrapper">
+    <div (resized)="onAceWrapperResized()" class="form" [ngClass]="{'half-form': !(noConfig | async) && (loaded | async)}">
+        <h1>{{ 'TASK_EDITOR.INITIAL_CODE.TITLE' | translate }}</h1>
+        <div class="code-preview-container">
+            <ace [config]="aceConfig" [mode]="'python'" [theme]="'iplastic'" [(value)]="selectedCode" #aceComponent></ace>   
+        </div>
+        <div class="buttons-container">
+            <button class="button purple" (click)="onGenerateButtonClick();">{{'TASK_EDITOR.INITIAL_CODE.GENERATE' | translate}}</button>
+            <button [disabled]="!(loaded | async) || (noConfig | async)" class="button purple" cdkStepperNext>{{'TASK_EDITOR.NEXT' | translate}}</button>
+        </div>
+        <kiddo-terminal></kiddo-terminal>
+    </div>
+    
+    <div class="delimiter"></div>
+
+    <div *ngIf="!(noConfig | async) && (loaded | async)" class="preview">
+        <kiddo-scene [isStatic]="true" *ngIf="!(noConfig | async) && (loaded | async)"></kiddo-scene>
+    </div>
+    
+    
+
+</div>

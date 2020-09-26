@@ -1,0 +1,38 @@
+<article
+  *ngIf="sceneType; else spinner"
+  class="tile-scene"
+  [kiddoGameFieldMaxWidth]="gameField"
+>
+
+  <kiddo-inventory
+    [inventory]="playerInventory"
+    [compulsoryItems]="compulsoryItems"
+  >
+  </kiddo-inventory>
+
+  <kiddo-game-field
+    [field]="gameField"
+    [customTiles]="customTiles"
+    [playerPosition]="player?.position"
+    [sceneIsLabyrinth]="terraIncognita"
+  >
+    <kiddo-game-objects
+      [gameObjects]="gameObjects"
+      [itemSize]="gameField | gameFieldCellSize">
+    </kiddo-game-objects>
+
+    <kiddo-raccoon-player class="tile-scene__player"
+      [player]="player" 
+      [ngStyle]="{
+        left: player.position.x | coordinateInPercents: (gameField | gameFieldCellSize).width,
+        top: player.position.y | coordinateInPercents: (gameField | gameFieldCellSize).height,
+        width: (gameField | gameFieldCellSize).width + '%'
+      }">
+    </kiddo-raccoon-player>
+  </kiddo-game-field>
+
+</article>
+
+<ng-template #spinner>
+  <kiddo-loading-spinner></kiddo-loading-spinner>
+</ng-template>
