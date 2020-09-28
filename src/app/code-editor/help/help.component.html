@@ -3,7 +3,7 @@
         <i class="icon-close" (click)="onCloseClick()"></i>
     </header>
     <main class="help-content">
-        <markdown [src]="'MARKDOWN.HELP_' + currentSceneType | translate: {assetsPath: environment.assetsPath}">
+        <markdown [src]="'MARKDOWN.HELP_' + currentSceneType | translate: {assetsPath: environment.assetsPath, timestamp: timestamp}">
         </markdown>
     </main>
 </div>

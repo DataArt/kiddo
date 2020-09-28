@@ -177,9 +177,9 @@
     }
   },
   "MARKDOWN": {
-    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonRu.md",
-    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleRu.md",
-    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpPandemicRu.md"
+    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonRu.md?timestamp={{ timestamp }}",
+    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleRu.md?timestamp={{ timestamp }}",
+    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpPandemicRu.md?timestamp={{ timestamp }}"
   },
   "SCENE-COMPONENT": {
     "LEVEL_COMPLETE": "Уровень успешно пройден!",

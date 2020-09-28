@@ -177,9 +177,9 @@
     }
   },
   "MARKDOWN": {
-    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonEn.md",
-    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleEn.md",
-    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpWhoEn.md"
+    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonEn.md?timestamp={{ timestamp }}",
+    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleEn.md?timestamp={{ timestamp }}",
+    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpWhoEn.md?timestamp={{ timestamp }}"
   },
   "SCENE-COMPONENT": {
     "LEVEL_COMPLETE": "Level passed!",
