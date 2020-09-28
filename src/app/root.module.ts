@@ -75,7 +75,7 @@ export class RootModule implements DoBootstrap {
 }
 
 function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http, `${environment.assetsPath}/i18n/`, '.json');
+  return new TranslateHttpLoader(http, `${environment.assetsPath}/i18n/`, `.json?timestamp=${Date.now()}`);
 }
 
 function applyCustomAssetsPath(): void {
