@@ -21,16 +21,16 @@ this.setGameField([
 ]);
 ```
 
-<p style="color: #000; font-weight: bold;">2. (TODO: translate) Добавить пользовательский тайл</p>
+<p style="color: #000; font-weight: bold;">2. Add a custom tile</p>
 
 ```javascript
 this.addCustomTile('tileName', 'tileImagePath');
 ```
 
-<p style="color: #000;">где tileName – имя тайла, под которым его можно передать в метод для создания игрового поля 'this.setGameField', а tileImagePath - путь к изображению для этого тайла.</p>
+<p style="color: #000;">where tileName is the name of the tile passed to 'this.setGameField' method, which sets the game field, and tileImagePath is the path to the tile's image</p>
 
-Все пользовательские тайлы являются препятствиями на игровом поле.
-<p style="color: #000;">Пример:</p>
+All custom tiles are obstacles on the game field.
+<p style="color: #000;">For example:</p>
 
 ```javascript
 this.addCustomTile('TR', 'https://i.imgur.com/ELvTBrD.png');
