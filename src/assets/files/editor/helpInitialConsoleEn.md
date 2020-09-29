@@ -4,8 +4,8 @@
 this.addConsoleVariable('name', value, readOnly) 
 ```
 
-<p style="color: #000;">where “name” is a string with the variable name</p>
-<p style="color: #000;">value is a string, number or js function that returns a string/number</p>
+<p style="color: #000;">where name is a string with the variable name</p>
+<p style="color: #000;">value is a string, number or JS function that returns a string/number</p>
 <p style="color: #000;">readOnly is a logic parameter taking the value of true/false. The value “true” makes the variable unchangeable while “false” makes it changeable. By default, the parameter value is equal to “false”.</p>
 <p style="color: #000;">The admissible maximum number of the added variables is equal to 4. </p>
 <p style="color: #000;">Both capital letters and block letters registers are permitted for the variable name. Variables introduced in different registers are considered different.</p>
