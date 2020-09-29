@@ -20,7 +20,7 @@
       "LAUNCH": "Launch",
       "START_OVER": "Start over",
       "RERENDER": "Regenerate the level",
-      "RESET_CODE": "Reset the code to initial",
+      "RESET_CODE": "Reset the code",
       "PLAYBACK_SCENE": "Playback scene",
       "STOP_PLAYBACK": "Stop",
       "TASK": "Task",
@@ -32,7 +32,7 @@
       "HELP": "Help"
     },
     "BUTTON": {
-      "PLAY": "PLAY",
+      "PLAY": "RUN",
       "STOP": "STOP",
       "REPLAY": "REPLAY"
     },
@@ -318,7 +318,7 @@
       "TEST_LAUNCH": "There is a full-fledged player to launch a new scene. You can check it out to see the way it runs, create a solution in Python and find out how hard it is (or whether it is basically possible) to make your way through it.",
       "SAVE": "Save the generated scene code not to let it go to waste! That can be done by exporting the file in Yaml-format or by copying the code in a regular way.",
       "INTRODUCTION": "You have got a life-chance of becoming an author of Kiddo tasks! A little knowledge of JavaScript to configure the scene is the only thing required. By taking the following five steps, a new scene of your own can be created to be used for the game or to be shared with Kiddo editors who may make it available on the site after verifying it.",
-      "DO_NOT_SHOW": "Not to show this message when opening the task editor",
+      "DO_NOT_SHOW": "Don't show this message when opening the task editor",
       "STEP": "Step"
       
     },
