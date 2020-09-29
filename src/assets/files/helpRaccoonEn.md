@@ -49,11 +49,11 @@ import raccoon
     <p style="color: #000;">This returns the array of numbers containing as many of them as there are cells to check and depending on what follows in the specified direction.</p>
     <p style="color: #000;">
     Return values:<br>
-    0 - rough terrain<br>
-    1 - road<br>
-    2 - monster<br>
-    3 - cookie<br>
-    4 - maze way-out<br>
+    0 — rough terrain<br>
+    1 — road<br>
+    2 — monster<br>
+    3 — cookie<br>
+    4 — maze way-out<br>
     </p>
     <p style="color: #000;">Method parameters: X is the number indicating the horizontal deviation relative to the raccoon's position, Y is a vertical deviation. <strong style="color: #000;">Parameter values can only be numbers -1, 0 or 1</strong>.
 Coordinates are counted <strong style="color: #000;">from left to right (X)</strong> and <strong style="color: #000;">from the top down (Y)</strong>. For example, the coordinate (1, -1) relative to the raccoon is located in the upper right.</p>
