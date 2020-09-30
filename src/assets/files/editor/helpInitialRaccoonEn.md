@@ -1,11 +1,11 @@
-<p style="color: #000; font-weight: bold;">1. Game Field setting</p>
+<p style="color: #000; font-weight: bold;">1. Game field setting</p>
 
 ```javascript
 this.setGameField([ [...1st tiles row], [...2nd tiles row], ...]);
 ```
 
 <p style="color: #000;">As a method parameter, a two-dimensional array of elements is passed. Each of the elements takes one of the following values:</p>
-<p style="color: #000;">'OF' – off road (empty cell)</p>
+<p style="color: #000;">'OF' — off road (empty cell)</p>
 <p style="color: #000;">'BU' — bush</p>
 <p style="color: #000;">'RO' — road</p>
 <p style="color: #000;">'GR' — grass</p>
@@ -201,7 +201,7 @@ this.addMonster([1, 1], 'right', true);
 this.addCheckingLogic('code');
 ```
 
-<p style="color: #000;">where code is a JS function that returns null / undefined or an error text string (for example, “Finish Not Reached”).</p>
+<p style="color: #000;">where code is a JS function that returns null/undefined or an error text string (for example, “Finish Not Reached”).</p>
 <p style="color: #000;">For example:</p>
 
 ```javascript

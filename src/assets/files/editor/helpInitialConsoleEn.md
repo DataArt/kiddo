@@ -26,7 +26,7 @@ this.addConsoleVariable('c', null);
 this.addCheckingLogic('code') 
 ```
 
-<p style="color: #000;">where code is JS code that returns null/unidentified or an error text string (for example, “Task Done Wrong)</p>
+<p style="color: #000;">where code is JS code that returns null/undefined or an error text string (for example, “Task Done Wrong)</p>
 <p style="color: #000;">For example:</p>
 
 ```javascript
