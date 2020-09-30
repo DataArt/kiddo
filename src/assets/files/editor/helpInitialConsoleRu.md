@@ -27,7 +27,7 @@ this.addConsoleVariable('c', null);
 this.addCheckingLogic('code') 
 ```
 
-<p style="color: #000;">где code — JS код, который возвращает null / undefined или строку с текстом ошибки (например, “Задание выполнено неверно”)</p>
+<p style="color: #000;">где code — JS код, который возвращает null/undefined или строку с текстом ошибки (например, “Задание выполнено неверно”)</p>
 <p style="color: #000;">Пример:</p>
 
 ```javascript

@@ -194,7 +194,7 @@ this.addMonster([1, 1], 'right', true);
 this.addCheckingLogic('code');
 ```
 
-<p style="color: #000;">где code — JS функция, которая возвращает null / undefined или строку с текстом ошибки (например, “Не добрался до финиша”).</p>
+<p style="color: #000;">где code — JS функция, которая возвращает null/undefined или строку с текстом ошибки (например, “Не добрался до финиша”).</p>
 <p style="color: #000;">Пример:</p>
 
 ```javascript
