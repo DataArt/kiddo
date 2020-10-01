@@ -7,10 +7,10 @@ this.setGameField([ [...1st tiles row], [...2nd tiles row], ...])
 
 <p style="color: #000;">В качестве параметра метода передаем двумерный массив элементов, где каждый элемент принимает одно из следующих значений:</p>
 <p style="color: #000;">'OF' – off road (пустая клетка, бездорожье)</p>
-<p style="color: #000;">'BU' - bush (куст)</p>
-<p style="color: #000;">'RO' - road (дорожка)</p>
-<p style="color: #000;">'GR' - grass (трава)</p>
-<p style="color: #000;">'FI' – final (флажок)</p>
+<p style="color: #000;">'BU' — bush (куст)</p>
+<p style="color: #000;">'RO' — road (дорожка)</p>
+<p style="color: #000;">'GR' — grass (трава)</p>
+<p style="color: #000;">'FI' — final (флажок)</p>
 <p style="color: #000;">Размер игрового поля определяется автоматически на базе переданного массива. </p>
 <p style="color: #000;">Пример:</p>
 
@@ -28,7 +28,7 @@ this.setGameField([
 this.addCustomTile('tileName', 'tileImagePath');
 ```
 
-<p style="color: #000;">где tileName – имя тайла, под которым его можно передать в метод для создания игрового поля 'this.setGameField', а tileImagePath - путь к изображению для этого тайла.</p>
+<p style="color: #000;">где tileName – имя тайла, под которым его можно передать в метод для создания игрового поля 'this.setGameField', а tileImagePath — путь к изображению для этого тайла.</p>
 
 Все пользовательские тайлы являются препятствиями на игровом поле.
 <p style="color: #000;">Пример:</p>
@@ -194,7 +194,7 @@ this.addMonster([1, 1], 'right', true);
 this.addCheckingLogic('code');
 ```
 
-<p style="color: #000;">где code - js-функция, которая возвращает null / undefined или строку с текстом ошибки (например, “Не добрался до финиша”).</p>
+<p style="color: #000;">где code — JS функция, которая возвращает null/undefined или строку с текстом ошибки (например, “Не добрался до финиша”).</p>
 <p style="color: #000;">Пример:</p>
 
 ```javascript

@@ -177,9 +177,9 @@
     }
   },
   "MARKDOWN": {
-    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonRu.md",
-    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleRu.md",
-    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpPandemicRu.md"
+    "HELP_RACCOON": "{{ assetsPath }}/files/helpRaccoonRu.md?timestamp={{ timestamp }}",
+    "HELP_CONSOLE": "{{ assetsPath }}/files/helpConsoleRu.md?timestamp={{ timestamp }}",
+    "HELP_PANDEMIC": "{{ assetsPath }}/files/helpPandemicRu.md?timestamp={{ timestamp }}"
   },
   "SCENE-COMPONENT": {
     "LEVEL_COMPLETE": "Уровень успешно пройден!",
@@ -325,8 +325,8 @@
     "SCENE_TYPE": {
       "TITLE": "Выбери тип сцены",
       "MESSAGE": "Твой выбор важен для дальнейших шагов",
-      "CHANGING": "Внимание! Весь прогресс дальнейших шагов будет утерян",
-      "CHANGING_MODAL": "Весь прогресс дальнейших шагов будет утерян",
+      "CHANGING": "Внимание! При нажатии кнопки ДАЛЬШЕ все предыдущие изменения будут утеряны",
+      "CHANGING_MODAL": "Все предыдущие изменения будут утеряны",
       "WARNING": "Внимание!",
       "CONSOLE": "Консоль",
       "RACCOON": "Енот"

@@ -49,11 +49,11 @@ import raccoon
     <p style="color: #000;">Der gibt abhängig von der angegebenen Richtung ein Array von Zahlen zurück, das so viele Zahlen enthält, wie Zellen überprüft wurden.</p>
     <p style="color: #000;">
     Rückgabewerte:<br>
-    0 - unpassierbares Gelände<br>
-    1 - Straße<br>
-    2 - Monster<br>
-    3 - Keks<br>
-    4 - Ausgang aus dem Labyrinth<br>
+    0 — unpassierbares Gelände<br>
+    1 — Straße<br>
+    2 — Monster<br>
+    3 — Keks<br>
+    4 — Ausgang aus dem Labyrinth<br>
     </p>
     <p style="color: #000;">Methodenparameter: X ist die Zahl, die die horizontale Abweichung relativ zur Position des Waschbären angibt, Y ist eine vertikale Abweichung. <strong style = "color: #000;">Parameterwerte können nur die Zahlen -1, 0 oder 1 sein</strong>.
 Die Koordinaten werden <strong style = "color: #000;"> von links nach rechts (X) </strong> und <strong style = "color: #000;"> von oben nach unten (Y) </strong> gezählt. Beispielsweise befindet sich die Koordinate (1, -1) relativ zum Waschbären oben rechts.</p>

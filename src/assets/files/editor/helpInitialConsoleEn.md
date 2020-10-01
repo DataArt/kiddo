@@ -4,8 +4,8 @@
 this.addConsoleVariable('name', value, readOnly) 
 ```
 
-<p style="color: #000;">where “name” is a string with the variable name</p>
-<p style="color: #000;">value is a string, number or js-function that returns a string/number</p>
+<p style="color: #000;">where name is a string with the variable name</p>
+<p style="color: #000;">value is a string, number or JS function that returns a string/number</p>
 <p style="color: #000;">readOnly is a logic parameter taking the value of true/false. The value “true” makes the variable unchangeable while “false” makes it changeable. By default, the parameter value is equal to “false”.</p>
 <p style="color: #000;">The admissible maximum number of the added variables is equal to 4. </p>
 <p style="color: #000;">Both capital letters and block letters registers are permitted for the variable name. Variables introduced in different registers are considered different.</p>
@@ -26,7 +26,7 @@ this.addConsoleVariable('c', null);
 this.addCheckingLogic('code') 
 ```
 
-<p style="color: #000;">where code is a JS-code that returns null/unidentified or an error text string (for example, “Task Done Wrong)</p>
+<p style="color: #000;">where code is JS code that returns null/undefined or an error text string (for example, “Task Done Wrong)</p>
 <p style="color: #000;">For example:</p>
 
 ```javascript
@@ -38,7 +38,7 @@ this.addCheckingLogic(`
 `);
 ```
 
-<p style="color: #000;">Here is example of simple scene's config:</p>
+<p style="color: #000;">The following example shows a simple scene's configuration:</p>
 
 ```javascript
 this.addConsoleVariable('x', 10);
