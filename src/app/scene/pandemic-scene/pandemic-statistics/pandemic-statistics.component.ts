@@ -6,6 +6,7 @@ import {
 } from '../../../../app-engine/scene/common/entities';
 import { GameStatisticsService } from '../../common/game-statistics.service';
 import { SceneType } from '../../../../app-engine/scene/common/models/scene-type.enum';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'kiddo-pandemic-statistics',
@@ -15,11 +16,12 @@ import { SceneType } from '../../../../app-engine/scene/common/models/scene-type
 export class PandemicStatisticsComponent implements OnInit {
   @Input() sceneType: string;
   @Input() statistics: RaccoonGameStatistics | PandemicGameStatistics;
+  assetsPath = environment.assetsPath;
   statisticsItemsList: StatisticsItem[] = [];
   prefixPath: string;
   private scenesPrefixes = {
     [SceneType.RACCOON]: 'SCENE-COMPONENT.TILE-STATISTICS.RACCOON.',
-    [SceneType.PANDEMIC]: 'SCENE-COMPONENT.TILE-STATISTICS.WHO.',
+    [SceneType.PANDEMIC]: 'SCENE-COMPONENT.TILE-STATISTICS.PANDEMIC.',
   };
   private excludedStatisticsFields = ['gameFinished', 'levelPassed', 'compulsoryObjectsTotalAmount'];
 
@@ -29,6 +31,7 @@ export class PandemicStatisticsComponent implements OnInit {
   ngOnInit(): void {
     this.prefixPath = this.scenesPrefixes[this.sceneType];
     this.statisticsItemsList = this.getGameStatisticsAsList(this.statistics);
+    console.log(this.statistics);
   }
 
   private getGameStatisticsAsList(statisticsObject: RaccoonGameStatistics): StatisticsItem[] {

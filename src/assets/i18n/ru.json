@@ -123,7 +123,7 @@
       "LEVEL_NOT_COMPLETE": "Уровень не пройден",
       "ERROR_IN_SCRIPT": "Ошибка в скрипте"
     },
-    "WHO": {
+    "PANDEMIC": {
       "SERVICE": {
         "GAME_FAIL_ERROR": {
           "OFF_ROAD": "Игрок сошёл с дороги",
@@ -212,6 +212,26 @@
         "UNKNOWN_VARIABLE":"Неизвестная переменная"
       }
     },
+    "PANDEMIC": {
+      "FAIL_REASON": {
+        "FAIL_ROW_NUMBER": "Ошибка в строке",
+        "HOME_NOT_REACHEDs": "Игрок не дошёл до дома",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Не все маски и санитайзеры собраны",
+        "COULD_NOT_COMPILE_SCRIPT": "Ошибка в скрипте",
+        "OFF_ROAD": "Игрок сошёл с дороги",
+        "OFF_MAP": "Игрок вышел за пределы игрового поля",
+        "MASK_IS_NOT_ON": "Игрок не надел маску",
+        "ENTERED_MALL": "Игрок выбрал торговый центр вместо маленького магазина",
+        "HANDS_NOT_WASHED": "Игрок не помыл руки",
+        "PRODUCTS_NOT_PICKED": "Продукты не куплены",
+        "SCRIPT_STOPPED": "Выполнение скрипта было прервано",
+        "CAUGHT_BY_VIRUS": "Игрок подхватил вирус",
+        "TOO_CLOSE_TO_PERSON": "Игрок не выдержал дистанцию от людей",
+        "INVALID_ARGUMENT":"Неправильный аргумент",
+        "ARGUMENT_OUT_OF_RANGE":"Аргумент вышел за границы допустимых значений",
+        "EXTRA_ARGUMENT":"Ожидалось ноль аргументов"
+      }
+    },
     "TILE-STATISTICS": {
       "RACCOON": {
         "FAIL_REASON": "Причина",
@@ -232,12 +252,12 @@
         "INVENTORY_NO_MINE": "Мины нет в инвентаре",
         "INVENTORY_NO_TURRET": "Туррели нет в инвентаре"
       },
-      "WHO": {
+      "PANDEMIC": {
         "FAIL_REASON": "Причина",
         "FAIL_ROW_NUMBER": "Ошибка в строке",
         "CELLS_PASSED": "Пройдено клеток",
         "COMPULSORY_OBJECTS_PICKED": "Масок и санитайзеров собрано",
-        "FINISH_NOT_REACHED": "Игрок не дошёл до дома",
+        "HOME_NOT_REACHED": "Игрок не дошёл до дома",
         "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Не все маски и санитайзеры собраны",
         "COULD_NOT_COMPILE_SCRIPT": "Ошибка в скрипте",
         "OFF_ROAD": "Игрок сошёл с дороги",

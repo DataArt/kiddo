@@ -23,7 +23,7 @@
   <script></script> -->
 
   <!-- case 2: sceneConfig from URL -->
-  <kiddo-player kiddo-scene-config="http://192.168.196.173:91/ru/raccoon/task1/task.yaml"></kiddo-player>
+  <!--<kiddo-player kiddo-scene-config="http://192.168.196.173:91/ru/raccoon/task1/task.yaml"></kiddo-player>
 
   <script>
     const appConfig = {
@@ -36,26 +36,30 @@
     };
     const rootElement = document.querySelector('kiddo-player');
     rootElement.setAttribute('kiddo-app-config', JSON.stringify(appConfig));
-  </script>
+  </script>-->
 
   <!-- case3: sceneConfig from variable -->
-  <!-- <kiddo-player></kiddo-player>
+  <kiddo-player></kiddo-player>
 
   <script>
     const sceneConfig = `
-    sceneType: Raccoon
+    sceneType: Pandemic
     generatingFunc: >-
-      this.setPlayerPosition(1, 0);
+      this.setPlayerPosition(0, 0);
       this.setGameField([
-        ['BU', 'RO', 'BU', 'BU', 'BU', 'BU'],
-        ['BU', 'RO', 'GR', 'RO', 'RO', 'RO'],
-        ['BU', 'RO', 'RO', 'RO', 'GR', 'RO'],
-        ['BU', 'RO', 'RO', 'GR', 'GR', 'FI'],
-        ['BU', 'GR', 'GR', 'GR', 'OF', 'OF'],
-        ['BU', 'GR', 'GR', 'GR', 'OF', 'GR']
+        ['HO', 'RO', 'FE', 'CO', 'FE', 'RO', 'RO'],
+        ['RO', 'RO', 'RO', 'RO', 'FE', 'FE', 'RO'],
+        ['FE', 'FE', 'FE', 'RO', 'RO', 'FE', 'RO'],
+        ['RO', 'RO', 'CO', 'CO', 'RO', 'FE', 'CO'],
+        ['RO', 'RO', 'RO', 'FE', 'RO', 'RO', 'FE'],
+        ['RO', 'RO', 'RO', 'CO', 'FE', 'RO', 'HO']
       ]);
-      this.addCheckingLogic('return this.player.position.x === 5 && this.player.position.y === 3 ? null : "FINISH_NOT_REACHED"');
-    winButton:
+      this.addVirus([5, 0], 'right');
+      this.setMaskRequired();
+      this.addSanitizers([1, 0]);
+      this.addMasks([1, 1]);
+      this.addCheckingLogic('console.log(this); return this.player.position.x === 6 && this.player.position.y === 5 ? null : "HOME_NOT_REACHED"');
+    winButton:  
       url: ./task2
       text: Следующий уровень
     initialScript: |-
@@ -69,7 +73,7 @@
     const rootElement = document.querySelector('kiddo-player');
     rootElement.setAttribute('kiddo-scene-config', sceneConfig);
     rootElement.setAttribute('kiddo-app-config', JSON.stringify(appConfig));
-  </script> -->
+  </script>
 
   <!-- <script>
     if (appConfig.analytics.GA_key) {

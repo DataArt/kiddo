@@ -58,3 +58,7 @@ export enum GameObjectAdditionalState {
   MALE = 'MALE',
   FEMALE = 'FEMALE',
 }
+
+export interface PandemicGameObjectCssClassImageMap {
+  [cssClass: string]: string;
+}

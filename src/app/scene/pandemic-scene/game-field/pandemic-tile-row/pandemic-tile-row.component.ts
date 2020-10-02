@@ -1,5 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Tile, TileCssClassMap, PassableTile, ImpassableTile } from '../../../../../app-engine/scene/pandemic/entities';
+import { Coords } from 'src/app-engine/scene/common/entities';
+import { environment } from 'src/environments/environment';
+import { Tile, TileCssClassMap, PassableTile, ImpassableTile, CustomeTile } from '../../../../../app-engine/scene/pandemic/entities';
 
 @Component({
   selector: 'kiddo-pandemic-tile-row',
@@ -9,15 +11,22 @@ import { Tile, TileCssClassMap, PassableTile, ImpassableTile } from '../../../..
 })
 export class PandemicTileRowComponent {
   @Input() row: Tile[];
+  @Input() customTiles: CustomeTile[];
+  @Input() playerPosition: Coords;
+  @Input() rowIndex: number;
+  @Input() sceneIsLabyrinth: boolean;
+  env = environment;
+  PassableTile: typeof PassableTile = PassableTile;
+  ImpassableTile: typeof ImpassableTile = ImpassableTile;
   tileMap: TileCssClassMap = {
-    [PassableTile.ROAD]: 'road',
-    [PassableTile.HOME]: 'home',
-    [PassableTile.SHOP]: 'shop',
-    [ImpassableTile.FENCE]: 'fence',
-    [ImpassableTile.CONE]: 'cone',
-    [ImpassableTile.MALL_UP_LEFT]: 'mall mall-up-left',
-    [ImpassableTile.MALL_UP_RIGHT]: 'mall mall-up-right',
-    [ImpassableTile.MALL_DOWN_LEFT]: 'mall mall-down-left',
-    [ImpassableTile.MALL_DOWN_RIGHT]: 'mall mall-down-right',
+    [PassableTile.ROAD]: {cssClass: 'road'},
+    [PassableTile.HOME]: {cssClass: 'home'},
+    [PassableTile.SHOP]: {cssClass: 'shop'},
+    [ImpassableTile.FENCE]: {cssClass: 'fence'},
+    [ImpassableTile.CONE]: {cssClass: 'cone'},
+    [ImpassableTile.MALL_UP_LEFT]: {cssClass: 'mall mall-up-left'},
+    [ImpassableTile.MALL_UP_RIGHT]: {cssClass: 'mall mall-up-right'},
+    [ImpassableTile.MALL_DOWN_LEFT]: {cssClass: 'mall mall-down-left'},
+    [ImpassableTile.MALL_DOWN_RIGHT]: {cssClass: 'mall mall-down-right'},
   };
 }

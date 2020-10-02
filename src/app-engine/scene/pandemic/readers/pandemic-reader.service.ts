@@ -1,10 +1,9 @@
 import { PandemicSceneModel } from '../models/pandemic-scene-model';
-import { GameObject, GameObjectAdditionalState, GameObjectState, GameObjectType, Player, Tile } from '../entities';
+import { CustomeTile, GameObject, GameObjectAdditionalState, GameObjectState, GameObjectType, Player, Tile } from '../entities';
 import {
   Coords,
   Direction,
   moveDirections, PandemicGameStatistics,
-  WinButton,
   CheckingLogic
 } from '../../common/entities';
 import { ImpassableTile, PassableTile } from '../entities';
@@ -23,31 +22,30 @@ export class PandemicReaderService implements SceneReader {
     this.sceneModel = this.sceneModelService.sceneModel as PandemicSceneModel;
   }
 
+  getFailMessagsMap(): Array<{checkFunction: () => {}, message: string}> {
+    return  [
+      {
+        checkFunction: () => !this.checkMaskOn(),
+        message: 'MASK_IS_NOT_ON',
+      },
+      {
+        checkFunction: () => !this.checkHandsWashed(),
+        message: 'HANDS_NOT_WASHED',
+      },
+      {
+        checkFunction: () => !this.checkProductsPicked(),
+        message: 'PRODUCTS_NOT_PICKED',
+      },
+      {
+        checkFunction: () => !this.checkAllCompulsoryGameObjectsPicked(),
+        message: 'NOT_ALL_COMPULSORY_OBJECTS_COLLECTED',
+      }
+    ];
+  }
+
   getGameStatistics(): PandemicGameStatistics {
-    // // perhaps should be stored as a class private property
-    // const gameFailConditions: Condition[] = [
-    //   {
-    //     checkFunction: () => !this.checkGameObjectOnTile(this.sceneModel.player, PassableTile.HOME),
-    //     message: 'FINISH_NOT_REACHED',
-    //   },
-    //   {
-    //     checkFunction: () => this.getWinCondition().pickAllCompulsoryObjects && !this.checkAllCompulsoryGameObjectsPicked(),
-    //     message: 'NOT_ALL_COMPULSORY_OBJECTS_COLLECTED',
-    //   },
-    //   {
-    //     checkFunction: () => !this.checkMaskOn(),
-    //     message: 'MASK_IS_NOT_ON',
-    //   },
-    //   {
-    //     checkFunction: () => !this.checkHandsWashed(),
-    //     message: 'HANDS_NOT_WASHED',
-    //   },
-    //   {
-    //     checkFunction: () => !this.checkProductsPicked(),
-    //     message: 'PRODUCTS_NOT_PICKED',
-    //   },
-    // ];
-    const gameStatistics: PandemicGameStatistics = { gameFinished: true, levelPassed: true };
+    // perhaps should be stored as a class private property
+    const gameStatistics: PandemicGameStatistics = { gameFinished: true, levelPassed: false };
     gameStatistics.compulsoryObjectsPicked = this.getCompulsoryGameObjects().filter(item => item.state === GameObjectState.PICKED).length;
     gameStatistics.compulsoryObjectsTotalAmount = this.getCompulsoryGameObjects().length;
     gameStatistics.handsWashed = this.checkHandsWashed();
@@ -63,11 +61,19 @@ export class PandemicReaderService implements SceneReader {
   }
 
   getGameFailMessage(): string {
-    return this.sceneModel?.checkingLogic();
+    const message = this.getFailMessagsMap().find(x => x.checkFunction())?.message;
+
+    return message
+      ? message
+      : this.sceneModel?.checkingLogic();
   }
 
-  get player(): Player {
-    return this.sceneModel.player;
+  getPlayer(): Player {
+    return this.sceneModel?.player;
+  }
+
+  getCustomTiles(): CustomeTile[] {
+    return this.sceneModel?.customeTiles;
   }
 
   getGameObjectsOfType(type: GameObjectType, state?: GameObjectState, additionalState?: GameObjectAdditionalState): GameObject[] {
@@ -142,8 +148,8 @@ export class PandemicReaderService implements SceneReader {
   }
 
   checkIfMovedOverGameFieldEdge(coordinate: Coords): boolean {
-    return (coordinate.x > (this.sceneModel.gameField.length - 1) || coordinate.x < 0)
-      || (coordinate.y > (this.sceneModel.gameField[0].length - 1) || coordinate.y < 0);
+    return (coordinate.x > (this.sceneModel.gameField[0].length - 1) || coordinate.x < 0)
+      || (coordinate.y > (this.sceneModel.gameField.length - 1) || coordinate.y < 0);
   }
 
   getGameField(): Tile[][] {
@@ -178,8 +184,8 @@ export class PandemicReaderService implements SceneReader {
     let presence = false;
     const targetCell = {
       position: {
-        x: this.player.position.x + offset.x,
-        y: this.player.position.y + offset.y
+        x: this.sceneModel.player.position.x + offset.x,
+        y: this.sceneModel.player.position.y + offset.y
       },
     };
     objects.forEach(object => {
@@ -191,7 +197,10 @@ export class PandemicReaderService implements SceneReader {
   }
 
   getCompulsoryGameObjects(): GameObject[] {
-    return this.sceneModel.gameObjects.filter(gameObj => gameObj.isCompulsory) || [];
+    const compulsoryObjectsFromInventory = this.sceneModel.player.inventory?.filter(gameObj => gameObj.isCompulsory) || [];
+    const compulsoryObjectsFromGameField = this.sceneModel.gameObjects?.filter(gameObj => gameObj.isCompulsory) || [];
+
+    return compulsoryObjectsFromInventory.concat(compulsoryObjectsFromGameField);
   }
 
   checkAllCompulsoryGameObjectsPicked(): boolean {
@@ -200,7 +209,7 @@ export class PandemicReaderService implements SceneReader {
 
   getPlayerCollisions(): GameObject[] {
     const collisions: GameObject[] = [];
-    this.sceneModel.gameObjects.forEach((item: GameObject) => {
+    this.sceneModel?.gameObjects.forEach((item: GameObject) => {
       if (this.detectCollision(this.sceneModel.player, item)) {
         collisions.push(item);
       }
@@ -259,17 +268,13 @@ export class PandemicReaderService implements SceneReader {
     return this.getGameField()[position.y][position.x];
   }
 
-  getWinButton(): WinButton {
-    return this.sceneModel.winButton || { url: null, text: null };
-  }
-
   getDirectionNumericValue(direction: Direction): number {
     return moveDirections[direction].numericValue;
   }
 
   checkPlayerReachedFinish(): boolean {
-    return this.checkGameObjectOnTile(this.player, PassableTile.HOME)
-      || this.checkGameObjectOnTile(this.player, PassableTile.FINAL);
+    return this.checkGameObjectOnTile(this.sceneModel.player, PassableTile.HOME)
+      || this.checkGameObjectOnTile(this.sceneModel.player, PassableTile.FINAL);
   }
 
 
@@ -288,10 +293,10 @@ export class PandemicReaderService implements SceneReader {
   checkEnteredMall(): boolean {
     const { MALL_DOWN_LEFT, MALL_DOWN_RIGHT, MALL_UP_LEFT, MALL_UP_RIGHT } = ImpassableTile;
     return (
-      this.checkGameObjectOnTile(this.player, MALL_UP_LEFT)
-      || this.checkGameObjectOnTile(this.player, MALL_UP_RIGHT)
-      || this.checkGameObjectOnTile(this.player, MALL_DOWN_LEFT)
-      || this.checkGameObjectOnTile(this.player, MALL_DOWN_RIGHT)
+      this.checkGameObjectOnTile(this.sceneModel.player, MALL_UP_LEFT)
+      || this.checkGameObjectOnTile(this.sceneModel.player, MALL_UP_RIGHT)
+      || this.checkGameObjectOnTile(this.sceneModel.player, MALL_DOWN_LEFT)
+      || this.checkGameObjectOnTile(this.sceneModel.player, MALL_DOWN_RIGHT)
     );
   }
 
@@ -303,7 +308,7 @@ export class PandemicReaderService implements SceneReader {
   }
 
   look(offsets: Coords[]): number | number[] {
-    this.player.state = GameObjectState.DEFAULT;
+    this.sceneModel.player.state = GameObjectState.DEFAULT;
     const objectsAround = [];
     for (const offset of offsets) {
       try {

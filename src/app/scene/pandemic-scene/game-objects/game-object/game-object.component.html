@@ -1,18 +1,20 @@
-<!-- <div
+<div
   class="game-object
+  {{ (gameObject.type | lowercase | snakeToKebabCase) + '-' + (gameObject.state  | lowercase | snakeToKebabCase) }}
   {{
-    'game-object_type_'
-    + (gameObject.type | lowercase | snakeToKebabCase)
+    (gameObject.type | lowercase | snakeToKebabCase)
     + '-'
     + (gameObject.state  | lowercase | snakeToKebabCase)
     + (gameObject.additionalState
       ? '--' + (gameObject.additionalState  | lowercase | snakeToKebabCase)
       : '')
   }}
-  {{ gameObject.state === GameObjectState.Moving && gameObject.direction
-    ? 'game-object_type_' + (gameObject.type | lowercase | snakeToKebabCase) + '-' + (gameObject.direction | lowercase)
+  {{ gameObject.state === GameObjectState.MOVING && gameObject.direction
+    ? (gameObject.type | lowercase | snakeToKebabCase) + '-' + (gameObject.direction | lowercase)
     : ''
-  }}"
-  [ngClass]="{'chasing': gameObject.chasing}"
-  >
-</div> -->
+  }}
+  {{ gameObject.chasing === true ? (gameObject.type | lowercase | snakeToKebabCase) + '-chasing' : ''}}
+  "
+  [ngStyle]="{'background-image': 'url(' + assetsPath + '/images/who.svg)'}"
+>
+</div>

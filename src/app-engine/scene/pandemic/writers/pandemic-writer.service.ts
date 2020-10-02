@@ -89,19 +89,17 @@ export class PandemicWriterService implements SceneWriter {
     this.sceneModel.player.additionalState = newState;
   }
 
-  pickGameObject(gameObject: GameObject): void {
-    const pickedGameObject: GameObject = {
-      ...gameObject,
-      state: GameObjectState.PICKED
-    };
-    this.sceneModel.player.inventory.push(pickedGameObject);
-    this.sceneModel.gameObjects = this.sceneModel.gameObjects.filter((item: GameObject) => item.id !== gameObject.id);
+  private pickGameObject(gameObject: GameObject): void {
+    this.sceneModel.gameObjects.splice(this.sceneModel.gameObjects.indexOf(gameObject), 1);
+    gameObject.state = GameObjectState.PICKED;
+    this.sceneModel.player.inventory.push(gameObject);
+    console.log(this.sceneModel.player.inventory);
   }
 
   activateGameObject(gameObjectType: GameObjectType): void {
     let itemToActivate: GameObject = this.sceneModel.player.inventory.find((item: GameObject) => item.type === gameObjectType);
     if (itemToActivate) {
-      this.reader.player.state = GameObjectState.DEFAULT;
+      this.reader.getPlayer().state = GameObjectState.DEFAULT;
       itemToActivate = {
         ...itemToActivate,
         state: GameObjectState.ACTIVATED,
@@ -265,6 +263,12 @@ export class PandemicWriterService implements SceneWriter {
         || gameObject.position.y !== (this.sceneModel.player.position.y + offsetDirection.y)
       );
     });
+  }
+
+  handlePlayerStateOnCompletion(): void {
+    const levelPassed = this.sceneModelService.gameStatistics.levelPassed;
+    this.setPlayerState(levelPassed ? GameObjectState.SUCCESS : GameObjectState.FAIL);
+    this.setPlayerAdditionalState(null);
   }
 }
 

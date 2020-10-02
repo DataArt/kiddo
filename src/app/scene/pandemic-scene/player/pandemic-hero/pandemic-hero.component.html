@@ -1,2 +1,6 @@
-<!-- <div class="player {{ 'player_state_' + (player.state | lowercase | snakeToKebabCase) + (player.additionalState? '--' + (player.additionalState | lowercase | snakeToKebabCase) : '') }}">
-</div> -->
+<div class="player
+    {{ 'player_state_' + player.state | lowercase }}
+    {{ 'player_state_direction-' + player.direction | lowercase }}"
+    [ngStyle]="{ backgroundImage: 'url(' + assetsPath + '/images/who.svg' +')'}"
+>
+</div>

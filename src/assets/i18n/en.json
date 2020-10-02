@@ -123,7 +123,7 @@
       "LEVEL_NOT_COMPLETE": "Level not passed",
       "ERROR_IN_SCRIPT": "Error in the script"
     },
-    "WHO": {
+    "PANDEMIC": {
       "SERVICE": {
         "GAME_FAIL_ERROR": {
           "OFF_ROAD": "The player is off the road",
@@ -212,6 +212,25 @@
         "UNKNOWN_VARIABLE":"Unknown variable"
       }
     },
+    "PANDEMIC": {
+      "FAIL_REASON": {
+        "HOME_NOT_REACHED": "Home was not reached",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Not all masks and sanitizers are collected",
+        "COULD_NOT_COMPILE_SCRIPT": "Script Error",
+        "OFF_ROAD": "The player is off the road",
+        "OFF_MAP": "The player is beyond the playing field",
+        "MASK_IS_NOT_ON": "The player didn't put on the mask",
+        "ENTERED_MALL": "Shopping mall preferred over store",
+        "HANDS_NOT_WASHED": "The player didn't wash hands",
+        "PRODUCTS_NOT_PICKED": "Groceries weren't bought",
+        "SCRIPT_STOPPED": "Script execution was aborted",
+        "CAUGHT_BY_VIRUS": "The player caught the virus",
+        "TOO_CLOSE_TO_PERSON": "The player broke physical distancing rules",
+        "INVALID_ARGUMENT":"Invalid argument",
+        "ARGUMENT_OUT_OF_RANGE":"Argument is out of range",
+        "EXTRA_ARGUMENT":"Expected zero arguments"
+      }
+  },
     "TILE-STATISTICS": {
       "RACCOON": {
         "FAIL_REASON": "Fail reason",
@@ -232,12 +251,12 @@
         "INVENTORY_NO_MINE": "The raccoon has no mines",
         "INVENTORY_NO_TURRET": "The raccoon has no turrets"
       },
-      "WHO": {
+      "PANDEMIC": {
         "FAIL_REASON": "Fail reason",
         "FAIL_ROW_NUMBER": "Error in row",
         "CELLS_PASSED": "Cells passed",
         "COMPULSORY_OBJECTS_PICKED": "Masks and sanitizers collected",
-        "FINISH_NOT_REACHED": "Home was not reached",
+        "HOME_NOT_REACHED": "Home was not reached",
         "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Not all masks and sanitizers are collected",
         "COULD_NOT_COMPILE_SCRIPT": "Script Error",
         "OFF_ROAD": "The player is off the road",

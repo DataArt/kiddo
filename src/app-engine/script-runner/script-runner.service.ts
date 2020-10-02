@@ -134,6 +134,7 @@ export class ScriptRunnerService {
   }
 
   private processScriptFail(err: SkulptError): void {
+    console.log(err);
     this.googleAnalyticsService.emitEvent(environment.googleAnalytics.events.info, 'script-runner: script_execution_fail');
 
     const gameStatistics: GameStatistics = this.sceneAccessorsService.reader.getGameStatistics();

@@ -4,12 +4,12 @@ import { PandemicWriterService } from './writers/pandemic-writer.service';
 import { PandemicReaderService } from './readers/pandemic-reader.service';
 import { PandemicValidationService } from './pandemic-validation.service';
 import { SceneSkulptService } from '../common/scene-skulpt-service';
+import { Singleton } from 'src/app-engine/singleton.decorator';
+import { GameFailError } from '../common/errors';
 
 declare const Sk: any;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Singleton
 export class PandemicSkulptService implements SceneSkulptService {
 
   executionWasAborted = false;
@@ -68,9 +68,14 @@ export class PandemicSkulptService implements SceneSkulptService {
   }
 
   private performGameStep(action: () => void): void {
+    this.throwErrorIfScriptIsStopped();
     this.writer.moveGameObjects();
     this.writer.detectAndHandleGameObjectsCollisions();
     action();
     this.writer.detectAndHandlePlayerCollisions();
+  }
+
+  private throwErrorIfScriptIsStopped(): void {
+    if (this.executionWasAborted) throw new GameFailError('SCRIPT_STOPPED');
   }
 }

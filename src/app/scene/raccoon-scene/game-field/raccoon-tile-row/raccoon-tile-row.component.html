@@ -2,7 +2,7 @@
   <div *ngFor="let tile of row; index as tileIndex"
     class="tile-row__tile"
     [ngStyle]="{ 'background-image': 'url(' + env.assetsPath + '/images/gamefield.svg' + ')'}"
-    [kiddoTileClass]="tile"
+    [kiddoRaccoonTileClass]="tile"
     [tileMap]="tileMap"
     [tileClassPrefix]="'tile-row__tile_type_'"
     [ngClass]="{'incognita': sceneIsLabyrinth && isIncognita(tileIndex)}"
