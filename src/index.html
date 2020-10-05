@@ -19,7 +19,6 @@
 <body class="player-body">
   <!-- case 1: sceneConfig from localStorage -->
   <!-- <kiddo-player local-storage-key="kiddo_default_task_from_storage"></kiddo-player>
-
   <script></script> -->
 
   <!-- case 2: sceneConfig from URL -->
@@ -40,7 +39,6 @@
 
   <!-- case3: sceneConfig from variable -->
   <!-- <kiddo-player></kiddo-player>
-
   <script>
     const sceneConfig = `
     sceneType: Raccoon
@@ -60,11 +58,9 @@
       text: Следующий уровень
     initialScript: |-
       import raccoon
-
       # Add your code here
     taskDescription: Доведи енота до флага
     `;
-
     // DON'T EDIT THE CODE BELOW
     const rootElement = document.querySelector('kiddo-player');
     rootElement.setAttribute('kiddo-scene-config', sceneConfig);
@@ -84,7 +80,6 @@
         a.src = g;
         m.parentNode.insertBefore(a, m)
       })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
       ga('create', appConfig.analytics.GA_key, 'auto');
       ga('send', 'pageview');
     }

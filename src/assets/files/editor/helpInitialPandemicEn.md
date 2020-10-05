@@ -1,4 +1,4 @@
-<p style="color: #000; font-weight: bold;">3 step</p>
+
 <p style="color: #000; font-weight: bold;">1. Game Field setting</p>
 
 ```javascript
@@ -54,8 +54,15 @@ The mask can be added only onto the road within the game field. The mask can’t
 ```javascript
     this.addMasks([0, 4], [2, 5], [1, 6]);
 ```
+
+<p style="color: #000; font-weight: bold;">4. (TODO: translate) Добавить обязательное правило ношения маски</p>
+
+```javascript
+    this.setWearingMaskAsRequired()
+```
+<p style="color: #000;">Если в конфиге задан этот метод, перед началом любых ходов игроку необходимо надеть маску, иначе игра прервется, и уровень будет пройден.</p>
 	
-<p style="color: #000; font-weight: bold;">4.	Adding sanitizers to the scene</p>
+<p style="color: #000; font-weight: bold;">5.	Adding sanitizers to the scene</p>
 
 ```javascript
     this.addSanitizers([X1, Y1], [X2, Y2], ...);
@@ -71,7 +78,7 @@ The sanitizer can be added only onto the road within the game field. The sanitiz
     this.addSanitizers([0, 4], [2, 5]);
 ```
     
-<p style="color: #000; font-weight: bold;">5. Adding a person with the fixed initial position onto the game field</p>
+<p style="color: #000; font-weight: bold;">6. Adding a person with the fixed initial position onto the game field</p>
 
 ```javascript
 this.addPerson([X, Y], 'direction');
@@ -89,7 +96,7 @@ Calling method this.addPerson ([X, Y], 'direction') again is required to add eac
 this.addPerson([1, 1], 'left');
 ```
 
-<p style="color: #000; font-weight: bold;">6. Adding a person with a number of the possible initial positions onto the game field</p>
+<p style="color: #000; font-weight: bold;">7. Adding a person with a number of the possible initial positions onto the game field</p>
 
 ```javascript
 this.addPerson([[X1, Y1], [X2, Y2], ...], 'direction');
@@ -107,7 +114,7 @@ Calling method this.addPerson ([[X1, Y1], [X2, Y2], ...], 'direction') again is 
 this.addPerson([ [1, 1], [2, 1], [3, 1] ], 'up');
 ```
 
-<p style="color: #000; font-weight: bold;">7.	Adding a virus with the fixed initial position onto the game field</p>
+<p style="color: #000; font-weight: bold;">8. Adding a virus with the fixed initial position onto the game field</p>
 
 ```javascript
 this.addVirus([X, Y], 'direction');
@@ -125,7 +132,7 @@ Calling method this.addVirus ([X, Y], 'direction') again is required to add each
 this.addVirus([1, 1], 'left')
 ```
 
-<p style="color: #000; font-weight: bold;">8.	Adding a virus with a number of the possible initial positions onto the game field</p>
+<p style="color: #000; font-weight: bold;">9.	Adding a virus with a number of the possible initial positions onto the game field</p>
 
 ```javascript
 this.addVirus([[X1, Y1], [X2, Y2], ...], 'direction');
@@ -143,7 +150,7 @@ Calling method this.addVirus([[X1, Y1], [X2, Y2], ...], 'direction') again is re
 this.addVirus([ [1, 1], [2, 1], [3, 1] ], 'up'); 
 ```
 
-<p style="color: #000; font-weight: bold;">9. Adding a virus with the player chase function</p>
+<p style="color: #000; font-weight: bold;">10. Adding a virus with the player chase function</p>
 
 ```javascript
 this.addVirus([X, Y], 'direction', true); 
@@ -161,7 +168,7 @@ Calling method this.addVirus([X, Y], 'direction', true) again is required to add
 this.addVirus([1, 1], 'right', true);
 ```
 
-<p style="color: #000; font-weight: bold;">10.	Adding the checking logic code</p>
+<p style="color: #000; font-weight: bold;">11.	Adding the checking logic code</p>
 
 ```javascript
 this.addCheckingLogic('code')
@@ -174,3 +181,17 @@ this.addCheckingLogic('code')
 this.addCheckingLogic('return this.player.position.x === 8 && this.player.position.y === 0 ? null : `FINISH_NOT_REACHED`'});
 ```
 
+<p style="color: #000; font-weight: bold;">The following example shows a simple scene's configuration:</p>
+
+```javascript
+this.setGameField([ ['RO', 'RO', 'RO'], ['RO', 'FE', 'RO'], ['RO', 'RO', 'HO'] ]);
+this.setPlayerPosition(0, 0);
+this.addVirus([1, 2], 'left');
+this.addCheckingLogic(`
+    return this.player.position.x === 2 &&this.player.position.y === 2
+        ? null
+        : 'FINISH_NOT_REACHED'
+`);
+```
+
+<p style="color: #000;">If game objects do not appear on the field, check the correctness and order of the arguments that you pass to the add methods.</p>

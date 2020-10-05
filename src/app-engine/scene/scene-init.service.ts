@@ -19,6 +19,7 @@ import { ConsoleSkulptService } from './console/console-skulpt.service';
 import { Singleton } from '../singleton.decorator';
 import { RaccoonValidationService } from './raccoon/raccoon-validation.service';
 import { ConsoleValidationService } from './console/console-validation.service';
+import { PandemicValidationService } from './pandemic/pandemic-validation.service';
 
 interface BuildersMap {
   [sceneType: string]: () => SceneBuilder;
@@ -40,8 +41,9 @@ export class SceneInitService {
     [SceneType.PANDEMIC]: () => {
       const reader = new PandemicReaderService(this.sceneModelService);
       const writer = new PandemicWriterService(this.sceneModelService, reader);
+      const validation = new PandemicValidationService();
       const api = new PandemicSkulptService(reader, writer);
-      return new PandemicBuilderService(reader, writer, api);
+      return new PandemicBuilderService(reader, writer, api, validation);
     },
     [SceneType.CONSOLE]: () => {
       const reader = new ConsoleReaderService(this.sceneModelService);

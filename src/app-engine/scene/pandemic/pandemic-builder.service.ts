@@ -1,23 +1,36 @@
-import { Injectable } from '@angular/core';
 import { PandemicReaderService } from './readers/pandemic-reader.service';
 import { PandemicWriterService } from './writers/pandemic-writer.service';
 import { SceneConfig } from '../common/scene-config';
 import { SceneDescriptor } from '../common/scene-descriptor';
-import { Coords, Direction, TileSceneWinCondition, WinButton, CheckingLogic } from '../common/entities';
+import { Coords, Direction, CheckingLogic } from '../common/entities';
 import { PandemicSceneModel } from './models/pandemic-scene-model';
-import { Player, Tile, ConfigGameObject, GameObjectState, GameObjectType, GameObjectAdditionalState } from './entities';
+import {
+  Tile,
+  ConfigGameObject,
+  GameObjectState, GameObjectType,
+  GameObjectAdditionalState,
+  Virus,
+  Mask,
+  Sanitizer,
+  Person } from './entities';
 import { SceneType } from '../common/models/scene-type.enum';
-import { I18nFactoryService } from '../../../app/shared/services';
-import { PandemicSceneConfig } from './models/pandemic-scene-config';
-import { TerminalService } from '../../../app/code-editor/terminal/terminal.service';
 import { PandemicSkulptService } from './pandemic-skulpt.service';
 import { SceneBuilder } from '../common/scene-builder';
+import { Singleton } from 'src/app-engine/singleton.decorator';
+import { PandemicValidationService } from './pandemic-validation.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Singleton
 export class PandemicBuilderService implements SceneBuilder {
-  sceneModel: PandemicSceneModel;
+  sceneModel: PandemicSceneModel = {
+    sceneType: SceneType.PANDEMIC,
+    player: null,
+    gameField: [],
+    gameObjects: [],
+    terraIncognita: false,
+    maze: [''][''],
+    customeTiles: [],
+    checkingLogic: null
+  };
 
   directions = {
     RIGHT: Direction.RIGHT,
@@ -26,55 +39,56 @@ export class PandemicBuilderService implements SceneBuilder {
     DOWN: Direction.DOWN
   };
 
-  private gameObjectIdCounter: number;
+  private gameObjectIdCounter = 1;
 
 
   constructor(private reader: PandemicReaderService,
               private writer: PandemicWriterService,
               private sceneSkulptService: PandemicSkulptService,
+              private validationService: PandemicValidationService
   ) {
   }
 
-  nextGameObjectID(): number {
+  private get nextGameObjectID(): number {
     return this.gameObjectIdCounter++;
   }
 
   buildScene(config: SceneConfig): SceneDescriptor {
+    this.resetModel();
     this.parseGeneratingFunc(config.generatingFunc);
+    this.validationService.validateConfig(this.sceneModel);
+
     return { model: this.sceneModel, reader: this.reader, writer: this.writer, skulptService:  this.sceneSkulptService };
   }
 
-  addPlayer(player: Player): void {
-    if (!player) throw new Error('Pandemic scene must have a player');
-    this.sceneModel.player = player;
+  private setPlayerPosition(x: number, y: number): void {
+    if (x === undefined || y === undefined) throw new Error('Raccoon scene must have a player');
+    this.sceneModel.player = {
+      id: 0,
+      type: GameObjectType.PLAYER,
+      position: this.derivePosition([x, y]),
+      hitboxSize: 0,
+      state: GameObjectState.DEFAULT,
+      additionalState: null,
+      direction: Direction.RIGHT,
+      inventory: [],
+      isMovable: true,
+      isPickable: false,
+    };
   }
 
-  addGameField(gameField: Tile[][]): void {
-    if (!gameField) throw new Error('Pandemic scene must have a game field');
+  private setWearingMaskAsRequired(): void {
+    this.sceneModel.shouldPutOnMask = true;
+  }
+
+  private setGameField(gameField: Tile[][]): void {
+    if (!gameField) throw new Error('Tile scene must have a game field');
     this.sceneModel.gameField = gameField;
   }
 
-  initializeGameField(gameField: Tile[][]): void {
-    if (!gameField) {
-      return;
-    }
-    this.sceneModel.gameField = [];
-    for (let i = 0; i < gameField.length; i++) {
-      this.sceneModel.gameField[i] = new Array(gameField[i].length);
-      for (let j = 0; j < gameField[0].length; j++) {
-        this.sceneModel.gameField[i][j] = gameField[i][j];
-      }
-    }
-  }
-
-  addCheckingLogic(checkingLogic: CheckingLogic): void {
+  private addCheckingLogic(checkingLogic: string): void {
     if (!checkingLogic) return;
-    this.sceneModel.checkingLogic = checkingLogic;
-  }
-
-  addWinButtonDetails(details: WinButton): void {
-    if (!details) return;
-    this.sceneModel.winButton = { ...details };
+    this.sceneModel.checkingLogic = new Function(checkingLogic) as CheckingLogic;
   }
 
   parseGeneratingFunc(generatingFunc: string): PandemicSceneModel {
@@ -95,99 +109,87 @@ export class PandemicBuilderService implements SceneBuilder {
     return Array.isArray(incomingArray[0]) && Array.isArray(incomingArray[1]);
   }
 
-  async initializePandemicLevel(levelConfig: PandemicSceneConfig): Promise<void> {
-    this.parseGeneratingFunc(levelConfig.generatingFunc);
-    this.initializeLevel(levelConfig);
-    this.sceneModel.sceneType = SceneType.PANDEMIC;
-    this.sceneModel.maskIsOn = false;
-    this.sceneModel.handsWashed = false;
-    this.sceneModel.productsPicked = false;
-    this.sceneModel.shouldPutOnMask = levelConfig.shouldPutOnMask;
-    this.addPeople(levelConfig.people);
-    this.addViruses(levelConfig.viruses);
-    this.addSanitizers(levelConfig.sanitizers);
-    this.addMasks(levelConfig.masks);
+  private addVirus(position: number[] | number[][], direction: string, chasing: boolean = false): void {
+    if (!position?.length) return;
+    const newMonster: Virus = {
+      id: this.nextGameObjectID,
+      type: GameObjectType.VIRUS,
+      position: this.derivePosition(position),
+      direction: Object.values(Direction).find(oneDirection => oneDirection === direction.toUpperCase()) || Direction.RIGHT,
+      state: GameObjectState.DEFAULT,
+      hitboxSize: 0,
+      isMovable: true,
+      isPickable: false,
+      chasing,
+    };
+    this.sceneModel.gameObjects.push(newMonster);
   }
 
-  initializeLevel(levelConfig: PandemicSceneConfig): void {
-    this.addPlayer(levelConfig.player);
-    this.initializeGameField(levelConfig.gameField);
-    this.sceneModel.gameObjects = [];
-    // this.addWinCondition(levelConfig.winCondition);
-    this.addWinButtonDetails(levelConfig.winButtonDetails);
-    this.sceneModel.sceneInitialScript = levelConfig.initialScript;
-    this.sceneModel.taskDescription = levelConfig.taskDescription;
+  private addPerson(position: number[] | number[][], direction: string): void {
+    if (!position?.length) return;
+    const newPerson: Person = {
+      id: this.nextGameObjectID,
+      type: GameObjectType.PERSON,
+      position: this.derivePosition(position),
+      direction: Object.values(Direction).find(oneDirection => oneDirection === direction.toUpperCase()) || Direction.RIGHT,
+      state: GameObjectState.DEFAULT,
+      hitboxSize: 1,
+      isMovable: true,
+      isPickable: false,
+      additionalState: Math.round(Math.random()) === 0 ? GameObjectAdditionalState.MALE : GameObjectAdditionalState.FEMALE,
+    };
+    this.sceneModel.gameObjects.push(newPerson);
   }
 
-  addSanitizers(sanitizers: ConfigGameObject[]): void {
-    if (!sanitizers) {
-      return;
-    }
-    sanitizers.forEach((sanitizer: ConfigGameObject) => {
-      this.sceneModel.gameObjects.push({
-        position: { x: sanitizer.position[0], y: sanitizer.position[1] },
+
+  addSanitizers(...sanitizers: number[][]): void {
+    if (!sanitizers?.length) return;
+    sanitizers.forEach((gameObject: number[]) => {
+      const sanitizer: Sanitizer = {
+        id: this.nextGameObjectID,
         type: GameObjectType.SANITIZER,
+        position: { x: gameObject[0], y: gameObject[1] },
+        state: GameObjectState.DEFAULT,
         hitboxSize: 0,
         isMovable: false,
-        state: GameObjectState.DEFAULT,
         isPickable: true,
-        id: this.nextGameObjectID(),
-      });
+        isCompulsory: true,
+      };
+      this.sceneModel.gameObjects.push(sanitizer);
     });
   }
 
-  addMasks(masks: ConfigGameObject[]): void {
-    if (!masks) {
-      return;
-    }
-    masks.forEach((mask: ConfigGameObject) => {
-      this.sceneModel.gameObjects.push({
-        position: { x: mask.position[0], y: mask.position[1] },
+  private addMasks(...masks: number[][]): void {
+    if (!masks?.length) return;
+    masks.forEach((gameObject: number[]) => {
+      const cookie: Mask = {
+        id: this.nextGameObjectID,
         type: GameObjectType.MASK,
+        position: { x: gameObject[0], y: gameObject[1] },
+        state: GameObjectState.DEFAULT,
         hitboxSize: 0,
         isMovable: false,
-        state: GameObjectState.DEFAULT,
         isPickable: true,
-        id: this.nextGameObjectID(),
-      });
+        isCompulsory: true,
+      };
+      this.sceneModel.gameObjects.push(cookie);
     });
   }
 
-  addViruses(viruses: ConfigGameObject[]): void {
-    if (!viruses) {
-      return;
-    }
-    viruses.forEach((virus: ConfigGameObject) => {
-      this.sceneModel.gameObjects.push({
-        direction: virus.direction ? (this.directions[(virus.direction).toUpperCase()] || Direction.RIGHT) : Direction.RIGHT,
-        position: this.derivePosition(virus.position),
-        type: GameObjectType.VIRUS,
-        hitboxSize: 0,
-        isMovable: true,
-        isPickable: false,
-        chasing: virus.chasing === true,
-        state: GameObjectState.DEFAULT,
-        id: this.nextGameObjectID(),
-      });
-    });
-  }
-
-  addPeople(people: ConfigGameObject[]): void {
-    if (!people) {
-      return;
-    }
-    people.forEach((person: ConfigGameObject, index: number) => {
-      this.sceneModel.gameObjects.push({
-        direction: person.direction ? (this.directions[(person.direction).toUpperCase()] || Direction.RIGHT) : Direction.RIGHT,
-        position: this.derivePosition(person.position),
-        type: GameObjectType.PERSON,
-        hitboxSize: 1,
-        isMovable: true,
-        isPickable: false,
-        state: GameObjectState.DEFAULT,
-        additionalState: Math.round(Math.random()) === 0 ? GameObjectAdditionalState.MALE : GameObjectAdditionalState.FEMALE,
-        id: this.nextGameObjectID(),
-      });
-    });
+  private resetModel(): void {
+    this.sceneModel = {
+      sceneType: SceneType.PANDEMIC,
+      player: null,
+      gameField: [],
+      gameObjects: [],
+      terraIncognita: false,
+      maze: [''][''],
+      customeTiles: [],
+      checkingLogic: null,
+      productsPicked: false,
+      maskIsOn: false,
+      handsWashed: false,
+      shouldPutOnMask: false,
+    };
   }
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 import { Direction } from '../../../../../app-engine/scene/common/entities';
 import { Player, GameObjectState } from '../../../../../app-engine/scene/raccoon/entities';
@@ -12,4 +13,5 @@ export class PandemicHeroComponent {
   @Input() player: Player;
   GameObjectState: typeof GameObjectState = GameObjectState;
   Direction: typeof Direction = Direction;
+  assetsPath = environment.assetsPath;
 }

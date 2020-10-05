@@ -123,7 +123,7 @@
       "LEVEL_NOT_COMPLETE": "Level not passed",
       "ERROR_IN_SCRIPT": "Error in the script"
     },
-    "WHO": {
+    "PANDEMIC": {
       "SERVICE": {
         "GAME_FAIL_ERROR": {
           "OFF_ROAD": "The player is off the road",
@@ -212,6 +212,25 @@
         "UNKNOWN_VARIABLE":"Unknown variable"
       }
     },
+    "PANDEMIC": {
+      "FAIL_REASON": {
+        "HOME_NOT_REACHED": "Home was not reached",
+        "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Not all masks and sanitizers are collected",
+        "COULD_NOT_COMPILE_SCRIPT": "Script Error",
+        "OFF_ROAD": "The player is off the road",
+        "OFF_MAP": "The player is beyond the playing field",
+        "MASK_IS_NOT_ON": "The player didn't put on the mask",
+        "ENTERED_MALL": "Shopping mall preferred over store",
+        "HANDS_NOT_WASHED": "The player didn't wash hands",
+        "PRODUCTS_NOT_PICKED": "Groceries weren't bought",
+        "SCRIPT_STOPPED": "Script execution was aborted",
+        "CAUGHT_BY_VIRUS": "The player caught the virus",
+        "TOO_CLOSE_TO_PERSON": "The player broke physical distancing rules",
+        "INVALID_ARGUMENT":"Invalid argument",
+        "ARGUMENT_OUT_OF_RANGE":"Argument is out of range",
+        "EXTRA_ARGUMENT":"Expected zero arguments"
+      }
+  },
     "TILE-STATISTICS": {
       "RACCOON": {
         "FAIL_REASON": "Fail reason",
@@ -232,12 +251,12 @@
         "INVENTORY_NO_MINE": "The raccoon has no mines",
         "INVENTORY_NO_TURRET": "The raccoon has no turrets"
       },
-      "WHO": {
+      "PANDEMIC": {
         "FAIL_REASON": "Fail reason",
         "FAIL_ROW_NUMBER": "Error in row",
         "CELLS_PASSED": "Cells passed",
         "COMPULSORY_OBJECTS_PICKED": "Masks and sanitizers collected",
-        "FINISH_NOT_REACHED": "Home was not reached",
+        "HOME_NOT_REACHED": "Home was not reached",
         "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Not all masks and sanitizers are collected",
         "COULD_NOT_COMPILE_SCRIPT": "Script Error",
         "OFF_ROAD": "The player is off the road",
@@ -294,6 +313,19 @@
       "NO_CHECKING_LOGIC": "No logic check is set",
       "GAMEFIELD_ROW_LENGTH": "The tile rows on the game field have different lengths"
     },
+    "PANDEMIC": {
+      "NO_PLAYER": "There is no Player in the scene configuration",
+      "NO_GAMEFIELD": "There is no game field in the configuration",
+      "GAMEOBJECTS_COORDS": "One or more objects are (mislocated outside the field)",
+      "GAMEOBJECTS_OUT_FIELD": "One or more objects are mislocated (outside the field)",
+      "PLAYER_COORDS": "The Player is mislocated (outside the road)",
+      "PLAYER_OUT_FIELD": "The Player is mislocated (outside the field)",
+      "GAMEOBJECTS_SAME_COORDS": "Two or more game objects have the same coordinates",
+      "GAMEOBJECT_WRONG_COLOR": "The game object has a wrong color assigned",
+      "GAMEOBJECT_NO_COLOR": "The game object has no color assigned",
+      "NO_CHECKING_LOGIC": "No logic check is set",
+      "GAMEFIELD_ROW_LENGTH": "(TODO: translate): Строки тайлов игрового поля имеют разную длину"
+    },
     "CONSOLE": {
       "OUT_OF_RANGE": "Numeric variables must take values from -1000000 up to 1000000",
       "MAX_VARIABLES": "The admissible maximum number of variables in the configuration is 4",
@@ -313,6 +345,7 @@
       "HELP": "Help",
       "INITIAL_RACCOON_LINK": "Several methods can be used to configure the scene. Following the <a href='/scene-config-help#raccoon' target='_blank'>link</a> will lead you to the detailed description of each.",
       "INITIAL_CONSOLE_LINK": "Several methods can be used to configure the scene. Following the <a href='/scene-config-help#console' target='_blank'>link</a> will lead you to the detailed description of each.",
+      "INITIAL_PANDEMIC_LINK": "Several methods can be used to configure the scene. Following the <a href='/scene-config-help#pandemic_hero' target='_blank'>link</a> will lead you to the detailed description of each.",
       "SCENE_TYPE": "Choose the scene type (level). The first type is console that is a computer terminal emulator. At this level, the initial conditions consist of an original variables set. The one who is going to solve the problem is to manipulate the variables and to display the required value on the screen. The second scene type is graphic and consists of square elements (tiles). Tiles levels are the ones with the raccoon, for example. At them, the one who is solving the problem is to write a code using Python to take the character through the labyrinth created by them. ",
       "SCENE_DESCRIPTION": "Write the scene description. It will be visible when the game is about to start. It can be a description of what has to be done or, alternatively, the scene pre-history. The text is displayed in .md format (markdown), so in case if necessary, it can be processed with markdown syntax.",
       "TEST_LAUNCH": "There is a full-fledged player to launch a new scene. You can check it out to see the way it runs, create a solution in Python and find out how hard it is (or whether it is basically possible) to make your way through it.",
@@ -329,8 +362,8 @@
       "CHANGING_MODAL": "All progress will be lost",
       "WARNING": "Warning!",
       "CONSOLE": "Console",
-      "RACCOON": "Raccoon"
-
+      "RACCOON": "Raccoon",
+      "PANDEMIC_HERO": "Pandemic hero"
     },
     "TASK_DESCRIPTION": {
       "TITLE": "Task description",

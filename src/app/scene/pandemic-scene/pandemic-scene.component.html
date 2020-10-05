@@ -1,30 +1,38 @@
-<!-- <article class="tile-scene" *ngIf="sceneType; else spinner">
+<article
+  *ngIf="sceneType; else spinner"
+  class="tile-scene"
+  [kiddoGameFieldMaxWidth]="gameField"
+>
 
-  <kiddo-inventory
+  <kiddo-pademic-inventory
     [inventory]="playerInventory"
     [compulsoryItems]="compulsoryItems"
   >
-  </kiddo-inventory>
+  </kiddo-pademic-inventory>
 
-  <kiddo-game-field [field]="gameField" [sceneType]="sceneType" [playerPosition]="player?.position" [sceneIsLabyrinth]="terraIncognita">
-    <kiddo-game-objects
+  <kiddo-pandemic-game-field
+    [field]="gameField"
+    [customTiles]="customTiles"
+    [playerPosition]="player?.position"
+    [sceneIsLabyrinth]="terraIncognita"
+  >
+    <kiddo-pandemic-game-objects
       [gameObjects]="gameObjects"
-      [itemSize]="gameField | cellSize">
-    </kiddo-game-objects>
+      [itemSize]="gameField | gameFieldCellSize">
+    </kiddo-pandemic-game-objects>
 
-    <kiddo-player class="tile-scene__player"
+    <kiddo-pandemic-player class="tile-scene__player"
       [player]="player" 
-      [sceneType]="sceneType"
       [ngStyle]="{
-        left: player.position.x | coordinateInPercents: (gameField | cellSize),
-        top: player.position.y | coordinateInPercents: (gameField | cellSize),
-        width: (gameField | cellSize) + '%'
+        left: player.position.x | coordinateInPercents: (gameField | gameFieldCellSize).width,
+        top: player.position.y | coordinateInPercents: (gameField | gameFieldCellSize).height,
+        width: (gameField | gameFieldCellSize).width + '%'
       }">
-    </kiddo-player>
-  </kiddo-game-field>
+    </kiddo-pandemic-player>
+  </kiddo-pandemic-game-field>
 
 </article>
 
 <ng-template #spinner>
-  <b style="color: red">TODO put a spinner in here</b>
-</ng-template> -->
+  <kiddo-loading-spinner></kiddo-loading-spinner>
+</ng-template>

@@ -7,7 +7,7 @@ import { Player } from '../../../../app-engine/scene/raccoon/entities';
   templateUrl: './pandemic-player.component.html',
   styleUrls: ['./pandemic-player.component.scss'],
 })
-export class PlayerComponent {
+export class PandemicPlayerComponent {
   @Input() player: Player;
   @Input() sceneType: string;
   SceneType: typeof SceneType = SceneType;

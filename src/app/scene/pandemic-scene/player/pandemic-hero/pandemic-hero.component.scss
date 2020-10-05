@@ -1,105 +1,99 @@
-// .player {
-//   width: 100%;
-//   background-repeat: no-repeat;
-//   background-image: url("../../../../../assets/images/who.svg");
-//   background-size: 1650%;
-// }
+.player {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 1650%;
+}
 
-// .player::after {
-//   content: "";
-//   display: block;
-//   padding-bottom: 100%;;
-// }
+.player::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;;
+}
 
-// .player_state_default {
-//   background-position: 1.2% 20%;
-// }
+.player_state_default {
+  background-position: 1.2% 20%;
+}
 
-// .player_state_success {
-//   background-position: 23.6% 20%;
-// }
+.player_state_success {
+  background-position: 23.6% 20%;
+}
 
-// .player_state_fail {
-//   background-position: 31.2% 20%;
-// }
+.player_state_fail {
+  background-position: 31.2% 20%;
+}
 
-// .player_state_moving {
-//   animation-name: player_moving;
-//   animation-duration: 1s;
-//   animation-timing-function: steps(3);
-//   animation-iteration-count: infinite;
+.player_state_moving {
+  animation-name: player_moving;
+  animation-duration: 1s;
+  animation-timing-function: steps(3);
+  animation-iteration-count: infinite;
   
-// }
+}
 
-// .player_state_default--carrying-products {
-//   background-image: url("../../../../../assets/images/who_add.svg");
-//   background-repeat: no-repeat;
-//   background-size: 385%;
-//   background-position: 6.5% 55%;
-// }
+.player_state_default--carrying-products {
+  background-repeat: no-repeat;
+  background-size: 385%;
+  background-position: 6.5% 55%;
+}
   
 
-// .player_state_moving--carrying-products {
-//   background-image: url("../../../../../assets/images/who_add.svg");
-//   background-repeat: no-repeat;
-//   background-size: 385%;
-//   background-position: 6.5% 55%;
-//   animation-name: movingWithProducts;
-//   animation-duration: 1s;
-//   animation-timing-function: steps(3);
-//   animation-iteration-count: infinite;
-// }
+.player_state_moving--carrying-products {
+  background-repeat: no-repeat;
+  background-size: 385%;
+  background-position: 6.5% 55%;
+  animation-name: movingWithProducts;
+  animation-duration: 1s;
+  animation-timing-function: steps(3);
+  animation-iteration-count: infinite;
+}
 
-// @keyframes movingWithProducts {
-//   0% {
-//     background-position: 7.9% 55%;
-//   }
+@keyframes movingWithProducts {
+  0% {
+    background-position: 7.9% 55%;
+  }
 
-//   to {
-//     background-position: 125.4% 55%;
-//   }
-// }
+  to {
+    background-position: 125.4% 55%;
+  }
+}
 
-// .player_state_default--wearing-mask {
-//   background-image: url("../../../../../assets/images/who_add.svg");
-//   background-repeat: no-repeat;
-//   background-size: 385%;
-//   background-position: 7.9% 11%;
-// }
+.player_state_default--wearing-mask {
+  background-repeat: no-repeat;
+  background-size: 385%;
+  background-position: 7.9% 11%;
+}
 
-// .player_state_moving--wearing-mask {
-//   background-image: url("../../../../../assets/images/who_add.svg");
-//   background-repeat: no-repeat;
-//   background-size: 385%;
-//   background-position: 7.9% 11%;
-//   animation-name: movingWithMask;
-//   animation-duration: 1s;
-//   animation-timing-function: steps(3);
-//   animation-iteration-count: infinite;
-// }
+.player_state_moving--wearing-mask {
+  background-repeat: no-repeat;
+  background-size: 385%;
+  background-position: 7.9% 11%;
+  animation-name: movingWithMask;
+  animation-duration: 1s;
+  animation-timing-function: steps(3);
+  animation-iteration-count: infinite;
+}
 
-// @keyframes movingWithMask {
-//   0% {
-//     background-position: 7.9% 11%;
-//   }
+@keyframes movingWithMask {
+  0% {
+    background-position: 7.9% 11%;
+  }
 
-//   to {
-//     background-position: 125.4% 11%;
-//   }
-// }
-// @keyframes player_moving {
-// 0% { background-position: 1.2% 20%; } to { background-position: 22.7% 20%; }
-// }
+  to {
+    background-position: 125.4% 11%;
+  }
+}
+@keyframes player_moving {
+0% { background-position: 1.2% 20%; } to { background-position: 22.7% 20%; }
+}
 
-// .player_state_default--washing-hands {
-//   background-image: url("../../../../../assets/images/who_add.svg");
-//   background-repeat: no-repeat;
-//   background-size: 385%;
-//   animation-name: washing_hands;
-//   animation-duration: 0.3s;
-//   animation-timing-function: steps(2);
-//   animation-iteration-count: infinite;
-// }
-// @keyframes washing_hands {
-//   0% { background-position: 6.5% 95%; } to { background-position: 85.9% 95%; }
-// }
+.player_state_default--washing-hands {
+  background-repeat: no-repeat;
+  background-size: 385%;
+  animation-name: washing_hands;
+  animation-duration: 0.3s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
+@keyframes washing_hands {
+  0% { background-position: 6.5% 95%; } to { background-position: 85.9% 95%; }
+}

@@ -17,5 +17,5 @@ export enum ImpassableTile {
 export type Tile = PassableTile | ImpassableTile;
 
 export interface TileCssClassMap {
-  [tileName: string]: string;
+  [tileName: string]: { cssClass?: string, imageUrl?: string };
 }
