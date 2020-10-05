@@ -1,4 +1,4 @@
-import { Component, OnInit, Self } from '@angular/core';
+import { Component, Input, OnInit, Self } from '@angular/core';
 import { delay, filter, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ScriptRunnerService } from '../../../app-engine/script-runner/script-runner.service';
 import { scriptExecutionState } from '../../../app-engine/script-runner/script-runner.types';
@@ -27,6 +27,7 @@ export class PandemicSceneComponent implements OnInit {
   player: Player;
   playerInventory: GameObject[];
   terraIncognita: boolean;
+  @Input() isStatic: boolean;
 
   private tileSceneReader: PandemicReaderService;
   private playerWriter: PandemicWriterService;
@@ -55,7 +56,7 @@ export class PandemicSceneComponent implements OnInit {
       // Whenever execution state is ready for running, update current scene model
       tap(state => {
         if (state === scriptExecutionState.READY) {
-          this.getModel();
+          this.isStatic ? this.getImmutableModel() : this.getModel();
           this.terraIncognita = this.tileSceneReader.terraIncognitaIsOn();
         }
       }),
@@ -81,6 +82,18 @@ export class PandemicSceneComponent implements OnInit {
     this.compulsoryItems = this.tileSceneReader.getCompulsoryGameObjects();
     this.playerInventory = this.player.inventory;
     this.customTiles = this.tileSceneReader.getCustomTiles();
-    console.log(this.gameObjects)
+  }
+
+  private getImmutableModel(): void {
+    this.sceneType = this.tileSceneReader.getSceneType();
+    this.player = {...this.tileSceneReader.getPlayer(), position: {...this.tileSceneReader.getPlayer().position}};
+    this.gameField = this.tileSceneReader.getGameField();
+    this.gameObjects = [];
+    for (const obj of this.tileSceneReader.getGameObjects()) {
+      this.gameObjects.push({...obj, position: {...obj.position}});
+    }
+    this.compulsoryItems = this.tileSceneReader.getCompulsoryGameObjects();
+    this.playerInventory = this.player.inventory;
+    this.customTiles = this.tileSceneReader.getCustomTiles();
   }
 }

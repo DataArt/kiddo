@@ -29,6 +29,10 @@ export class PandemicReaderService implements SceneReader {
         message: 'PRODUCTS_NOT_PICKED',
       },
       {
+        checkFunction: () => !this.checkHandsWashed(),
+        message: 'HANDS_NOT_WASHED',
+      },
+      {
         checkFunction: () => !this.checkAllCompulsoryGameObjectsPicked(),
         message: 'NOT_ALL_COMPULSORY_OBJECTS_COLLECTED',
       }
@@ -54,10 +58,9 @@ export class PandemicReaderService implements SceneReader {
 
   getGameFailMessage(): string {
     const message = this.getFailMessagsMap().find(x => x.checkFunction())?.message;
+    const checkingLogic = this.sceneModel?.checkingLogic();
 
-    return message
-      ? message
-      : this.sceneModel?.checkingLogic();
+    return checkingLogic ? checkingLogic : (message ? message : null);
   }
 
   getPlayer(): Player {

@@ -31,7 +31,6 @@ export class PandemicStatisticsComponent implements OnInit {
   ngOnInit(): void {
     this.prefixPath = this.scenesPrefixes[this.sceneType];
     this.statisticsItemsList = this.getGameStatisticsAsList(this.statistics);
-    console.log(this.statistics);
   }
 
   private getGameStatisticsAsList(statisticsObject: RaccoonGameStatistics): StatisticsItem[] {

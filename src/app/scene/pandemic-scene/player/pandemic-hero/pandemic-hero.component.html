@@ -1,6 +1,8 @@
-<div class="player
-    {{ 'player_state_' + player.state | lowercase }}
-    {{ 'player_state_direction-' + player.direction | lowercase }}"
-    [ngStyle]="{ backgroundImage: 'url(' + assetsPath + '/images/who.svg' +')'}"
+<div class="player 
+    {{ 'player_state_'
+    + (player.state | lowercase) 
+    + (player.additionalState ? '--' + (player.additionalState | lowercase | snakeToKebabCase) : '')}}
+    "
+    [ngStyle]="{ backgroundImage: 'url(' + assetsPath + '/images/'+ (player.additionalState? 'who_add.svg' : 'who.svg') +')'}"
 >
 </div>
