@@ -18,15 +18,15 @@
   >
     <kiddo-pandemic-game-objects
       [gameObjects]="gameObjects"
-      [itemSize]="gameField | gameFieldCellSize">
+      [itemSize]="gameField | pandemicGameFieldCellSize">
     </kiddo-pandemic-game-objects>
 
     <kiddo-pandemic-player class="tile-scene__player"
       [player]="player" 
       [ngStyle]="{
-        left: player.position.x | coordinateInPercents: (gameField | gameFieldCellSize).width,
-        top: player.position.y | coordinateInPercents: (gameField | gameFieldCellSize).height,
-        width: (gameField | gameFieldCellSize).width + '%'
+        left: player.position.x | coordinateInPercents: (gameField | pandemicGameFieldCellSize).width,
+        top: player.position.y | coordinateInPercents: (gameField | pandemicGameFieldCellSize).height,
+        width: (gameField | pandemicGameFieldCellSize).width + '%'
       }">
     </kiddo-pandemic-player>
   </kiddo-pandemic-game-field>
