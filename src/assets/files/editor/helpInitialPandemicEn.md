@@ -1,4 +1,4 @@
-<p style="color: #000; font-weight: bold;">3 step</p>
+
 <p style="color: #000; font-weight: bold;">1. Game Field setting</p>
 
 ```javascript

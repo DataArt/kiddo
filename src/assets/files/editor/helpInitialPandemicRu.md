@@ -1,4 +1,3 @@
-<p style="color: #000; font-weight: bold;">3 шаг</p>
 <p style="color: #000;">Для конфигурации сцены есть следующие методы:</p>
 <p style="color: #000; font-weight: bold;">1. Создать игровое поле</p>
 
