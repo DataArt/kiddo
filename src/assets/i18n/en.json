@@ -313,6 +313,19 @@
       "NO_CHECKING_LOGIC": "No logic check is set",
       "GAMEFIELD_ROW_LENGTH": "(TODO: translate): Строки тайлов игрового поля имеют разную длину"
     },
+    "PANDEMIC": {
+      "NO_PLAYER": "There is no Player in the scene configuration",
+      "NO_GAMEFIELD": "There is no game field in the configuration",
+      "GAMEOBJECTS_COORDS": "One or more objects are (mislocated outside the field)",
+      "GAMEOBJECTS_OUT_FIELD": "One or more objects are mislocated (outside the field)",
+      "PLAYER_COORDS": "The Player is mislocated (outside the road)",
+      "PLAYER_OUT_FIELD": "The Player is mislocated (outside the field)",
+      "GAMEOBJECTS_SAME_COORDS": "Two or more game objects have the same coordinates",
+      "GAMEOBJECT_WRONG_COLOR": "The game object has a wrong color assigned",
+      "GAMEOBJECT_NO_COLOR": "The game object has no color assigned",
+      "NO_CHECKING_LOGIC": "No logic check is set",
+      "GAMEFIELD_ROW_LENGTH": "(TODO: translate): Строки тайлов игрового поля имеют разную длину"
+    },
     "CONSOLE": {
       "OUT_OF_RANGE": "Numeric variables must take values from -1000000 up to 1000000",
       "MAX_VARIABLES": "The admissible maximum number of variables in the configuration is 4",
@@ -348,8 +361,8 @@
       "CHANGING_MODAL": "All progress will be lost",
       "WARNING": "Warning!",
       "CONSOLE": "Console",
-      "RACCOON": "Raccoon"
-
+      "RACCOON": "Raccoon",
+      "PANDEMIC_HERO": "Pandemic hero"
     },
     "TASK_DESCRIPTION": {
       "TITLE": "Task description",

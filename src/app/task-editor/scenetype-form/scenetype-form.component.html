@@ -3,8 +3,8 @@
     <p>{{'TASK_EDITOR.SCENE_TYPE.MESSAGE' | translate}}</p>
     <form [formGroup]="sceneTypeForm" (submit)="sceneType !== sceneTypeForm.value.sceneType && sceneType? confirmChanging.open() : onSubmit(sceneTypeForm.value)" class="scenetype-form">
         <div class="form-element"><label for="raccoon"><input formControlName="sceneType" id="raccoon" type="radio" value="raccoon"> {{'TASK_EDITOR.SCENE_TYPE.RACCOON' | translate}}</label></div>
+        <div class="form-element"><label for="pandemic"><input formControlName="sceneType" id="pandemic" type="radio" value="pandemic"> {{'TASK_EDITOR.SCENE_TYPE.PANDEMIC_HERO' | translate}}</label></div>
         <div class="form-element"><label for="console"><input formControlName="sceneType" id="console" type="radio" value="console"> {{'TASK_EDITOR.SCENE_TYPE.CONSOLE' | translate}}</label></div>
-        <div class="form-element"><label for="console"><input formControlName="sceneType" id="console" type="radio" value="pandemic"> {{'TASK_EDITOR.SCENE_TYPE.PANDEMIC' | translate}}</label></div>
         <button [disabled]="!sceneTypeForm.valid" class="button purple form-element" type="submit">{{'TASK_EDITOR.NEXT' | translate}}</button>
     </form>
     <div *ngIf="sceneType !== sceneTypeForm.value.sceneType && sceneType">{{'TASK_EDITOR.SCENE_TYPE.CHANGING' | translate}}</div>

@@ -7,7 +7,7 @@ export interface Person extends GameObject {
   state: GameObjectState.DEFAULT;
   position: Coords;
   direction: Direction;
-  hitboxSize: 0;
+  hitboxSize: 1;
   isMovable: true;
   isPickable: false;
   id: number;

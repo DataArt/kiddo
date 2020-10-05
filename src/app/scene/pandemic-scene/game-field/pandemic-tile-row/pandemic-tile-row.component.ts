@@ -24,9 +24,9 @@ export class PandemicTileRowComponent {
     [PassableTile.SHOP]: {cssClass: 'shop'},
     [ImpassableTile.FENCE]: {cssClass: 'fence'},
     [ImpassableTile.CONE]: {cssClass: 'cone'},
-    [ImpassableTile.MALL_UP_LEFT]: {cssClass: 'mall mall-up-left'},
-    [ImpassableTile.MALL_UP_RIGHT]: {cssClass: 'mall mall-up-right'},
-    [ImpassableTile.MALL_DOWN_LEFT]: {cssClass: 'mall mall-down-left'},
-    [ImpassableTile.MALL_DOWN_RIGHT]: {cssClass: 'mall mall-down-right'},
+    [ImpassableTile.MALL_UP_LEFT]: {cssClass: 'mall-up-left'},
+    [ImpassableTile.MALL_UP_RIGHT]: {cssClass: 'mall-up-right'},
+    [ImpassableTile.MALL_DOWN_LEFT]: {cssClass: 'mall-down-left'},
+    [ImpassableTile.MALL_DOWN_RIGHT]: {cssClass: 'mall-down-right'},
   };
 }

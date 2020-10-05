@@ -81,6 +81,6 @@ export class PandemicSceneComponent implements OnInit {
     this.compulsoryItems = this.tileSceneReader.getCompulsoryGameObjects();
     this.playerInventory = this.player.inventory;
     this.customTiles = this.tileSceneReader.getCustomTiles();
-    console.log(this.playerInventory, this.compulsoryItems)
+    console.log(this.gameObjects)
   }
 }

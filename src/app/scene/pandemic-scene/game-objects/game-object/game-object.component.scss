@@ -54,7 +54,7 @@
 
 .virus-moving {
   background-size: 2400%;
-  background-position: 9.2% 97%;
+  background-position: 9.2% 92%;
   animation-name: virusMoving;
   animation-duration: 1s;
   animation-timing-function: steps(2);
@@ -62,10 +62,10 @@
 }
 @keyframes virusMoving {
   0% {
-    background-position: 9.2% 97%;
+    background-position: 9.2% 92%;
   }
 
   to {
-    background-position: -5.1% 97%;
+    background-position: -5.1% 92%;
   }
 }

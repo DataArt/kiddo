@@ -25,14 +25,6 @@ export class PandemicReaderService implements SceneReader {
   getFailMessagsMap(): Array<{checkFunction: () => {}, message: string}> {
     return  [
       {
-        checkFunction: () => !this.checkMaskOn(),
-        message: 'MASK_IS_NOT_ON',
-      },
-      {
-        checkFunction: () => !this.checkHandsWashed(),
-        message: 'HANDS_NOT_WASHED',
-      },
-      {
         checkFunction: () => !this.checkProductsPicked(),
         message: 'PRODUCTS_NOT_PICKED',
       },

@@ -60,31 +60,34 @@
   margin-bottom: 0;
   padding-right: 1px;
   padding-bottom: 1px;
-  background-image: url('../../../../../assets/images/who.svg');
   background-color: #bdb5e4;
   background-size: 1900%;
   background-position: 73.4% 54%;
 }
 
 .tile-row__tile_type_mall-up-left {
+  @extend .tile-row__tile_type_mall;
   background-position: 73.4% 54%;
   border-right: none;
   border-bottom: none;
 }
 
 .tile-row__tile_type_mall-down-left {
+  @extend .tile-row__tile_type_mall;
   padding-bottom: 0;
   background-position: 73.4% 108%;
   border-right: none
 }
 
 .tile-row__tile_type_mall-up-right {
+  @extend .tile-row__tile_type_mall;
   padding-right: 0;
   background-position: 79% 54%;
   border-bottom: none;
 }
 
 .tile-row__tile_type_mall-down-right {
+  @extend .tile-row__tile_type_mall;
   padding-right: 0;
   padding-bottom: 0;
   background-position: 79% 108%;

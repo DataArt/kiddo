@@ -79,6 +79,7 @@ export class RaccoonSceneComponent implements OnInit {
     this.compulsoryItems = this.tileSceneReader.getCompulsoryGameObjects();
     this.playerInventory = this.player.inventory;
     this.customTiles = this.tileSceneReader.getCustomTiles();
+    console.log(this.gameObjects)
   }
 
   private getImmutableModel(): void {

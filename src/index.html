@@ -45,20 +45,18 @@
     const sceneConfig = `
     sceneType: Pandemic
     generatingFunc: >-
-      this.setPlayerPosition(0, 0);
+      this.setPlayerPosition(6, 0);
       this.setGameField([
-        ['HO', 'RO', 'FE', 'CO', 'FE', 'RO', 'RO'],
-        ['RO', 'RO', 'RO', 'RO', 'FE', 'FE', 'RO'],
-        ['FE', 'FE', 'FE', 'RO', 'RO', 'FE', 'RO'],
-        ['RO', 'RO', 'CO', 'CO', 'RO', 'FE', 'CO'],
-        ['RO', 'RO', 'RO', 'FE', 'RO', 'RO', 'FE'],
-        ['RO', 'RO', 'RO', 'CO', 'FE', 'RO', 'HO']
+        ['HO', 'FE', 'FE', 'CO', 'FE', 'FE', 'RO'],
+        ['RO', 'RO', 'RO', 'CO', 'RO', 'RO', 'RO'],
+        ['RO', 'RO', 'RO', 'RO', 'FE', 'RO', 'CO'],
+        ['L1', 'L2', 'RO', 'RO', 'RO', 'RO', 'FE'],
+        ['L3', 'L4', 'FE', 'RO', 'RO', 'RO', 'CO'],
+        ['FE', 'FE', 'RO', 'RO', 'RO', 'RO', 'RO'],
+        ['CO', 'RO', 'FE', 'RO', 'CO', 'RO', 'RO']
       ]);
-      this.addVirus([5, 0], 'right');
-      this.setMaskRequired();
-      this.addSanitizers([1, 0]);
-      this.addMasks([1, 1]);
-      this.addCheckingLogic('console.log(this); return this.player.position.x === 6 && this.player.position.y === 5 ? null : "HOME_NOT_REACHED"');
+      this.setWearingMaskAsRequired();
+      this.addCheckingLogic('return this.player.position.x === 0 && this.player.position.y === 0 ? (this.handsWashed? null : "не в") : "HOME_NOT_REACHED"');
     winButton:  
       url: ./task2
       text: Следующий уровень

@@ -17,6 +17,7 @@ import { SceneType } from '../common/models/scene-type.enum';
 import { PandemicSkulptService } from './pandemic-skulpt.service';
 import { SceneBuilder } from '../common/scene-builder';
 import { Singleton } from 'src/app-engine/singleton.decorator';
+import { PandemicValidationService } from './pandemic-validation.service';
 
 @Singleton
 export class PandemicBuilderService implements SceneBuilder {
@@ -38,12 +39,13 @@ export class PandemicBuilderService implements SceneBuilder {
     DOWN: Direction.DOWN
   };
 
-  private gameObjectIdCounter: number;
+  private gameObjectIdCounter = 1;
 
 
   constructor(private reader: PandemicReaderService,
               private writer: PandemicWriterService,
               private sceneSkulptService: PandemicSkulptService,
+              private validationService: PandemicValidationService
   ) {
   }
 
@@ -54,6 +56,8 @@ export class PandemicBuilderService implements SceneBuilder {
   buildScene(config: SceneConfig): SceneDescriptor {
     this.resetModel();
     this.parseGeneratingFunc(config.generatingFunc);
+    this.validationService.validateConfig(this.sceneModel);
+
     return { model: this.sceneModel, reader: this.reader, writer: this.writer, skulptService:  this.sceneSkulptService };
   }
 
@@ -73,7 +77,7 @@ export class PandemicBuilderService implements SceneBuilder {
     };
   }
 
-  private setMaskRequired(): void {
+  private setWearingMaskAsRequired(): void {
     this.sceneModel.shouldPutOnMask = true;
   }
 
@@ -129,7 +133,7 @@ export class PandemicBuilderService implements SceneBuilder {
       position: this.derivePosition(position),
       direction: Object.values(Direction).find(oneDirection => oneDirection === direction.toUpperCase()) || Direction.RIGHT,
       state: GameObjectState.DEFAULT,
-      hitboxSize: 0,
+      hitboxSize: 1,
       isMovable: true,
       isPickable: false,
       additionalState: Math.round(Math.random()) === 0 ? GameObjectAdditionalState.MALE : GameObjectAdditionalState.FEMALE,
@@ -169,25 +173,6 @@ export class PandemicBuilderService implements SceneBuilder {
         isCompulsory: true,
       };
       this.sceneModel.gameObjects.push(cookie);
-    });
-  }
-
-  addPeople(people: ConfigGameObject[]): void {
-    if (!people) {
-      return;
-    }
-    people.forEach((person: ConfigGameObject, index: number) => {
-      this.sceneModel.gameObjects.push({
-        direction: person.direction ? (this.directions[(person.direction).toUpperCase()] || Direction.RIGHT) : Direction.RIGHT,
-        position: this.derivePosition(person.position),
-        type: GameObjectType.PERSON,
-        hitboxSize: 1,
-        isMovable: true,
-        isPickable: false,
-        state: GameObjectState.DEFAULT,
-        additionalState: Math.round(Math.random()) === 0 ? GameObjectAdditionalState.MALE : GameObjectAdditionalState.FEMALE,
-        id: this.nextGameObjectID,
-      });
     });
   }
 
