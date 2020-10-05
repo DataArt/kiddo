@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GameObject } from '../../../../app-engine/scene/raccoon/entities';
+import { GameFieldCellSize } from '../../common/interfaces/game-field-cell-size';
 
 @Component({
   selector: 'kiddo-pandemic-game-objects',
@@ -8,5 +9,5 @@ import { GameObject } from '../../../../app-engine/scene/raccoon/entities';
 })
 export class PandemicGameObjectsComponent {
   @Input() gameObjects: GameObject[];
-  @Input() itemSize: number;
+  @Input() itemSize: GameFieldCellSize;
 }

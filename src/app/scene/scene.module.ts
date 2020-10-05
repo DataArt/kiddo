@@ -13,7 +13,6 @@ import { GameObjectsComponent } from './raccoon-scene/game-objects/game-objects.
 import { GameObjectComponent } from './raccoon-scene/game-objects/game-object/game-object.component';
 import {
   ExcludeGameObjectsTypesPipe,
-  GameObjectCellSizePipe,
   GameObjectCoordinatePipe,
   QuoteStringPipe,
   SnakeToKebabCasePipe
@@ -33,6 +32,8 @@ import { PandemicHeroComponent } from './pandemic-scene/player/pandemic-hero/pan
 import { RaccoonTileClassDirective } from './raccoon-scene/directives/raccoon-tile-class.directive';
 import { PandemicTileClassDirective } from './pandemic-scene/directives/raccoon-tile-class.directive';
 import { PandemicGameObjectComponent } from './pandemic-scene/game-objects/game-object/game-object.component';
+import { GameObjectCellSizePipe } from './raccoon-scene/pipes/game-field-cell-size.pipe';
+import { PandemicGameObjectCellSizePipe } from './pandemic-scene/pipes/game-field-cell-size.pipe';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { PandemicGameObjectComponent } from './pandemic-scene/game-objects/game-
     GameObjectComponent,
     PropertyFilterPipe,
     GameObjectCellSizePipe,
+    PandemicGameObjectCellSizePipe,
     GameObjectCoordinatePipe,
     SnakeToKebabCasePipe,
     QuoteStringPipe,
