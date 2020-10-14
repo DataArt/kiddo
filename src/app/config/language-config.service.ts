@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class LanguageConfigService {
 
   private languageConfig: LanguageConfig;
-  private availableLanguages = ['en', 'ru'];
+  private availableLanguages = ['en', 'ru', 'ua', 'am'];
 
   constructor(private translateService: TranslateService) {
   }

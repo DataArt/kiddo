@@ -324,7 +324,7 @@
       "GAMEOBJECT_WRONG_COLOR": "The game object has a wrong color assigned",
       "GAMEOBJECT_NO_COLOR": "The game object has no color assigned",
       "NO_CHECKING_LOGIC": "No logic check is set",
-      "GAMEFIELD_ROW_LENGTH": "(TODO: translate): Строки тайлов игрового поля имеют разную длину"
+      "GAMEFIELD_ROW_LENGTH": "The tile rows on the game field have different lengths"
     },
     "CONSOLE": {
       "OUT_OF_RANGE": "Numeric variables must take values from -1000000 up to 1000000",
