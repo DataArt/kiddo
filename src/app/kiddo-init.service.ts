@@ -76,7 +76,7 @@ export class KiddoInitService {
       ? this.initPrefix + error.message
       : error.message;
 
-    this.terminal.print(`${this.i18n.translate(this.initPrefix)(errorType)}: ${this.i18n.translate('')(errorMessage)}`);
+    this.terminal.print(this.initPrefix + errorType, errorMessage);
     this.configError.next({ type: errorType, message: errorMessage });
 
   }
