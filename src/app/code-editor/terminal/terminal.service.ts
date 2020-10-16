@@ -27,7 +27,7 @@ export class TerminalService {
     this._isOpen.next(false);
   }
 
-  print(text: string): void {
+  print(...text: string[]): void {
     const line = {time: `[${this.datePipe.transform(Date.now(), 'hh:mm:ss')}]`, text};
     this.content.push(line);
   }
