@@ -21,7 +21,10 @@
         <perfect-scrollbar #perfectScrollbarComponent>
             <div class="terminal-scrollable">
                 <div class="line" *ngFor="let line of content">
-                    {{line.time}} {{line.text | translate}}
+                    {{line.time}} 
+                    <span *ngFor="let textPart of line.text; index as i">
+                        {{ (textPart | translate) + (i < line.text.length - 1 ? ':' : '') }}
+                    </span>
                 </div>
             </div>
         </perfect-scrollbar>
