@@ -89,19 +89,17 @@ export class PandemicWriterService implements SceneWriter {
     this.sceneModel.player.additionalState = newState;
   }
 
-  pickGameObject(gameObject: GameObject): void {
-    const pickedGameObject: GameObject = {
-      ...gameObject,
-      state: GameObjectState.PICKED
-    };
-    this.sceneModel.player.inventory.push(pickedGameObject);
-    this.sceneModel.gameObjects = this.sceneModel.gameObjects.filter((item: GameObject) => item.id !== gameObject.id);
+  private pickGameObject(gameObject: GameObject): void {
+    this.sceneModel.gameObjects.splice(this.sceneModel.gameObjects.indexOf(gameObject), 1);
+    gameObject.state = GameObjectState.PICKED;
+    this.sceneModel.player.inventory.push(gameObject);
+    console.log(this.sceneModel.player.inventory);
   }
 
   activateGameObject(gameObjectType: GameObjectType): void {
     let itemToActivate: GameObject = this.sceneModel.player.inventory.find((item: GameObject) => item.type === gameObjectType);
     if (itemToActivate) {
-      this.reader.player.state = GameObjectState.DEFAULT;
+      this.reader.getPlayer().state = GameObjectState.DEFAULT;
       itemToActivate = {
         ...itemToActivate,
         state: GameObjectState.ACTIVATED,
@@ -259,12 +257,20 @@ export class PandemicWriterService implements SceneWriter {
       .find(moveDirection => moveDirection.numericValue === direction);
 
     timer(500).subscribe(() => {
-      this.sceneModel.gameObjects = this.sceneModel.gameObjects.filter((gameObject: GameObject) =>
-        gameObject.type !== GameObjectType.VIRUS
-        || gameObject.position.x !== (this.sceneModel.player.position.x + offsetDirection.x)
-        || gameObject.position.y !== (this.sceneModel.player.position.y + offsetDirection.y)
-      );
+      for (const virus of this.reader.getGameObjectsOfType(GameObjectType.VIRUS)) {
+        if (virus.position.x === (this.sceneModel.player.position.x + offsetDirection.x)
+        && virus.position.y === (this.sceneModel.player.position.y + offsetDirection.y)) {
+          const virusIndex = this.sceneModel.gameObjects.findIndex(item => item.id === virus.id);
+          this.sceneModel.gameObjects.splice(virusIndex, 1);
+        }
+      }
     });
+  }
+
+  handlePlayerStateOnCompletion(): void {
+    const levelPassed = this.sceneModelService.gameStatistics.levelPassed;
+    this.setPlayerState(levelPassed ? GameObjectState.SUCCESS : GameObjectState.FAIL);
+    this.setPlayerAdditionalState(null);
   }
 }
 

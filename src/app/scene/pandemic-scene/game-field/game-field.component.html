@@ -1,12 +1,13 @@
-<!-- <section class="game-field">
+<section class="game-field">
   
-  <ng-template [ngIf]="sceneType === SceneType.RACCOON">
-    <kiddo-raccoon-tile-row *ngFor="let row of field; index as i" [row]="row" [playerPosition]="playerPosition" [rowIndex]="i" [sceneIsLabyrinth]="sceneIsLabyrinth"></kiddo-raccoon-tile-row>
-  </ng-template>
-
-  <ng-template [ngIf]="sceneType === SceneType.PANDEMIC">
-    <kiddo-pandemic-tile-row *ngFor="let row of field" [row]="row"></kiddo-pandemic-tile-row>
-  </ng-template>
+  <kiddo-pandemic-tile-row
+    *ngFor="let row of field; index as i"
+    [row]="row"
+    [customTiles]="customTiles"
+    [playerPosition]="playerPosition"
+    [rowIndex]="i"
+    [sceneIsLabyrinth]="sceneIsLabyrinth"
+  ></kiddo-pandemic-tile-row>
 
   <ng-content></ng-content>
-</section> -->
+</section>

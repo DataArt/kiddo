@@ -1,14 +1,15 @@
-import { Component, OnInit, Self } from '@angular/core';
+import { Component, Input, OnInit, Self } from '@angular/core';
 import { delay, filter, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ScriptRunnerService } from '../../../app-engine/script-runner/script-runner.service';
 import { scriptExecutionState } from '../../../app-engine/script-runner/script-runner.types';
 import { Destroyed } from '../../shared/services';
-import { GameObject, Player, Tile } from '../../../app-engine/scene/raccoon/entities';
+import { GameObject, Player, Tile } from '../../../app-engine/scene/pandemic/entities';
 import { SceneType } from '../../../app-engine/scene/common/models/scene-type.enum';
-import { RaccoonReaderService } from '../../../app-engine/scene/raccoon/readers/raccoon-reader.service';
-import { RaccoonWriterService } from '../../../app-engine/scene/raccoon/writers/raccoon-writer.service';
 import { SceneAccessorsService } from '../../../app-engine/scene/scene-accessors.service';
 import { KiddoInitService } from '../../kiddo-init.service';
+import { PandemicReaderService } from 'src/app-engine/scene/pandemic/readers/pandemic-reader.service';
+import { PandemicWriterService } from 'src/app-engine/scene/pandemic/writers/pandemic-writer.service';
+import { CustomeTile } from 'src/app-engine/scene/pandemic/entities';
 
 @Component({
   selector: 'kiddo-pandemic-scene',
@@ -20,14 +21,16 @@ export class PandemicSceneComponent implements OnInit {
   // TODO this should PROBABLY be hooked up from scene-model.service.ts, not re-declared here
   sceneType: SceneType;
   compulsoryItems: GameObject[];
+  customTiles: CustomeTile[];
   gameField: Tile[][];
-  gameObjects: GameObject[];
+  gameObjects: GameObject[] = [];
   player: Player;
   playerInventory: GameObject[];
   terraIncognita: boolean;
+  @Input() isStatic: boolean;
 
-  private tileSceneReader: RaccoonReaderService;
-  private playerWriter: RaccoonWriterService;
+  private tileSceneReader: PandemicReaderService;
+  private playerWriter: PandemicWriterService;
 
   private sceneAccessorsService: SceneAccessorsService;
 
@@ -42,8 +45,8 @@ export class PandemicSceneComponent implements OnInit {
   // TODO this logic shouldn't be in component! Move it to script-runner or some other service it belongs to
   ngOnInit(): void {
     // hook up to scene accessors
-    this.tileSceneReader = this.sceneAccessorsService.reader as RaccoonReaderService;
-    this.playerWriter = this.sceneAccessorsService.writer as RaccoonWriterService;
+    this.tileSceneReader = this.sceneAccessorsService.reader as PandemicReaderService;
+    this.playerWriter = this.sceneAccessorsService.writer as PandemicWriterService;
 
     // wait for init to finish,
     this.kiddoInitService.isLoaded.pipe(
@@ -53,7 +56,7 @@ export class PandemicSceneComponent implements OnInit {
       // Whenever execution state is ready for running, update current scene model
       tap(state => {
         if (state === scriptExecutionState.READY) {
-          this.getModel();
+          this.isStatic ? this.getImmutableModel() : this.getModel();
           this.terraIncognita = this.tileSceneReader.terraIncognitaIsOn();
         }
       }),
@@ -77,6 +80,20 @@ export class PandemicSceneComponent implements OnInit {
     this.gameField = this.tileSceneReader.getGameField();
     this.gameObjects = this.tileSceneReader.getGameObjects();
     this.compulsoryItems = this.tileSceneReader.getCompulsoryGameObjects();
-    this.playerInventory = this.player?.inventory.filter(gameObject => !gameObject.isCompulsory);
+    this.playerInventory = this.player.inventory;
+    this.customTiles = this.tileSceneReader.getCustomTiles();
+  }
+
+  private getImmutableModel(): void {
+    this.sceneType = this.tileSceneReader.getSceneType();
+    this.player = {...this.tileSceneReader.getPlayer(), position: {...this.tileSceneReader.getPlayer().position}};
+    this.gameField = this.tileSceneReader.getGameField();
+    this.gameObjects = [];
+    for (const obj of this.tileSceneReader.getGameObjects()) {
+      this.gameObjects.push({...obj, position: {...obj.position}});
+    }
+    this.compulsoryItems = this.tileSceneReader.getCompulsoryGameObjects();
+    this.playerInventory = this.player.inventory;
+    this.customTiles = this.tileSceneReader.getCustomTiles();
   }
 }

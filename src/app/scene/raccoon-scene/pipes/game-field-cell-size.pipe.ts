@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 import { Tile } from '../../../../app-engine/scene/raccoon/entities';
-import { GameFieldCellSize } from '../interfaces/game-field-cell-size';
+import { GameFieldCellSize } from '../../common/interfaces/game-field-cell-size';
 
 @Pipe({
   name: 'gameFieldCellSize',
