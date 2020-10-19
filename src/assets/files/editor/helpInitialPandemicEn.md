@@ -23,8 +23,29 @@ this.setGameField([ [...1st row tiles], [...2nd row tiles], ...])
 		['HO', 'RO', 'RO', 'OF'])
 ])
 ```
+
+<p style="color: #000; font-weight: bold;">2. Add a custom tile</p>
+
+```javascript
+this.addCustomTile('tileName', 'tileImagePath');
+```
+
+<p style="color: #000;">where tileName is the name of the tile passed to 'this.setGameField' method, which sets the game field, and tileImagePath is the path to the tile's image.</p>
+
+All custom tiles are obstacles on the game field.
+<p style="color: #000;">For example:</p>
+
+```javascript
+this.addCustomTile('TR', 'https://i.imgur.com/ELvTBrD.png');
+
+this.setGameField([
+    ['TR', 'RO', 'TR'],
+    ['TR', 'RO', 'TR'],
+    ['TR', 'RO', 'TR']
+]);
+```
 	
-<p style="color: #000; font-weight: bold;">2. Setting player’s initial position</p>
+<p style="color: #000; font-weight: bold;">3. Setting player’s initial position</p>
  
 ```javascript
     this.setPlayerPosition(X, Y)
@@ -40,7 +61,7 @@ The player can be located only on the road within the game field. The player mus
     this.setPlayerPosition(0, 2);
 ```
 	
-<p style="color: #000; font-weight: bold;">3. Adding masks to the scene</p>
+<p style="color: #000; font-weight: bold;">4. Adding masks to the scene</p>
 
 ```javascript
     this.addMasks([X1, Y1], [X2, Y2], ...)
@@ -55,14 +76,14 @@ The mask can be added only onto the road within the game field. The mask can’t
     this.addMasks([0, 4], [2, 5], [1, 6]);
 ```
 
-<p style="color: #000; font-weight: bold;">4. (TODO: translate) Добавить обязательное правило ношения маски</p>
+<p style="color: #000; font-weight: bold;">5. (TODO: translate) Добавить обязательное правило ношения маски</p>
 
 ```javascript
     this.setWearingMaskAsRequired()
 ```
 <p style="color: #000;">Если в конфиге задан этот метод, перед началом любых ходов игроку необходимо надеть маску, иначе игра прервется, и уровень будет пройден.</p>
 	
-<p style="color: #000; font-weight: bold;">5.	Adding sanitizers to the scene</p>
+<p style="color: #000; font-weight: bold;">6.	Adding sanitizers to the scene</p>
 
 ```javascript
     this.addSanitizers([X1, Y1], [X2, Y2], ...);
@@ -78,7 +99,7 @@ The sanitizer can be added only onto the road within the game field. The sanitiz
     this.addSanitizers([0, 4], [2, 5]);
 ```
     
-<p style="color: #000; font-weight: bold;">6. Adding a person with the fixed initial position onto the game field</p>
+<p style="color: #000; font-weight: bold;">7. Adding a person with the fixed initial position onto the game field</p>
 
 ```javascript
 this.addPerson([X, Y], 'direction');
@@ -96,7 +117,7 @@ Calling method this.addPerson ([X, Y], 'direction') again is required to add eac
 this.addPerson([1, 1], 'left');
 ```
 
-<p style="color: #000; font-weight: bold;">7. Adding a person with a number of the possible initial positions onto the game field</p>
+<p style="color: #000; font-weight: bold;">8. Adding a person with a number of the possible initial positions onto the game field</p>
 
 ```javascript
 this.addPerson([[X1, Y1], [X2, Y2], ...], 'direction');
@@ -114,7 +135,7 @@ Calling method this.addPerson ([[X1, Y1], [X2, Y2], ...], 'direction') again is 
 this.addPerson([ [1, 1], [2, 1], [3, 1] ], 'up');
 ```
 
-<p style="color: #000; font-weight: bold;">8. Adding a virus with the fixed initial position onto the game field</p>
+<p style="color: #000; font-weight: bold;">9. Adding a virus with the fixed initial position onto the game field</p>
 
 ```javascript
 this.addVirus([X, Y], 'direction');
@@ -132,7 +153,7 @@ Calling method this.addVirus ([X, Y], 'direction') again is required to add each
 this.addVirus([1, 1], 'left')
 ```
 
-<p style="color: #000; font-weight: bold;">9.	Adding a virus with a number of the possible initial positions onto the game field</p>
+<p style="color: #000; font-weight: bold;">10.	Adding a virus with a number of the possible initial positions onto the game field</p>
 
 ```javascript
 this.addVirus([[X1, Y1], [X2, Y2], ...], 'direction');
@@ -150,7 +171,7 @@ Calling method this.addVirus([[X1, Y1], [X2, Y2], ...], 'direction') again is re
 this.addVirus([ [1, 1], [2, 1], [3, 1] ], 'up'); 
 ```
 
-<p style="color: #000; font-weight: bold;">10. Adding a virus with the player chase function</p>
+<p style="color: #000; font-weight: bold;">11. Adding a virus with the player chase function</p>
 
 ```javascript
 this.addVirus([X, Y], 'direction', true); 
@@ -168,7 +189,7 @@ Calling method this.addVirus([X, Y], 'direction', true) again is required to add
 this.addVirus([1, 1], 'right', true);
 ```
 
-<p style="color: #000; font-weight: bold;">11.	Adding the checking logic code</p>
+<p style="color: #000; font-weight: bold;">12.	Adding the checking logic code</p>
 
 ```javascript
 this.addCheckingLogic('code')

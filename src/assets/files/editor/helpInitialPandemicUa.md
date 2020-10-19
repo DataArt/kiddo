@@ -23,8 +23,29 @@ this.setGameField([ [...1st row tiles], [...2nd row tiles], ...])
 		['HO', 'RO', 'RO', 'OF'])
 ])
 ```
+
+<p style="color: #000; font-weight: bold;">2. Додати користувальницький тайл</p>
+
+```javascript
+this.addCustomTile('tileName', 'tileImagePath');
+```
+
+<p style="color: #000;">де tileName — ім'я тайла, під яким його можна передати в метод для створення ігрового поля 'this.setGameField', а tileImagePath — шлях до зображення для цього тайла.</p>
+
+Всі користувацькі тайли є перешкодами на ігровому полі.
+<p style="color: #000;">Приклад:</p>
+
+```javascript
+this.addCustomTile('TR', 'https://i.imgur.com/ELvTBrD.png');
+
+this.setGameField([
+    ['TR', 'RO', 'TR'],
+    ['TR', 'RO', 'TR'],
+    ['TR', 'RO', 'TR']
+]);
+```
 	
-<p style="color: #000; font-weight: bold;">2. Встановити початкову позицію гравця</p>
+<p style="color: #000; font-weight: bold;">3. Встановити початкову позицію гравця</p>
  
 ```javascript
     this.setPlayerPosition(X, Y)
@@ -40,7 +61,7 @@ this.setGameField([ [...1st row tiles], [...2nd row tiles], ...])
     this.setPlayerPosition(0, 2);
 ```
 	
-<p style="color: #000; font-weight: bold;">3. Додати маски на сцену</p>
+<p style="color: #000; font-weight: bold;">4. Додати маски на сцену</p>
 
 ```javascript
     this.addMasks([X1, Y1], [X2, Y2], ...)
@@ -55,14 +76,14 @@ this.setGameField([ [...1st row tiles], [...2nd row tiles], ...])
     this.addMasks([0, 4], [2, 5], [1, 6]);
 ```
 
-<p style="color: #000; font-weight: bold;">4. (TODO: translate) Добавить обязательное правило ношения маски</p>
+<p style="color: #000; font-weight: bold;">5. Додати обов'язкове правило носіння маски</p>
 
 ```javascript
     this.setWearingMaskAsRequired()
 ```
-<p style="color: #000;">Если в конфиге задан этот метод, перед началом любых ходов игроку необходимо надеть маску, иначе игра прервется, и уровень будет пройден.</p>
+<p style="color: #000;">Якщо в конфігу задано цей метод, перед початком будь-яких ходів гравцеві необхідно надіти маску, інакше гра перерветься, і рівень буде пройдено.</p>
 	
-<p style="color: #000; font-weight: bold;">5. Додати санітайзери на сцену</p>
+<p style="color: #000; font-weight: bold;">6. Додати санітайзери на сцену</p>
 
 ```javascript
     this.addSanitizers([X1, Y1], [X2, Y2], ...);
@@ -79,7 +100,7 @@ this.setGameField([ [...1st row tiles], [...2nd row tiles], ...])
     this.addSanitizers([0, 4], [2, 5]);
 ```
     
-<p style="color: #000; font-weight: bold;">6. Додати людину з фіксованою початковою позицією на ігрове поле</p>
+<p style="color: #000; font-weight: bold;">7. Додати людину з фіксованою початковою позицією на ігрове поле</p>
 
 ```javascript
 this.addPerson([X, Y], 'direction');
@@ -97,7 +118,7 @@ this.addPerson([X, Y], 'direction');
 this.addPerson([1, 1], 'left');
 ```
 
-<p style="color: #000; font-weight: bold;">7. Додати людину з кількома можливими початковими позиціями на ігрове поле</p>
+<p style="color: #000; font-weight: bold;">8. Додати людину з кількома можливими початковими позиціями на ігрове поле</p>
 
 ```javascript
 this.addPerson([[X1, Y1], [X2, Y2], ...], 'direction');
@@ -115,7 +136,7 @@ this.addPerson([[X1, Y1], [X2, Y2], ...], 'direction');
 this.addPerson([ [1, 1], [2, 1], [3, 1] ], 'up');
 ```
 
-<p style="color: #000; font-weight: bold;">8. Додати вірус із фіксованою початковою позицією на ігрове поле</p>
+<p style="color: #000; font-weight: bold;">9. Додати вірус із фіксованою початковою позицією на ігрове поле</p>
 
 ```javascript
 this.addVirus([X, Y], 'direction');
@@ -134,7 +155,7 @@ this.addVirus ([X, Y], 'direction') повторно. Кількість вір�
 this.addVirus([1, 1], 'left')
 ```
 
-<p style="color: #000; font-weight: bold;">9. Додати вірус з декількома можливими початковими позиціями на ігрове поле</p>
+<p style="color: #000; font-weight: bold;">10. Додати вірус з декількома можливими початковими позиціями на ігрове поле</p>
 
 ```javascript
 this.addVirus([[X1, Y1], [X2, Y2], ...], 'direction');
@@ -153,7 +174,7 @@ this.addVirus ([[X1, Y1], [X2, Y2], ...], 'direction') повторно. Кіл�
 this.addVirus([ [1, 1], [2, 1], [3, 1] ], 'up'); 
 ```
 
-<p style="color: #000; font-weight: bold;">10. Додати вірус з функцією переслідування гравця на ігрове поле</p>
+<p style="color: #000; font-weight: bold;">11. Додати вірус з функцією переслідування гравця на ігрове поле</p>
 
 ```javascript
 this.addVirus([X, Y], 'direction', true); 
@@ -172,7 +193,7 @@ this.addVirus ([X, Y], 'direction', true) повторно. Кількість �
 this.addVirus([1, 1], 'right', true);
 ```
 
-<p style="color: #000; font-weight: bold;">11.	Додати код перевірки виконання завдання</p>
+<p style="color: #000; font-weight: bold;">12.	Додати код перевірки виконання завдання</p>
 
 ```javascript
 this.addCheckingLogic('code')
@@ -185,7 +206,7 @@ this.addCheckingLogic('code')
 this.addCheckingLogic('return this.player.position.x === 8 && this.player.position.y === 0 ? null : `FINISH_NOT_REACHED`'});
 ```
 
-<p style="color: #000; font-weight: bold;">(TODO: translate) The following example shows a simple scene's configuration:</p>
+<p style="color: #000; font-weight: bold;">Приклад конфігу простої сценки:</p>
 
 ```javascript
 this.setGameField([ ['RO', 'RO', 'RO'], ['RO', 'FE', 'RO'], ['RO', 'RO', 'HO'] ]);

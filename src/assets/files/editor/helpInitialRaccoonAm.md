@@ -203,7 +203,7 @@ this.addCheckingLogic('code')
 this.addCheckingLogic('return this.player.position.x === 8 && this.player.position.y === 0 ? null : `FINISH_NOT_REACHED`');
 ```
 
-<p style="color: #000; font-weight: bold;">(TODO: translate) Пример конфига простой сценки:</p>
+<p style="color: #000; font-weight: bold;">Հաջորդ օրինակում ցուցադրված է պարզ դրվագի կազմաձևումը</p>
 
 ```javascript
     this.setGameField([ ['RO', 'RO', 'RO'], ['RO', 'GR', 'RO'], ['RO', 'RO', 'FI']]);
