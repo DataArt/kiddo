@@ -1,3 +1,9 @@
+.tile-scene {
+  margin: 0 auto;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
 .tile-scene__player {
   position: absolute;
   transition-property: left, top;

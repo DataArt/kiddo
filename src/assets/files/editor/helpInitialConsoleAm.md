@@ -38,7 +38,7 @@ this.addCheckingLogic(`
 `);
 ```
 
-<p style="color: #000; font-weight: bold;">(TODO: translate) Пример конфига простой сценки:</p>
+<p style="color: #000; font-weight: bold;">Հաջորդ օրինակում ցուցադրված է պարզ դրվագի կազմաձևումը</p>
 
 ```javascript
 this.addConsoleVariable('x', 10);

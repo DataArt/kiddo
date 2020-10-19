@@ -192,4 +192,11 @@ export class PandemicBuilderService implements SceneBuilder {
       shouldPutOnMask: false,
     };
   }
+
+  private addCustomTile(name: string, url: string): void {
+    if (!this.sceneModel.customeTiles) {
+      this.sceneModel.customeTiles = [];
+    }
+    this.sceneModel.customeTiles.push({ name, url });
+  }
 }

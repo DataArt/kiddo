@@ -22,8 +22,29 @@ this.setGameField([ [...1st row tiles], [...2nd row tiles], ...])
 		['HO', 'RO', 'RO', 'OF'])
 ])
 ```
+
+<p style="color: #000; font-weight: bold;">2. Ավելացնել օգտագործողի թայլ</p>
+
+```javascript
+this.addCustomTile('tileName', 'tileImagePath');
+```
+
+<p style="color: #000;">որտեղ tileName- ը թայլի անունն է, որի տակ այն կարող է փոխանցվել «this.setGameField» խաղադաշտի ստեղծման մեթոդին, իսկ tileImage Path- ը այս թայլի պատկերի ուղին է:</p>
+
+Բոլոր օգտվողների թայլերը խոչընդոտներ են հանդիսանում խաղադաշտում:
+<p style="color: #000;">Օրինակ՝</p>
+
+```javascript
+this.addCustomTile('TR', 'https://i.imgur.com/ELvTBrD.png');
+
+this.setGameField([
+    ['TR', 'RO', 'TR'],
+    ['TR', 'RO', 'TR'],
+    ['TR', 'RO', 'TR']
+]);
+```
 	
-<p style="color: #000; font-weight: bold;">2. Սահմանել խաղացողի նախնական դիրքը</p>
+<p style="color: #000; font-weight: bold;">3. Սահմանել խաղացողի նախնական դիրքը</p>
  
 ```javascript
     this.setPlayerPosition(X, Y)
@@ -40,7 +61,7 @@ X, Y կոորդինատային արժեքները կարող են լինել մ
     this.setPlayerPosition(0, 2);
 ```
 	
-<p style="color: #000; font-weight: bold;">3. Խաղադաշտում ավելացնել դիմակներ</p>
+<p style="color: #000; font-weight: bold;">4. Խաղադաշտում ավելացնել դիմակներ</p>
 
 ```javascript
     this.addMasks([X1, Y1], [X2, Y2], ...)
@@ -56,14 +77,14 @@ X, Y կոորդինատային արժեքները կարող են լինել մ
 ```
 
 
-<p style="color: #000; font-weight: bold;">4. (TODO: translate) Добавить обязательное правило ношения маски</p>
+<p style="color: #000; font-weight: bold;">5. Ավելացնել դիմակ կրելու պարտադիր կանոն</p>
 
 ```javascript
     this.setWearingMaskAsRequired()
 ```
-<p style="color: #000;">Если в конфиге задан этот метод, перед началом любых ходов игроку необходимо надеть маску, иначе игра прервется, и уровень будет пройден.</p>
+<p style="color: #000;">Եթե այս մեթոդը նշված է կազմաձևման մեջ, ապա  խաղացողը ցանկացած շարժում կատարելուց առաջ պետք է դիմակ դնի, հակառակ դեպքում խաղը կընդհատվի  և մակարդակը կավարտվի</p>
 	
-<p style="color: #000; font-weight: bold;">5. Խաղադաշտում ավելացնել ախտահանող միջոցներ</p>
+<p style="color: #000; font-weight: bold;">6. Խաղադաշտում ավելացնել ախտահանող միջոցներ</p>
 
 ```javascript
     this.addSanitizers([X1, Y1], [X2, Y2], ...);
@@ -79,7 +100,7 @@ X, Y կոորդինատային արժեքները կարող են լինել մ
     this.addSanitizers([0, 4], [2, 5]);
 ```
     
-<p style="color: #000; font-weight: bold;">6. Խաղադաշտում ավելացնել ֆիկսված սկզբնակնիրքով մարդ</p>
+<p style="color: #000; font-weight: bold;">7. Խաղադաշտում ավելացնել ֆիկսված սկզբնակնիրքով մարդ</p>
 
 ```javascript
 this.addPerson([X, Y], 'direction');
@@ -95,7 +116,7 @@ X, Y կոորդինատային արժեքները կարող են լինել մ
 this.addPerson([1, 1], 'left');
 ```
 
-<p style="color: #000; font-weight: bold;">7. Խաղադաշտում ավեավնել մարդ մի քանի հնարավոր նախնական դիրքերով</p>
+<p style="color: #000; font-weight: bold;">8. Խաղադաշտում ավեավնել մարդ մի քանի հնարավոր նախնական դիրքերով</p>
 
 ```javascript
 this.addPerson([[X1, Y1], [X2, Y2], ...], 'direction');
@@ -110,7 +131,7 @@ X, Y կոորդինատային արժեքները կարող են լինել մ
 this.addPerson([ [1, 1], [2, 1], [3, 1] ], 'up');
 ```
 
-<p style="color: #000; font-weight: bold;">8. Խաղադաշտում ավելացնել ֆիկսված սկզբնակնիրքով վիրուս</p>
+<p style="color: #000; font-weight: bold;">9. Խաղադաշտում ավելացնել ֆիկսված սկզբնակնիրքով վիրուս</p>
 
 ```javascript
 this.addVirus([X, Y], 'direction');
@@ -126,7 +147,7 @@ X, Y կոորդինատային արժեքները կարող են լինել մ
 this.addVirus([1, 1], 'left')
 ```
 
-<p style="color: #000; font-weight: bold;">9. Խաղադաշտում ավեավնել վիրուս մի քանի հնարավոր նախնական դիրքերով</p>
+<p style="color: #000; font-weight: bold;">10. Խաղադաշտում ավեավնել վիրուս մի քանի հնարավոր նախնական դիրքերով</p>
 
 ```javascript
 this.addVirus([[X1, Y1], [X2, Y2], ...], 'direction');
@@ -141,7 +162,7 @@ X, Y կոորդինատային արժեքները կարող են լինել մ
 this.addVirus([ [1, 1], [2, 1], [3, 1] ], 'up'); 
 ```
 
-<p style="color: #000; font-weight: bold;">10. Ավելացնել վիրուս խաղացողին խաղադաշտում հետապնդելու գործառույթով</p>
+<p style="color: #000; font-weight: bold;">11. Ավելացնել վիրուս խաղացողին խաղադաշտում հետապնդելու գործառույթով</p>
 
 ```javascript
 this.addVirus([X, Y], 'direction', true); 
@@ -158,7 +179,7 @@ X, Y կոորդինատային արժեքները կարող են լինել մ
 this.addVirus([1, 1], 'right', true);
 ```
 
-<p style="color: #000; font-weight: bold;">11. Ավելացնել ծածկագիր առաջադրանքի կատարման ստուգման համար</p>
+<p style="color: #000; font-weight: bold;">12. Ավելացնել ծածկագիր առաջադրանքի կատարման ստուգման համար</p>
 
 ```javascript
 this.addCheckingLogic('code')
@@ -171,7 +192,7 @@ this.addCheckingLogic('code')
 this.addCheckingLogic('return this.player.position.x === 8 && this.player.position.y === 0 ? null : `FINISH_NOT_REACHED`');
 ```
 
-<p style="color: #000; font-weight: bold;">(TODO: translate) Пример конфига простой сценки:</p>
+<p style="color: #000; font-weight: bold;">Հաջորդ օրինակում ցուցադրված է պարզ դրվագի կազմաձևումը</p>
 
 ```javascript
 this.setGameField([ ['RO', 'RO', 'RO'], ['RO', 'FE', 'RO'], ['RO', 'RO', 'HO'] ]);

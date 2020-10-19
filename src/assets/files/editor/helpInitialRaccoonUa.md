@@ -215,7 +215,7 @@ this.addCheckingLogic(`
 `);
 ```
 
-<p style="color: #000; font-weight: bold;">(TODO: translate) The following example shows a simple scene's configuration:</p>
+<p style="color: #000; font-weight: bold;">Приклад конфігу простої сценки:</p>
 
 ```javascript
 this.setGameField([ ['RO', 'RO', 'RO'], ['RO', 'GR', 'RO'], ['RO', 'RO', 'FI'] ]);

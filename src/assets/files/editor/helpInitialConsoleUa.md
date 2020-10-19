@@ -33,7 +33,7 @@ this.addCheckingLogic('code')
 this.addCheckingLogic("return this.getConsoleVarValue('C') === this.getConsoleVarValue('X') * this.getConsoleVarValue('Y') ? null : `TASK_DONE_WRONG`");
 ```
 
-<p style="color: #000; font-weight: bold;">(TODO: translate) Пример конфига простой сценки:</p>
+<p style="color: #000; font-weight: bold;">Приклад конфігу простої сценки:</p>
 
 ```javascript
     this.addConsoleVariable('x', 10);

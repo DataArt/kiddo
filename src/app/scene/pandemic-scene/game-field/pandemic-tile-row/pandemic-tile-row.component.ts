@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
 import { Coords } from 'src/app-engine/scene/common/entities';
 import { environment } from 'src/environments/environment';
 import { Tile, TileCssClassMap, PassableTile, ImpassableTile, CustomeTile } from '../../../../../app-engine/scene/pandemic/entities';
@@ -9,7 +9,7 @@ import { Tile, TileCssClassMap, PassableTile, ImpassableTile, CustomeTile } from
   styleUrls: ['./pandemic-tile-row.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PandemicTileRowComponent {
+export class PandemicTileRowComponent implements OnInit {
   @Input() row: Tile[];
   @Input() customTiles: CustomeTile[];
   @Input() playerPosition: Coords;
@@ -29,4 +29,17 @@ export class PandemicTileRowComponent {
     [ImpassableTile.MALL_DOWN_LEFT]: {cssClass: 'mall-down-left'},
     [ImpassableTile.MALL_DOWN_RIGHT]: {cssClass: 'mall-down-right'},
   };
+
+
+  ngOnInit(): void {
+    if (this.customTiles != null) {
+      this.addCustomTilesToMap(this.customTiles);
+    }
+  }
+
+  private addCustomTilesToMap(customTiles: CustomeTile[]): void {
+    for (const customTile of customTiles) {
+      this.tileMap[customTile.name] = { cssClass: 'custom-tile', imageUrl: customTile.url };
+    }
+  }
 }
