@@ -76,12 +76,12 @@ The mask can be added only onto the road within the game field. The mask can’t
     this.addMasks([0, 4], [2, 5], [1, 6]);
 ```
 
-<p style="color: #000; font-weight: bold;">5. (TODO: translate) Добавить обязательное правило ношения маски</p>
+<p style="color: #000; font-weight: bold;">5. Add the mandatory rule to wear a mask.</p>
 
 ```javascript
     this.setWearingMaskAsRequired()
 ```
-<p style="color: #000;">Если в конфиге задан этот метод, перед началом любых ходов игроку необходимо надеть маску, иначе игра прервется, и уровень будет пройден.</p>
+<p style="color: #000;">If the configuration features this method, Pandemic Hero needs to put on a mask before any move; otherwise, the game aborts and the level is not passed.</p>
 	
 <p style="color: #000; font-weight: bold;">6.	Adding sanitizers to the scene</p>
 
