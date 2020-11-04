@@ -8,9 +8,9 @@
   </div>
 </div>
 
-<div class="statistics">
-    <div *ngFor="let statisticsItem of statisticsItemsList" class="statistics-line">
-      <div class="table-cell statistics-item-header">{{ prefixPath + statisticsItem.name | translate }}:</div>
-      <div class="table-cell statistics-item-data">{{ statisticsItem.value | translate }}</div>
-    </div>
-</div>
+<table class="statistics">
+  <tr *ngFor="let statisticsItem of statisticsItemsList">
+    <th class="statistics-item-header">{{ prefixPath + statisticsItem.name | translate }}:</th>
+    <td class="statistics-item-data">{{ statisticsItem.value | translate }}</td>
+  </tr>
+</table>
