@@ -236,7 +236,7 @@
       "RACCOON": {
         "FAIL_REASON": "Ձախողման",
         "FAIL_ROW_NUMBER": "Սխալ տողում",
-        "CELLS_PASSED": "Վանդակները անցված են։",
+        "CELLS_PASSED": "Վանդակները անցված են",
         "COMPULSORY_OBJECTS_PICKED": "Բլիթները հավաքված են",
         "FINISH_NOT_REACHED": "Ջրարջը չկարողացավ հասնել դրոշին",
         "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Դեռ չհավաքաց բլիթներ են մնացել",
@@ -255,7 +255,7 @@
       "PANDEMIC": {
         "FAIL_REASON": "Ձախողման",
         "FAIL_ROW_NUMBER": "Սխալ տողում",
-        "CELLS_PASSED": "Վանդակները անցված են։",
+        "CELLS_PASSED": "Վանդակները անցված են",
         "COMPULSORY_OBJECTS_PICKED": "Հավաքվել են դիմակներ և սանիտարական միջոցներ",
         "HOME_NOT_REACHED": "Ցավոք, չկարողացա՛ր տուն հասնել",
         "NOT_ALL_COMPULSORY_OBJECTS_COLLECTED": "Ոչ բոլոր դիմակները և սանիտարական միջոցները հավաքվում են",
