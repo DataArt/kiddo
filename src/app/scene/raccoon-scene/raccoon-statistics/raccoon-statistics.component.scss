@@ -24,10 +24,20 @@
 }
 
 .statistics {
+  display: table;
+  border-collapse: collapse;
 
-  td {
-    white-space: nowrap;
+  .statistics-line {
+    display: table-row;
+
+    .table-cell {
+      display: table-cell;
+   text-align: left;
+   vertical-align: top;
+    }
   }
+
+
 }
 
 .statistics-item-header {
