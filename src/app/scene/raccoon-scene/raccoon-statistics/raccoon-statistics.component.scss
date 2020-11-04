@@ -24,7 +24,10 @@
 }
 
 .statistics {
-  margin: 0 auto;
+
+  td {
+    white-space: nowrap;
+  }
 }
 
 .statistics-item-header {
