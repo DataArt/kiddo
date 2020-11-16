@@ -1,6 +1,6 @@
 import { SceneType } from '../../common/models/scene-type.enum';
 import { WinButton, CheckingLogic } from '../../common/entities';
-import { Tile, Player, GameObject } from '../entities';
+import { Tile, Player, GameObject, CustomeTile } from '../entities';
 
 export interface PandemicSceneModel {
   sceneType: SceneType.PANDEMIC;
@@ -9,12 +9,10 @@ export interface PandemicSceneModel {
   gameObjects: GameObject[];
   terraIncognita: boolean;
   maze: string[][];
-  shouldPutOnMask: boolean;
-  productsPicked: boolean;
-  handsWashed: boolean;
-  maskIsOn: boolean;
-  taskDescription: string;
-  sceneInitialScript: string;
+  shouldPutOnMask?: boolean;
+  productsPicked?: boolean;
+  handsWashed?: boolean;
+  maskIsOn?: boolean;
   checkingLogic: CheckingLogic;
-  winButton: WinButton;
+  customeTiles?: CustomeTile[];
 }

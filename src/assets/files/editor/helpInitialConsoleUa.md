@@ -1,18 +1,17 @@
-<p style="color: #000;">Для конфигурации сцены есть следующие методы:</p>
-<p style="color: #000; font-weight: bold;">1. Добавить переменную в консоль.</p>
+<p style="color: #000; font-weight: bold;">1. Додати змінну в консоль.</p>
 
 ```javascript
 this.addConsoleVariable('name', value, readOnly) 
 ```
 
-<p style="color: #000;">где 'name' – строка-название переменной</p>
-<p style="color: #000;">value - строка, число или js-функция, возвращающая строку/число</p>
-<p style="color: #000;">readOnly – логический параметр, принимающий значение true/false. Значение true делает переменную неизменяемой, false — изменяемой. По умолчанию значение параметра равно false.</p>
-<p style="color: #000;">Максимальное количество добавляемых переменных равно 4. </p>
-<p style="color: #000;">Для имени переменной допустим верхний и нижний регистр букв. Если регистры букв отличаются, то переменные считаются разными.</p>
-<p style="color: #000;">Значение переменной может быть пустым. В этом случае в качестве value необходимо передать null.</p>
-<p style="color: #000;">Допустимый диапазон цифрового значения переменной от -1 000 000 до 1 000 000.</p>
-<p style="color: #000;">Примеры:</p>
+<p style="color: #000;">де 'name' — рядок-назва змінної</p>
+<p style="color: #000;">value — рядок, число або js-функція, яка повертає рядок/число</p>
+<p style="color: #000;">readOnly — логічний параметр, який приймає значення true/false. Значення true робить змінну незмінюваною, false — змінюваною. За замовчуванням значення параметра дорівнює false.</p>
+<p style="color: #000;">Максимальна кількість змінних дорівнює 4.</p>
+<p style="color: #000;">Для імені змінної є допустимими верхній і нижній регістри букв. Якщо регістри букв відрізняються, то змінні вважаються різними.</p>
+<p style="color: #000;">Значення змінної може бути порожнім. У цьому випадку як value необхідно передати null.</p>
+<p style="color: #000;">Допустимий діапазон цифрового значення змінної від –1 000 000 до 1 000 000.</p>
+<p style="color: #000;">Приклади:</p>
 
 ```javascript
 this.addConsoleVariable('STR', 'test', true);
@@ -21,20 +20,20 @@ this.addConsoleVariable('Y', 10, false);
 this.addConsoleVariable('c', null);
 ```
 
-<p style="color: #000; font-weight: bold;">2.	Добавить код проверки выполнения задания </p>
+<p style="color: #000; font-weight: bold;">2. Додати код перевірки виконання завдання</p>
 
 ```javascript
 this.addCheckingLogic('code') 
 ```
 
-<p style="color: #000;">где code - js-код, который возвращает null / undefined или строку с текстом ошибки (например, “Задание выполнено неверно”)</p>
-<p style="color: #000;">Пример:</p>
+<p style="color: #000;">де code — JS код, який повертає null / undefined або рядок з текстом помилки (наприклад, "Завдання виконано неправильно").</p>
+<p style="color: #000;">Приклад:</p>
 
 ```javascript
 this.addCheckingLogic("return this.getConsoleVarValue('C') === this.getConsoleVarValue('X') * this.getConsoleVarValue('Y') ? null : `TASK_DONE_WRONG`");
 ```
 
-<p style="color: #000; font-weight: bold;">Пример конфига простой сценки:</p>
+<p style="color: #000; font-weight: bold;">Приклад конфігу простої сценки:</p>
 
 ```javascript
     this.addConsoleVariable('x', 10);

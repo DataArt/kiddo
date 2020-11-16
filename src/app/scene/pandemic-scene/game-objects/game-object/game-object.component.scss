@@ -1,320 +1,71 @@
-// .game-object {
-//   width: 100%;
-//   background-repeat: no-repeat;
-// }
+.game-object {
+    width: 100%;
+    background-repeat: no-repeat;
+  }
+  
+  .game-object::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 
-// .game-object::after {
-//   content: "";
-//   display: block;
-//   padding-bottom: 100%;
-// }
+.mask-default {
+  background-size: 3200%;
+  background-position: 16.5% 88%;
+}
 
-// .game-object_type_cookie-default {
-//   background-image: url('../../../../../assets/images/cookie-filled.svg');
-//   background-size: 60%;
-//   background-position: 50% 50%;
-// }
+.sanitizer-default {
+  background-size: 3200%;
+  background-position: 31.7% 88%;
+}
 
-// .game-object_type_monster-default {
-//   background-image: url("../../../../../assets/images/KidsEdu.svg");
-//   background-size: 700%;
-//   background-position: 102% -4%;
-//   will-change: transform;
+.virus-default {
+  background-size: 2400%;
+  background-position: 9.2% 92%;
+}
 
-//   &.chasing {
-//     background-image: url("../../../../../assets/images/monster.svg");
-//     background-position: -2% 95%;
-//   }
-// }
+.person-default--male,
+.person-moving--male {
+  background-size: 2000%;
+  background-position: 86.1% 97%;
+}
 
-// .game-object_type_monster-moving {
-//   background-image: url("../../../../../assets/images/KidsEdu.svg");
-//   background-size: 700%;
-//   background-position: 102% -4%;
-//   will-change: transform;
+.person-default--female,
+.person-moving--female {
+  background-size: 2000%;
+  background-position: 92.1% 97%;
+}
 
-//   &.chasing {
-//     background-image: url("../../../../../assets/images/monster.svg");
-//     background-position: -2% 95%;
-//   }
-// }
-
-// .game-object_type_mask-default {
-//   background-image: url("../../../../../assets/images/who.svg");
-//   background-size: 3200%;
-//   background-position: 16.5% 88%;
-// }
-
-// .game-object_type_sanitizer-default {
-//   background-image: url("../../../../../assets/images/who.svg");
-//   background-size: 3200%;
-//   background-position: 31.7% 88%;
-// }
-
-// .game-object_type_virus-default {
-//   background-image: url("../../../../../assets/images/who.svg");
-//   background-size: 2400%;
-//   background-position: 9.2% 92%;
-// }
-
-// .game-object_type_person-default--male,
-// .game-object_type_person-moving--male {
-//   background-image: url("../../../../../assets/images/who.svg");
-//   background-size: 2000%;
-//   background-position: 86.1% 97%;
-// }
-
-// .game-object_type_person-default--female,
-// .game-object_type_person-moving--female {
-//   background-image: url("../../../../../assets/images/who.svg");
-//   background-size: 2000%;
-//   background-position: 92.1% 97%;
-// }
-
-// .game-object_type_person-right {
-//   transform: scaleX(-1);
-// }
-
-// .game-object_type_mine-default {
-//   background-image: url("../../../../../assets/images/box.png");
-//   background-size: 105%;
-//   background-position: 46.5% 90%;
-// }
-
-// .game-object_type_mine-activated {
-//   background-image: url("../../../../../assets/images/mine.png");
-//   background-size: 40%;
-//   background-position: 46.5% 40%;
-// }
-
-// .game-object_type_mine-fires {
-//   background-image: url("../../../../../assets/images/explode.png");
-//   background-size: 100%;
-//   background-position: 102% 0;
-// }
-
-// .game-object_type_turret-default { // TODO: change after receiving design
-//   background-image: url("../../../../../assets/images/cannon.svg");
-//   background-size: 70%;
-//   background-position: 50% 50%;
-//   transition: transform 0.5s linear 0s;
-// }
-
-// .game-object_type_turret-activated { // TODO: change after receiving design
-//   background-image: url("../../../../../assets/images/cannon.svg");
-//   background-size: 70%;
-//   background-position: 50% 50%;
-//   transition: transform 0.5s linear 0s;
-
-//   &--up {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(-90deg);
-//   }
-//   &--up-right {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(-45deg);
-//   }
-//   &--down-right {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(45deg);
-//   }
-//   &--down {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(90deg);
-//   }
-//   &--down-left {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(135deg);
-//   }
-//   &--left {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(180deg);
-//   }
-//   &--up-left {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(-135deg);
-//   }
-//   &--right {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(0deg);
-//   }
-// }
-
-// .game-object_type_turret-recharge { // TODO: change after receiving design
-//   background-image: url("../../../../../assets/images/cannon.svg");
-//   background-size: 70%;
-//   background-position: 50% 50%;
-//   transition: transform 0.5s linear 0s;
-
-//   &--up {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(-90deg);
-//   }
-//   &--up-right {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(-45deg);
-//   }
-//   &--down-right {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(45deg);
-//   }
-//   &--down {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(90deg);
-//   }
-//   &--down-left {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(135deg);
-//   }
-//   &--left {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(180deg);
-//   }
-//   &--up-left {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(-135deg);
-//   }
-//   &--right {
-//     @extend .game-object_type_turret-activated;
-//     transform: rotate(0deg);
-//   }
-// }
-
-// .game-object_type_turret-fires { // TODO: change after receiving design
-//   background-image: url("../../../../../assets/images/boom.svg");
-//   background-size: 100%;
-
-//   &--up {
-//     @extend .game-object_type_turret-fires;
-//     transform: rotate(-90deg);
-//   }
-//   &--up-right {
-//     @extend .game-object_type_turret-fires;
-//     transform: rotate(-45deg);
-//   }
-//   &--down-right {
-//     @extend .game-object_type_turret-fires;
-//     transform: rotate(45deg);
-//   }
-//   &--down {
-//     @extend .game-object_type_turret-fires;
-//     transform: rotate(90deg);
-//   }
-//   &--down-left {
-//     @extend .game-object_type_turret-fires;
-//     transform: rotate(135deg);
-//   }
-//   &--left {
-//     @extend .game-object_type_turret-fires;
-//     transform: rotate(180deg);
-//   }
-//   &--up-left {
-//     @extend .game-object_type_turret-fires;
-//     transform: rotate(-135deg);
-//   }
-//   &--right {
-//     @extend .game-object_type_turret-fires;
-//     transform: rotate(0deg);
-//   }
-// }
+.person-right {
+  transform: scaleX(-1);
+}
 
 
-// .game-object_type_key-default { // TODO: change after receiving design
-//   background-image: url("../../../../../assets/images/key.svg");
-//   background-size: 60%;
-//   background-position: 50% 50%;
+.virus-default {
+  background-size: 2400%;
+  background-position: 9.2% 97%;
+  transition: left 0.5s linear 0s, top 0.5s linear 0s;
+  will-change: transform;
+  animation-name: virusMoving;
+  animation-duration: 1s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
 
-//   &--red {
-//     @extend .game-object_type_key-default;
-//     background-color: red;
-//   }
-//   &--green {
-//     @extend .game-object_type_key-default;
-//     background-color: green;
-//   }
-//   &--yellow {
-//     @extend .game-object_type_key-default;
-//     background-color: yellow;
-//   }
-//   &--blue {
-//     @extend .game-object_type_key-default;
-//     background-color: blue;
-//   }
-// }
+.virus-moving {
+  background-size: 2400%;
+  background-position: 9.2% 92%;
+  animation-name: virusMoving;
+  animation-duration: 1s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+}
+@keyframes virusMoving {
+  0% {
+    background-position: 9.2% 92%;
+  }
 
-// .game-object_type_gates-default { // TODO: change after receiving design
-//   background-image: url("../../../../../assets/images/locked.svg");
-//   background-size: 60%;
-//   background-position: 50% 50%;
-
-//   &--red {
-//     @extend .game-object_type_gates-default;
-//     background-color: red;
-//   }
-//   &--green {
-//     @extend .game-object_type_gates-default;
-//     background-color: green;
-//   }
-//   &--yellow {
-//     @extend .game-object_type_gates-default;
-//     background-color: yellow;
-//   }
-//   &--blue {
-//     @extend .game-object_type_gates-default;
-//     background-color: blue;
-//   }
-// }
-
-// .game-object_type_gates-open { // TODO: change after receiving design
-//   background-image: url("../../../../../assets/images/locked-copy.svg");
-//   background-size: 60%;
-//   background-position: 50% 50%;
-
-//   @at-root #{&}--red {
-//     @extend .game-object_type_gates-open;
-//     background-color: red;
-//   }
-//   @at-root #{&}--green {
-//     @extend .game-object_type_gates-open;
-//     background-color: green;
-//   }
-//   @at-root #{&}--yellow {
-//     @extend .game-object_type_gates-open;
-//     background-color: yellow;
-//   }
-//   @at-root #{&}--blue {
-//     @extend .game-object_type_gates-open;
-//     background-color: blue;
-//   }
-// }
-
-// .game-object_type_virus-default {
-//   background-image: url("../../../../../assets/images/who.svg");
-//   background-size: 2400%;
-//   background-position: 9.2% 97%;
-//   transition: left 0.5s linear 0s, top 0.5s linear 0s;
-//   will-change: transform;
-//   animation-name: virusMoving;
-//   animation-duration: 1s;
-//   animation-timing-function: steps(2);
-//   animation-iteration-count: infinite;
-// }
-
-// .game-object_type_virus-moving {
-//   background-image: url("../../../../../assets/images/who.svg");
-//   background-size: 2400%;
-//   background-position: 9.2% 97%;
-//   animation-name: virusMoving;
-//   animation-duration: 1s;
-//   animation-timing-function: steps(2);
-//   animation-iteration-count: infinite;
-// }
-// @keyframes virusMoving {
-//   0% {
-//     background-position: 9.2% 97%;
-//   }
-
-//   to {
-//     background-position: -5.1% 97%;
-//   }
-// }
+  to {
+    background-position: -5.1% 92%;
+  }
+}

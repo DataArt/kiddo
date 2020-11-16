@@ -1,6 +1,6 @@
 .image-wrapper {
   display: block;
-  margin: 1rem auto;
+  margin: 0 auto;
   width: 25rem;
   text-align: center;
 }
@@ -24,10 +24,13 @@
 }
 
 .statistics {
-  margin: 0 auto;
+
+  td {
+    white-space: nowrap;
+  }
 }
 
 .statistics-item-header {
-  padding: 0.5rem;
+  padding: .2rem .5rem;
   text-align: left;
 }
