@@ -22,23 +22,10 @@
   <script></script> -->
 
   <!-- case 2: sceneConfig from URL -->
-  <kiddo-player kiddo-scene-config="http://192.168.196.173:91/ru/raccoon/task1/task.yaml"></kiddo-player>
-
-  <script>
-    const appConfig = {
-      // language: {
-      //   useOnly: 'ru'
-      // },
-      analytics: {
-        GA_key: 'UA-159399120-1'
-      }
-    };
-    const rootElement = document.querySelector('kiddo-player');
-    rootElement.setAttribute('kiddo-app-config', JSON.stringify(appConfig));
-  </script>
+  <!-- <kiddo-player kiddo-scene-config="http://192.168.196.173:91/ru/raccoon/task1/task.yaml"></kiddo-player>-->
 
   <!-- case3: sceneConfig from variable -->
-  <!-- <kiddo-player></kiddo-player>
+  <kiddo-player></kiddo-player>
   <script>
     const sceneConfig = `
     sceneType: Raccoon
@@ -65,7 +52,20 @@
     const rootElement = document.querySelector('kiddo-player');
     rootElement.setAttribute('kiddo-scene-config', sceneConfig);
     rootElement.setAttribute('kiddo-app-config', JSON.stringify(appConfig));
-  </script>-->
+  </script>
+
+  <script>
+    const appConfig = {
+      // language: {
+      //   useOnly: 'ru'
+      // },
+      analytics: {
+        GA_key: 'UA-159399120-1'
+      }
+    };
+    const rootElement = document.querySelector('kiddo-player');
+    rootElement.setAttribute('kiddo-app-config', JSON.stringify(appConfig));
+  </script>
 
   <!-- <script>
     if (appConfig.analytics.GA_key) {
