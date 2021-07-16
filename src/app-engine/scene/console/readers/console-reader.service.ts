@@ -32,7 +32,7 @@ export class ConsoleReaderService implements SceneReader {
     }
 
     getGameFailMessage(): string {
-        return this.sceneModel?.checkingLogic();
+        return this.sceneModel?.checkingLogic(this);
     }
 
     get consoleContent(): string[] {

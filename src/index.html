@@ -30,7 +30,7 @@
     const sceneConfig = `
     sceneType: CONSOLEMATH
     generatingFunc: >-
-      this.addCheckingLogic('return this.player.position.x === 5 && this.player.position.y === 3 ? null : "FINISH_NOT_REACHED"');
+      this.addCheckingLogic((reader) => { console.log(reader); return "wow"; });
     winButton:
       url: ./task2
       text: Следующий уровень

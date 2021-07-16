@@ -86,9 +86,13 @@ export class PandemicBuilderService implements SceneBuilder {
     this.sceneModel.gameField = gameField;
   }
 
-  private addCheckingLogic(checkingLogic: string): void {
+  private addCheckingLogic(checkingLogic: string | CheckingLogic): void {
     if (!checkingLogic) return;
-    this.sceneModel.checkingLogic = new Function(checkingLogic) as CheckingLogic;
+    if (checkingLogic instanceof String) {
+      this.sceneModel.checkingLogic = (new Function(checkingLogic as string) as CheckingLogic).bind(this.reader);
+    } else {
+      this.sceneModel.checkingLogic = (checkingLogic as CheckingLogic).bind(this.reader);
+    }
   }
 
   parseGeneratingFunc(generatingFunc: string): PandemicSceneModel {
