@@ -31,6 +31,15 @@ export class ConsoleMathSkulptService extends ConsoleSkulptService {
             sin: (x: number) => Math.sin(x),
             cos: (x: number) => Math.cos(x),
             to_array: (...args) => args,
+            max_value: (array: number[]) => {
+                let j = -Infinity;
+                for (const i in array) {
+                    if (j <= array[i]) {
+                        j = array[i];
+                    }
+                }
+                return j;
+            }
         });
     }
 }
