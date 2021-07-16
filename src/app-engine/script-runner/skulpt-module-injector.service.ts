@@ -28,8 +28,9 @@ export class SkulptModuleInjectorService {
                     return jsModule[functionName](...args);
                 };
                 pyModule[functionName] = new Sk.builtin.func((...args) => {
+                    const result = func(...args.map(c => Sk.ffi.remapToJs(c)));
                     return Sk.ffi.remapToPy(
-                        func(...args.map(c => Sk.ffi.remapToJs(c)))
+                        result instanceof Promise ? Sk.misceval.promiseToSuspension(result) : result
                     );
                 });
             };

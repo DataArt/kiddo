@@ -39,6 +39,13 @@ export class ConsoleMathSkulptService extends ConsoleSkulptService {
                     }
                 }
                 return j;
+            },
+            sleep: (seconds: number, passResult: any) => {
+                return new Promise<any>(resolve => {
+                    setTimeout(() => {
+                        resolve(passResult);
+                    }, seconds * 1000);
+                });
             }
         });
     }
