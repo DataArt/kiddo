@@ -20,7 +20,9 @@ export class SkulptModuleInjectorService {
                     return jsModule[functionName](...args);
                 };
                 mod[functionName] = new Sk.builtin.func((...args) => {
-                    return func(...args.map(c => c.v));
+                    return Sk.ffi.remapToPy(
+                        func(...args.map(c => Sk.ffi.remapToJs(c)))
+                    );
                 });
             };
 
