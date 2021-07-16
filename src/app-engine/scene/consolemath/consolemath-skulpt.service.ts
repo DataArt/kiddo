@@ -24,7 +24,7 @@ export class ConsoleMathSkulptService extends ConsoleSkulptService {
 
         injector.addModule('console', {
             set_value: (variable: string, value: string | number) => this.writer.setConsoleVariableValue(variable, value),
-            get_value: (variable: string) => this.reader.getVariableByName(variable).value,
+            get_value: (variable: string) => this.reader.getConsoleVariableValue(variable),
         });
 
         injector.addModule('consolemath', {
