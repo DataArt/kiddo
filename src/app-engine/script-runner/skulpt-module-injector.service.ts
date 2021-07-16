@@ -6,20 +6,28 @@ declare const Sk: any;
     providedIn: 'root'
 })
 export class SkulptModuleInjectorService {
+    private addedModules: Set<string> = new Set<string>();
+
     constructor() {
     }
 
+    private static getModulePathByName(name: string): string {
+        return `src/lib/${name}/__init__.js`;
+    }
+
     addModule(name: string, module: any): void {
+        this.addedModules.add(name);
+
         Sk.builtins[name] = module;
         Sk.buildModuleFromJs = (moduleName: string) => {
             const jsModule: any = Sk.builtins[moduleName];
-            const mod = {};
+            const pyModule = {};
 
             const addFunction = (functionName: string) => {
                 const func = (...args) => {
                     return jsModule[functionName](...args);
                 };
-                mod[functionName] = new Sk.builtin.func((...args) => {
+                pyModule[functionName] = new Sk.builtin.func((...args) => {
                     return Sk.ffi.remapToPy(
                         func(...args.map(c => Sk.ffi.remapToJs(c)))
                     );
@@ -32,12 +40,24 @@ export class SkulptModuleInjectorService {
                 }
             }
 
-            return mod;
+            return pyModule;
         };
-        Sk.builtinFiles.files[`src/lib/${name}/__init__.js`] = `
+
+        Sk.builtinFiles.files[SkulptModuleInjectorService.getModulePathByName(name)] = `
             const $builtinmodule = function(name) {
                 return Sk.buildModuleFromJs(\"${name}\");
             };
         `;
+    }
+
+    removeModule(name: string): void {
+        this.addedModules.delete(name);
+        delete Sk.builtinFiles.files[SkulptModuleInjectorService.getModulePathByName(name)];
+        delete Sk.builtins[name];
+    }
+
+    removeAllInjectedModules(): void {
+        const addedModulesCopy = new Set<string>(this.addedModules);
+        addedModulesCopy.forEach(name => this.removeModule(name));
     }
 }
