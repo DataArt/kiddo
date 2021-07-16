@@ -20,6 +20,8 @@ import { Singleton } from '../singleton.decorator';
 import { RaccoonValidationService } from './raccoon/raccoon-validation.service';
 import { ConsoleValidationService } from './console/console-validation.service';
 import { PandemicValidationService } from './pandemic/pandemic-validation.service';
+import {ConsoleMathSkulptService} from './consolemath/consolemath-skulpt.service';
+import {SkulptService} from '../script-runner/skulpt.service';
 
 interface BuildersMap {
   [sceneType: string]: () => SceneBuilder;
@@ -51,13 +53,21 @@ export class SceneInitService {
       const api = new ConsoleSkulptService(reader, writer);
       const validation = new ConsoleValidationService();
       return new ConsoleBuilderService(reader, writer, api, validation);
+    },
+    [SceneType.CONSOLEMATH]: () => {
+      const reader = new ConsoleReaderService(this.sceneModelService);
+      const writer = new ConsoleWriterService(this.sceneModelService, reader);
+      const api = new ConsoleMathSkulptService(this.skulptService, reader, writer);
+      const validation = new ConsoleValidationService();
+      return new ConsoleBuilderService(reader, writer, api, validation);
     }
   };
 
   private sceneBuilder: SceneBuilder;
 
   constructor(private sceneModelService: SceneModelService,
-              private sceneAccessorsService: SceneAccessorsService) {
+              private sceneAccessorsService: SceneAccessorsService,
+              private skulptService: SkulptService) {
   }
 
   init(sceneConfig: SceneConfig): void {

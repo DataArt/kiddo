@@ -10,8 +10,8 @@ export class ConsoleSkulptService implements SceneSkulptService {
 
   executionWasAborted = false;
 
-  constructor(private reader: ConsoleReaderService,
-              private writer: ConsoleWriterService,
+  constructor(protected reader: ConsoleReaderService,
+              protected writer: ConsoleWriterService,
   ) {
     Sk.configure({ output: this.skulptOutputFunction.bind(this) });
   }
