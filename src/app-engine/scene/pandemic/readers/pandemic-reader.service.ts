@@ -58,7 +58,7 @@ export class PandemicReaderService implements SceneReader {
 
   getGameFailMessage(): string {
     const message = this.getFailMessagsMap().find(x => x.checkFunction())?.message;
-    const checkingLogic = this.sceneModel?.checkingLogic(this);
+    const checkingLogic = this.sceneModel?.checkingLogic(this.sceneModel);
 
     return checkingLogic ? checkingLogic : (message ? message : null);
   }
