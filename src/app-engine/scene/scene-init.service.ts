@@ -37,7 +37,7 @@ export class SceneInitService {
       const writer = new RaccoonWriterService(this.sceneModelService, reader);
       const tracker = new RaccoonTrackerService();
       const validation = new RaccoonValidationService();
-      const api = new RaccoonSkulptService(reader, writer, tracker);
+      const api = new RaccoonSkulptService(this.skulptService, reader, writer, tracker);
       return new RaccoonBuilderService(reader, writer, api, validation);
     },
     [SceneType.PANDEMIC]: () => {

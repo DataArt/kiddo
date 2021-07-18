@@ -43,20 +43,27 @@ export class RaccoonValidationService {
 
   areTwoNumbers(args: any, validArgs: Set<number>): boolean {
     return (args.length === 2
-      && typeof args[0].v === 'number'
-      && validArgs.has(args[0].v)
-      && typeof args[1].v === 'number')
-      && validArgs.has(args[1].v);
+      && typeof args[0] === 'number'
+      && validArgs.has(args[0])
+      && typeof args[1] === 'number')
+      && validArgs.has(args[1]);
+    // return (args.length === 2
+    //   && typeof args[0].v === 'number'
+    //   && validArgs.has(args[0].v)
+    //   && typeof args[1].v === 'number')
+    //   && validArgs.has(args[1].v);
   }
 
   private checkLook(args: any, validArgs: Set<number>): Coords[] {
     if (this.areTwoNumbers(args, validArgs)) {
-      return [{ x: args[0].v, y: args[1].v }];
+      return [{ x: args[0], y: args[1] }];
+      // return [{ x: args[0].v, y: args[1].v }];
     } else {
       if (args.length > 0) {
         return args.map(arg => {
-          if (this.areTwoNumbers(arg.v, validArgs)) {
-            return { x: arg.v[0].v, y: arg.v[1].v };
+          if (this.areTwoNumbers(arg, validArgs)) {
+            return { x: arg[0], y: arg[1] };
+            // return { x: arg.v[0].v, y: arg.v[1].v };
           } else {
             throw new GameFailError('INVALID_ARGUMENT');
           }
