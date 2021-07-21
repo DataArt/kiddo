@@ -44,7 +44,7 @@ export class SceneInitService {
       const reader = new PandemicReaderService(this.sceneModelService);
       const writer = new PandemicWriterService(this.sceneModelService, reader);
       const validation = new PandemicValidationService();
-      const api = new PandemicSkulptService(reader, writer);
+      const api = new PandemicSkulptService(this.skulptService, reader, writer);
       return new PandemicBuilderService(reader, writer, api, validation);
     },
     [SceneType.CONSOLE]: () => {

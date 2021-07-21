@@ -60,37 +60,19 @@
 </script> -->
 
 <script>
-
-
-    const sceneConfig = `
-    sceneType: CONSOLEMATH
+  const sceneConfig = `
+    sceneType: Pandemic
     generatingFunc: >-
-      const a = [];
-      let l = Math.floor(Math.random() * 9 + 1);
-      for (let i = 0; i < l; i ++) {
-        a.push(Math.floor(Math.random() * 9 + 1));
-      }
-
-      const arrayToMap = (arr) => arr.reduce((o, e) => {o[e] = (o[e] || 0) + 1; return o;}, {});
-
-      this.addConsoleVariable('a', a);
-      this.addConsoleVariable('b');
-      this.addCheckingLogic((reader) => {
-        const b = reader.getConsoleVariableValue('b')
-        for (let i = 0; i !== b.length - 1; i++) {
-          if (b[i] > b[i + 1]) {
-            return 'error';
-          }
-        }
-
-        const ao = arrayToMap(a);
-        const bo = arrayToMap(b);
-        for (let k in {...ao, ...bo}) {
-          if (ao[k] !== bo[k]) return 'error';
-        }
-
-        return null;
-      });
+      this.setPlayerPosition(1, 0);
+      this.setGameField([
+        ['BU', 'RO', 'BU', 'BU', 'BU', 'BU'],
+        ['BU', 'RO', 'GR', 'RO', 'RO', 'RO'],
+        ['BU', 'RO', 'RO', 'RO', 'GR', 'RO'],
+        ['BU', 'RO', 'RO', 'GR', 'GR', 'FI'],
+        ['BU', 'GR', 'GR', 'GR', 'OF', 'OF'],
+        ['BU', 'GR', 'GR', 'GR', 'OF', 'GR']
+      ]);
+      this.addCheckingLogic('return this.player.position.x === 5 && this.player.position.y === 3 ? null : "FINISH_NOT_REACHED"');
     winButton:
       url: ./task2
       text: Следующий уровень
@@ -99,10 +81,10 @@
       # Add your code here
     taskDescription: Доведи енота до флага
     `;
-    // DON'T EDIT THE CODE BELOW
-    const rootElement = document.querySelector('kiddo-player');
-    rootElement.setAttribute('kiddo-scene-config', sceneConfig);
-    rootElement.setAttribute('kiddo-app-config', JSON.stringify(appConfig));
+  // DON'T EDIT THE CODE BELOW
+  const rootElement = document.querySelector('kiddo-player');
+  rootElement.setAttribute('kiddo-scene-config', sceneConfig);
+  rootElement.setAttribute('kiddo-app-config', JSON.stringify(appConfig));
 </script>
 </body>
 
