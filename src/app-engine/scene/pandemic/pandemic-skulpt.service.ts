@@ -55,6 +55,7 @@ export class PandemicSkulptService implements SceneSkulptService {
             alert: (s: string) => {
                 alert(s);
             },
+
             go_right: (steps: any = 1) => {
                 if (typeof steps === 'number' && steps > 0) {
                     return executeWithDelay(() => {
@@ -140,51 +141,7 @@ export class PandemicSkulptService implements SceneSkulptService {
                     this.performGameStep(() => this.writer.buyProducts());
                 }, defaultDelay, 1);
             },
-
         });
-
-        // Sk.builtins.player = {
-        //     goRight: (steps) => {
-        //         this.validationService.validateGo(steps.v);
-        //         this.performGameStep(() => this.writer.movePlayer(Direction.RIGHT));
-        //     },
-        //     goLeft: (steps) => {
-        //         this.validationService.validateGo(steps.v);
-        //         this.performGameStep(() => this.writer.movePlayer(Direction.LEFT));
-        //     },
-        //     goUp: (steps) => {
-        //         this.validationService.validateGo(steps.v);
-        //         this.performGameStep(() => this.writer.movePlayer(Direction.UP));
-        //     },
-        //     goDown: (steps) => {
-        //         this.validationService.validateGo(steps.v);
-        //         this.performGameStep(() => this.writer.movePlayer(Direction.DOWN));
-        //     },
-        //     wait: (steps) => {
-        //         this.validationService.validateWait(steps.v);
-        //         this.performGameStep(() => this.writer.playerWait());
-        //     },
-        //     look: (offsets: any) => {
-        //         this.performGameStep(() => this.writer.playerWait());
-        //         return this.reader.look(this.validationService.validateLook(offsets));
-        //     },
-        //     putOnMask: (args) => {
-        //         this.validationService.validateEmptyMethod(args);
-        //         this.performGameStep(() => this.writer.putOnMask());
-        //     },
-        //     washHands: (args) => {
-        //         this.validationService.validateEmptyMethod(args);
-        //         this.performGameStep(() => this.writer.washHands());
-        //     },
-        //     disinfect: (direction: number) => this.performGameStep(() => {
-        //         this.validationService.validateDisinfect(direction);
-        //         return this.writer.playerDisinfect(direction);
-        //     }),
-        //     getProducts: (args) => {
-        //         this.validationService.validateEmptyMethod(args);
-        //         this.performGameStep(() => this.writer.buyProducts());
-        //     }
-        // };
     }
 
     private performGameStep(action: () => void): void {

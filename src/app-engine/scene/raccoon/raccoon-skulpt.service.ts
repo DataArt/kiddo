@@ -51,6 +51,10 @@ export class RaccoonSkulptService implements SceneSkulptService {
         };
 
         injector.addModule('raccoon', {
+            alert: (s: string) => {
+                alert(s);
+            },
+
             go_right: (steps: any = 1) => {
                 if (typeof steps === 'number' && steps > 0) {
                     return executeWithDelay(() => {
@@ -60,6 +64,7 @@ export class RaccoonSkulptService implements SceneSkulptService {
                     }, defaultDelay, steps as number);
                 }
             },
+
             go_left: (steps: any = 1) => {
                 if (typeof steps === 'number' && steps > 0) {
                     return executeWithDelay(() => {
@@ -69,6 +74,7 @@ export class RaccoonSkulptService implements SceneSkulptService {
                     }, defaultDelay, steps as number);
                 }
             },
+
             go_up: (steps: any = 1) => {
                 if (typeof steps === 'number' && steps > 0) {
                     return executeWithDelay(() => {
@@ -78,6 +84,7 @@ export class RaccoonSkulptService implements SceneSkulptService {
                     }, defaultDelay, steps as number);
                 }
             },
+
             go_down: (steps: any = 1) => {
                 if (typeof steps === 'number' && steps > 0) {
                     return executeWithDelay(() => {
@@ -125,54 +132,7 @@ export class RaccoonSkulptService implements SceneSkulptService {
                     this.tracker.addPlayerAction({type: PlayerActionType.ACTIVATE_GAME_OBJECT, payload: [GameObjectType.MINE]});
                 }, defaultDelay, 1);
             },
-
-            alert: (s: string) => {
-                alert(s);
-            },
         });
-
-        // Sk.builtins.raccoon = {
-        //     goRight: (steps) => {
-        //         this.validationService.validateGo(steps.v);
-        //         this.performGameStep(() => this.writer.movePlayer(Direction.RIGHT));
-        //         this.tracker.addPlayerAction({type: PlayerActionType.MOVE, payload: [Direction.RIGHT, steps]});
-        //     },
-        //     goLeft: (steps) => {
-        //         this.validationService.validateGo(steps.v);
-        //         this.performGameStep(() => this.writer.movePlayer(Direction.LEFT));
-        //         this.tracker.addPlayerAction({type: PlayerActionType.MOVE, payload: [Direction.LEFT, steps]});
-        //     },
-        //     goUp: (steps) => {
-        //         this.validationService.validateGo(steps.v);
-        //         this.performGameStep(() => this.writer.movePlayer(Direction.UP));
-        //         this.tracker.addPlayerAction({type: PlayerActionType.MOVE, payload: [Direction.UP, steps]});
-        //     },
-        //     goDown: (steps) => {
-        //         this.validationService.validateGo(steps.v);
-        //         this.performGameStep(() => this.writer.movePlayer(Direction.DOWN));
-        //         this.tracker.addPlayerAction({type: PlayerActionType.MOVE, payload: [Direction.DOWN, steps]});
-        //     },
-        //     wait: (steps) => {
-        //         this.validationService.validateWait(steps.v);
-        //         this.performGameStep(() => this.writer.playerWait());
-        //         this.tracker.addPlayerAction({type: PlayerActionType.WAIT});
-        //     },
-        //     inspect: (offsets: any) => {
-        //         this.performGameStep(() => this.writer.playerWait());
-        //         this.tracker.addPlayerAction({type: PlayerActionType.WAIT});
-        //         return this.reader.inspect(this.validationService.validateInspect(offsets));
-        //     },
-        //     placeTurret: (args) => {
-        //         this.validationService.validateEmptyMethod(args);
-        //         this.performGameStep(() => this.writer.activateGameObject(GameObjectType.TURRET));
-        //         this.tracker.addPlayerAction({type: PlayerActionType.ACTIVATE_GAME_OBJECT, payload: [GameObjectType.TURRET]});
-        //     },
-        //     setMine: (args) => {
-        //         this.validationService.validateEmptyMethod(args);
-        //         this.performGameStep(() => this.writer.activateGameObject(GameObjectType.MINE));
-        //         this.tracker.addPlayerAction({type: PlayerActionType.ACTIVATE_GAME_OBJECT, payload: [GameObjectType.MINE]});
-        //     }
-        // };
     }
 
     private performGameStep(action: () => void): void {
