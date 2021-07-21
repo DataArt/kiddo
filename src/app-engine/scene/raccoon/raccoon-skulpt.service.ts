@@ -94,6 +94,7 @@ export class RaccoonSkulptService implements SceneSkulptService {
                     }, defaultDelay, steps as number);
                 }
             },
+
             wait: (steps: any = 1) => {
                 if (typeof steps === 'number' && steps > 0) {
                     return executeWithDelay(() => {
@@ -103,6 +104,7 @@ export class RaccoonSkulptService implements SceneSkulptService {
                     }, defaultDelay, steps as number);
                 }
             },
+
             inspect: (...offsets: any) => {
                 return new Promise((resolve, reject) => {
                     Sk.setTimeout(() => {

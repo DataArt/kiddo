@@ -60,8 +60,23 @@
 </script> -->
 
 <script>
+    // sample raccoon task solution
+    /*
+    import raccoon
+
+    raccoon.go_down(2)
+    raccoon.place_turret()
+    raccoon.go_up(1)
+    raccoon.wait(2)
+    raccoon.go_down(1)
+    raccoon.go_right(2)
+    raccoon.go_up(1)
+    raccoon.go_right(2)
+    raccoon.go_down(2)
+    */
+
   const sceneConfig = `
-    sceneType: Pandemic
+    sceneType: raccoon
     generatingFunc: >-
       this.setPlayerPosition(1, 0);
       this.setGameField([
@@ -69,10 +84,12 @@
         ['BU', 'RO', 'GR', 'RO', 'RO', 'RO'],
         ['BU', 'RO', 'RO', 'RO', 'GR', 'RO'],
         ['BU', 'RO', 'RO', 'GR', 'GR', 'FI'],
-        ['BU', 'GR', 'GR', 'GR', 'OF', 'OF'],
-        ['BU', 'GR', 'GR', 'GR', 'OF', 'GR']
+        ['BU', 'SH', 'L2', 'GR', 'OF', 'OF'],
+        ['BU', 'L3', 'L4', 'GR', 'OF', 'GR']
       ]);
-      this.addCheckingLogic('return this.player.position.x === 5 && this.player.position.y === 2 ? null : "FINISH_NOT_REACHED"');
+      this.addTurrets([1, 1]);
+      this.addMonster([3, 1], 'right', true);
+      this.addCheckingLogic('return this.player.position.x === 5 && this.player.position.y === 3 ? null : "FINISH_NOT_REACHED"');
     winButton:
       url: ./task2
       text: Следующий уровень
