@@ -114,14 +114,14 @@ export class PandemicSkulptService implements SceneSkulptService {
                 });
             },
 
-            putOnMask: (args) => {
+            put_on_mask: (args) => {
                 return executeWithDelay(() => {
                     this.validationService.validateEmptyMethod(args);
                     this.performGameStep(() => this.writer.putOnMask());
                 }, defaultDelay, 1);
             },
 
-            washHands: (args) => {
+            wash_hands: (args) => {
                 return executeWithDelay(() => {
                     this.validationService.validateEmptyMethod(args);
                     this.performGameStep(() => this.writer.washHands());
@@ -135,7 +135,7 @@ export class PandemicSkulptService implements SceneSkulptService {
                 }, defaultDelay, 1);
             },
 
-            getProducts: (args) => {
+            get_products: (args) => {
                 return executeWithDelay(() => {
                     this.validationService.validateEmptyMethod(args);
                     this.performGameStep(() => this.writer.buyProducts());
