@@ -9,15 +9,6 @@ declare const Sk: any;
 
 @Singleton
 export class ConsoleMathSkulptService extends ConsoleSkulptService {
-
-    constructor(
-        private skulptService: SkulptService,
-        reader: ConsoleReaderService,
-        writer: ConsoleWriterService
-    ) {
-        super(reader, writer);
-    }
-
     addApiToSkulpt(): void {
         const injector: SkulptModuleInjectorService = this.skulptService.getModuleInjector();
         injector.removeAllInjectedModules();

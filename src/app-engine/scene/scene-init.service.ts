@@ -50,10 +50,11 @@ export class SceneInitService {
     [SceneType.CONSOLE]: () => {
       const reader = new ConsoleReaderService(this.sceneModelService);
       const writer = new ConsoleWriterService(this.sceneModelService, reader);
-      const api = new ConsoleSkulptService(reader, writer);
+      const api = new ConsoleSkulptService(this.skulptService, reader, writer);
       const validation = new ConsoleValidationService();
       return new ConsoleBuilderService(reader, writer, api, validation);
     },
+    // TODO: this is a test scene type, that must be removed in the future
     [SceneType.CONSOLEMATH]: () => {
       const reader = new ConsoleReaderService(this.sceneModelService);
       const writer = new ConsoleWriterService(this.sceneModelService, reader);
