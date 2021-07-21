@@ -1,1 +1,1 @@
-export type CheckingLogic = () => string;
+export type CheckingLogic = (reader: any) => string;

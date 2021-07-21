@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {SkulptModuleInjectorService} from './skulpt-module-injector.service';
 
 declare const Sk: any;
 
@@ -7,7 +8,9 @@ declare const Sk: any;
 })
 export class SkulptService {
 
-  constructor() {
+  constructor(
+      private moduleInjectorService: SkulptModuleInjectorService
+  ) {
   }
 
   configureSkulpt(): void {
@@ -25,4 +28,7 @@ export class SkulptService {
     return Sk.builtinFiles.files[lib];
   }
 
+  getModuleInjector(): SkulptModuleInjectorService {
+    return this.moduleInjectorService;
+  }
 }

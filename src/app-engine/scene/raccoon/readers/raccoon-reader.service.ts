@@ -75,7 +75,7 @@ export class RaccoonReaderService implements SceneReader {
   getGameFailMessage(): string {
     return !this.checkAllCompulsoryGameObjectsPicked()
       ? 'NOT_ALL_COMPULSORY_OBJECTS_COLLECTED'
-      : this.sceneModel?.checkingLogic();
+      : this.sceneModel?.checkingLogic(this.sceneModel);
   }
 
   inspect(offsets: Coords[]): number | number[] {

@@ -47,7 +47,7 @@ export class ScriptRunnerService {
   ) {
     this.sceneModelService = new SceneModelService();
     this.sceneAccessorsService = new SceneAccessorsService();
-    this.sceneInitService = new SceneInitService(this.sceneModelService, this.sceneAccessorsService);
+    this.sceneInitService = new SceneInitService(this.sceneModelService, this.sceneAccessorsService, this.skulptService);
   }
 
   translate = this.i18n.translate(this.prefixPath);

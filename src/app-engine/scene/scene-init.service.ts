@@ -20,6 +20,8 @@ import { Singleton } from '../singleton.decorator';
 import { RaccoonValidationService } from './raccoon/raccoon-validation.service';
 import { ConsoleValidationService } from './console/console-validation.service';
 import { PandemicValidationService } from './pandemic/pandemic-validation.service';
+import {ConsoleMathSkulptService} from './consolemath/consolemath-skulpt.service';
+import {SkulptService} from '../script-runner/skulpt.service';
 
 interface BuildersMap {
   [sceneType: string]: () => SceneBuilder;
@@ -35,20 +37,28 @@ export class SceneInitService {
       const writer = new RaccoonWriterService(this.sceneModelService, reader);
       const tracker = new RaccoonTrackerService();
       const validation = new RaccoonValidationService();
-      const api = new RaccoonSkulptService(reader, writer, tracker);
+      const api = new RaccoonSkulptService(this.skulptService, reader, writer, tracker);
       return new RaccoonBuilderService(reader, writer, api, validation);
     },
     [SceneType.PANDEMIC]: () => {
       const reader = new PandemicReaderService(this.sceneModelService);
       const writer = new PandemicWriterService(this.sceneModelService, reader);
       const validation = new PandemicValidationService();
-      const api = new PandemicSkulptService(reader, writer);
+      const api = new PandemicSkulptService(this.skulptService, reader, writer);
       return new PandemicBuilderService(reader, writer, api, validation);
     },
     [SceneType.CONSOLE]: () => {
       const reader = new ConsoleReaderService(this.sceneModelService);
       const writer = new ConsoleWriterService(this.sceneModelService, reader);
-      const api = new ConsoleSkulptService(reader, writer);
+      const api = new ConsoleSkulptService(this.skulptService, reader, writer);
+      const validation = new ConsoleValidationService();
+      return new ConsoleBuilderService(reader, writer, api, validation);
+    },
+    // TODO: this is a test scene type, that must be removed in the future
+    [SceneType.CONSOLEMATH]: () => {
+      const reader = new ConsoleReaderService(this.sceneModelService);
+      const writer = new ConsoleWriterService(this.sceneModelService, reader);
+      const api = new ConsoleMathSkulptService(this.skulptService, reader, writer);
       const validation = new ConsoleValidationService();
       return new ConsoleBuilderService(reader, writer, api, validation);
     }
@@ -57,7 +67,8 @@ export class SceneInitService {
   private sceneBuilder: SceneBuilder;
 
   constructor(private sceneModelService: SceneModelService,
-              private sceneAccessorsService: SceneAccessorsService) {
+              private sceneAccessorsService: SceneAccessorsService,
+              private skulptService: SkulptService) {
   }
 
   init(sceneConfig: SceneConfig): void {

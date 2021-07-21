@@ -44,9 +44,22 @@ export class ConsoleBuilderService implements SceneBuilder {
     return this.sceneModel;
   }
 
-  private addCheckingLogic(checkingLogic: string): void {
+  private addCheckingLogic(checkingLogic: string | CheckingLogic): void {
     if (!checkingLogic) return;
-    this.sceneModel.checkingLogic = (new Function(checkingLogic) as CheckingLogic).bind(this.reader);
+    if (typeof checkingLogic === 'string') {
+      this.sceneModel.checkingLogic = (new Function(checkingLogic as string) as CheckingLogic).bind(this.reader);
+    } else {
+      this.sceneModel.checkingLogic = (checkingLogic as CheckingLogic).bind(this.reader);
+    }
+
+    const checkingLogicFunc = this.sceneModel.checkingLogic;
+    this.sceneModel.checkingLogic = (...args) => {
+      try {
+        return checkingLogicFunc(...args);
+      } catch (e) {
+        return 'checking logic failed with error: ' + e;
+      }
+    };
   }
 
   private addConsoleVariable(
