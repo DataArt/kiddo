@@ -89,10 +89,19 @@ export class RaccoonBuilderService implements SceneBuilder {
   private addCheckingLogic(checkingLogic: string | CheckingLogic): void {
     if (!checkingLogic) return;
     if (typeof checkingLogic === 'string') {
-      this.sceneModel.checkingLogic = (new Function(checkingLogic as string) as CheckingLogic);
+      this.sceneModel.checkingLogic = (new Function(checkingLogic as string) as CheckingLogic).bind(this.sceneModel);
     } else {
-      this.sceneModel.checkingLogic = (checkingLogic as CheckingLogic);
+      this.sceneModel.checkingLogic = (checkingLogic as CheckingLogic).bind(this.sceneModel);
     }
+
+    const checkingLogicFunc = this.sceneModel.checkingLogic;
+    this.sceneModel.checkingLogic = (...args) => {
+      try {
+        return checkingLogicFunc(...args);
+      } catch (e) {
+        return 'checking logic failed with error: ' + e;
+      }
+    };
   }
 
   private parseGeneratingFunc(generatingFunc: string): RaccoonSceneModel {
