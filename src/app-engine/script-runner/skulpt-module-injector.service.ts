@@ -58,7 +58,6 @@ export class SkulptModuleInjectorService {
     }
 
     removeAllInjectedModules(): void {
-        const addedModulesCopy = new Set<string>(this.addedModules);
-        addedModulesCopy.forEach(name => this.removeModule(name));
+        this.addedModules.forEach(name => this.removeModule(name));
     }
 }
