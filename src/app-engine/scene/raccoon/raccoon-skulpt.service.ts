@@ -33,7 +33,7 @@ export class RaccoonSkulptService implements SceneSkulptService {
 
         const defaultDelay = 500;
 
-        const executeWithDelay = (callback: any, delay: number, repeat: number) => {
+        const executeWithDelay = (callback: () => void, delay: number, repeat: number) => {
             return new Promise<any>(
                 (resolve, reject) => {
                     for (let i = 0; i < repeat; i++) {
