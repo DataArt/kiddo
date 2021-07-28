@@ -1,60 +1,70 @@
 import {
-  ConsoleVariable,
-  GameStatistics,
-  CheckingLogic,
-  ConsoleVariableValue,
+    ConsoleVariable,
+    GameStatistics,
+    CheckingLogic,
+    ConsoleVariableValue,
 } from '../../common/entities';
-import { SceneReader } from '../../common/readers/scene.reader';
-import { ConsoleSceneModel } from '../models/console-scene-model';
-import { SceneModelService } from '../../scene-model.service';
-import { Singleton } from '../../../singleton.decorator';
-import { SceneType } from '../../common/models/scene-type.enum';
+import {SceneReader} from '../../common/readers/scene.reader';
+import {ConsoleSceneModel} from '../models/console-scene-model';
+import {SceneModelService} from '../../scene-model.service';
+import {Singleton} from '../../../singleton.decorator';
+import {SceneType} from '../../common/models/scene-type.enum';
+import {GameFailError} from '../../common/errors';
 
 @Singleton
 export class ConsoleReaderService implements SceneReader {
-  sceneModel: ConsoleSceneModel;
+    sceneModel: ConsoleSceneModel;
 
-  constructor(private sceneModelService: SceneModelService) {
-  }
+    constructor(private sceneModelService: SceneModelService) {
+    }
 
-  init(): void {
-    this.sceneModel = this.sceneModelService.sceneModel as ConsoleSceneModel;
-  }
+    init(): void {
+        this.sceneModel = this.sceneModelService.sceneModel as ConsoleSceneModel;
+    }
 
-  getSceneType(): SceneType {
-    return this.sceneModel?.sceneType;
-  }
+    getSceneType(): SceneType {
+        return this.sceneModel?.sceneType;
+    }
 
-  getGameStatistics(): GameStatistics {
-    const gameStatistics: GameStatistics = { gameFinished: true, levelPassed: false };
-    return gameStatistics;
-  }
+    getGameStatistics(): GameStatistics {
+        const gameStatistics: GameStatistics = {gameFinished: true, levelPassed: false};
+        return gameStatistics;
+    }
 
-  getGameFailMessage(): string {
-    return this.sceneModel?.checkingLogic();
-  }
+    getGameFailMessage(): string {
+        return this.sceneModel?.checkingLogic(this);
+    }
 
-  get consoleContent(): string[] {
-    return this.sceneModel.consoleContent;
-  }
+    get consoleContent(): string[] {
+        return this.sceneModel.consoleContent;
+    }
 
-  getVariableByName(name: string): ConsoleVariable {
-    return this.sceneModel?.consoleVariables.find(item => item.name === name);
-  }
+    getVariableByName(name: string): ConsoleVariable {
+        return this.sceneModel?.consoleVariables.find(item => item.name === name);
+    }
 
-  getVariableValue(name: string): ConsoleVariableValue {
-    return this.getVariableByName(name)?.value;
-  }
+    getVariableValue(name: string): ConsoleVariableValue {
+        return this.getVariableByName(name)?.value;
+    }
 
-  getVariablesList(): ConsoleVariable[] {
-    return this.sceneModel.consoleVariables;
-  }
+    getVariablesList(): ConsoleVariable[] {
+        return this.sceneModel.consoleVariables;
+    }
 
-  getCheckingLogic(): CheckingLogic {
-    return this.sceneModel.checkingLogic as CheckingLogic;
-  }
+    getCheckingLogic(): CheckingLogic {
+        return this.sceneModel.checkingLogic as CheckingLogic;
+    }
 
-  sceneIsPlaybackable(): boolean {
-    return false;
-  }
+    sceneIsPlaybackable(): boolean {
+        return false;
+    }
+
+    getConsoleVariableValue(name: string): ConsoleVariableValue {
+        const existingVariable = this.getVariableByName(name);
+        if (existingVariable) {
+          return existingVariable.value;
+        } else {
+          throw new GameFailError('UNKNOWN_VARIABLE');
+        }
+    }
 }
